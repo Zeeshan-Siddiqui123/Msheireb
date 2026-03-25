@@ -1,0 +1,83 @@
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('./assets/fonts/SF-Pro-Display-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('./assets/fonts/SF-Pro-Display-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('./assets/fonts/SF-Pro-Display-Semibold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('./assets/fonts/SF-Pro-Display-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('./assets/fonts/SF-Pro-Display-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('./assets/fonts/SF-Pro-Display-Thin.otf') format('opentype');
+  font-weight: 100;
+  font-style: normal;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-sf-pro antialiased bg-no-repeat bg-cover bg-top min-h-full;
+    background-image: url('./assets/BG.png');
+  }
+
+  input::placeholder {
+    @apply font-sf-pro !important;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply backdrop-blur-glass border border-white/20 shadow-glass-nav;
+  }
+
+  .glass-card {
+    @apply border border-[#CDEBFF] rounded-[8px];
+  }
+
+  .glass-input {
+    @apply bg-glass-input backdrop-blur-glass-ultra border border-glass-border shadow-glass-input rounded-full focus:outline-none transition-all duration-300 font-sf-pro;
+  }
+
+  /* 
+  .glass-drawer {
+    @apply bg-[rgba(10, 20, 50, 0.75)] backdrop-blur-glass border-b border-white/10 shadow-lg;
+  } */
+
+  .nav-link {
+    @apply text-xs xl:text-sm text-brand-accent hover:text-white transition-colors duration-200 font-sf-pro;
+  }
+
+  .nav-link-active {
+    @apply text-white relative font-medium after:content-[''] after:absolute after:bottom-[-5px] after:left-0 after:w-full after:h-[2px] after:bg-white after:rounded-full;
+  }
+}
