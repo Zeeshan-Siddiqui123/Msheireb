@@ -57,11 +57,11 @@
 
 @layer components {
   .glass-panel {
-    @apply backdrop-blur-glass border border-white/20 shadow-glass-nav;
+    @apply backdrop-blur-[12px] border border-white/20 shadow-glass-nav bg-white/10;
   }
 
   .glass-card {
-    @apply border border-[#CDEBFF] rounded-[8px];
+    @apply backdrop-blur-[12px] border border-white/30 bg-white/5 rounded-[12px] shadow-sm;
   }
 
   .glass-input {

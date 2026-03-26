@@ -21,6 +21,7 @@ export default function DiscoverCard({ title, bgUrl, href }: DiscoverCardProps) 
       <div className="relative z-10 flex flex-col items-center w-full">
         <h3 className="text-white font-semibold text-center mb-3 text-sm md:text-base">{title}</h3>
         <GlassButton
+          className=""
           onClick={() => {
             if (href) {
               navigate(href);

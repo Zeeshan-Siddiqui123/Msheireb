@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
-import GlassCard from "../../common/GlassCard";
+import QuickActionsWrapper from "./QuickActionsWrapper";
 
-export interface QuickActionItem {
+interface QuickActionItem {
   icon: ReactNode;
   label: string;
   onClick?: () => void;
@@ -13,21 +13,21 @@ export interface QuickActionsProps {
 
 export default function QuickActions({ actions }: QuickActionsProps) {
   return (
-    <GlassCard className="p-6 h-fit">
-      <div className="grid grid-cols-2 gap-y-8 gap-x-4">
+    <QuickActionsWrapper className="px-4 py-12 w-full h-auto">
+      <div className="grid grid-cols-2  gap-y-12 gap-x-12 w-full place-items-center">
         {actions.map((action, index) => (
           <button
             key={index}
             onClick={action.onClick}
-            className="flex flex-col items-center justify-center gap-3 text-white/90 hover:text-white group transition"
+            className="flex flex-col items-center justify-center gap-4 text-white hover:text-white group transition-all duration-300"
           >
-            <div className="p-3 rounded-full bg-white/5  group-hover:bg-white/20 transition shadow-inner">
+            <div className="text-white drop-shadow-md">
               {action.icon}
             </div>
-            <span className="text-xs font-medium">{action.label}</span>
+            <span className="text-[17px] font-medium tracking-wide">{action.label}</span>
           </button>
         ))}
       </div>
-    </GlassCard>
+    </QuickActionsWrapper>
   );
 }

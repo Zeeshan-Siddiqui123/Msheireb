@@ -34,7 +34,7 @@ const OutlineWrapper: React.FC<OutlineWrapperProps> = ({
           position: "absolute",
           inset: 0,
           borderRadius: "inherit",
-          padding: "1.5px",
+          padding: "1px",
           background:
             "linear-gradient(-185deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 40%, rgba(255,255,255,0) 60%, rgba(255,255,255,1) 100%)",
           WebkitMask:
