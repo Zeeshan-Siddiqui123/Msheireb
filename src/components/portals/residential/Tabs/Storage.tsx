@@ -21,6 +21,27 @@ const Storage = () => {
         { name: "Furniture (Chairs)", qty: 4 },
     ];
 
+    const storageUnitData = [
+        { label: "Location", value: "Building A", subValue: "Basement Level 2 • Zone C" },
+        { label: "Size", value: "8 sqm" },
+        { label: "Assigned To", value: "Unit #305 - Sarah Johnson" },
+        { label: "Access", value: "Card" },
+    ];
+
+    const accessUsageData = [
+        { label: "Last Accessed", value: "2026-02-15, 3:45 PM" },
+        { label: "Access Hours", value: "24/7" },
+        { label: "Assigned To", value: "Unit #305 - Sarah Johnson" },
+        { label: "Access", value: "Card" },
+    ];
+
+    const allocationDetailsData = [
+        { label: "Start Date", value: "2025-06-01" },
+        { label: "End Date", value: "2026-06-01" },
+        { label: "Monthly Fee", value: "120", currency: "Qar" },
+        { label: "Deposit", value: "240", currency: "Qar" },
+    ];
+
     return (
         <div className="mt-4 w-full bg-white/10 rounded-[24px] p-6 border border-white/20 backdrop-blur-md shadow-lg text-left relative overflow-hidden">
             {/* Storage Unit Section */}
@@ -28,23 +49,13 @@ const Storage = () => {
             <hr className="border-white/30 mb-5" />
 
             <div className="grid grid-cols-2 gap-y-6 mb-8">
-                <div>
-                    <label className="text-white/80 text-[12px] font-semibold mb-[2px] block">Location</label>
-                    <p className="font-bold text-white text-[15px]">Building A</p>
-                    <p className="text-white/70 text-[13px]">Basement Level 2 • Zone C</p>
-                </div>
-                <div>
-                    <label className="text-white/80 text-[12px] font-semibold mb-[2px] block">Size</label>
-                    <p className="font-bold text-white text-[15px]">8 sqm</p>
-                </div>
-                <div>
-                    <label className="text-white/80 text-[12px] font-semibold mb-[2px] block">Assigned To</label>
-                    <p className="font-bold text-white text-[15px]">Unit #305 - Sarah Johnson</p>
-                </div>
-                <div>
-                    <label className="text-white/80 text-[12px] font-semibold mb-[2px] block">Access</label>
-                    <p className="font-bold text-white text-[15px]">Card</p>
-                </div>
+                {storageUnitData.map((item, idx) => (
+                    <div key={idx}>
+                        <label className="text-white/80 text-[12px] font-semibold mb-[2px] block">{item.label}</label>
+                        <p className="font-bold text-white text-[15px]">{item.value}</p>
+                        {item.subValue && <p className="text-white/70 text-[13px]">{item.subValue}</p>}
+                    </div>
+                ))}
             </div>
 
             {/* Access and Usage Section */}
@@ -52,22 +63,12 @@ const Storage = () => {
             <hr className="border-white/30 mb-5" />
 
             <div className="grid grid-cols-2 gap-y-6 mb-6">
-                <div>
-                    <label className="text-white/80 text-[12px] font-semibold mb-[2px] block">Last Accessed</label>
-                    <p className="font-bold text-white text-[15px]">2026-02-15, 3:45 PM</p>
-                </div>
-                <div>
-                    <label className="text-white/80 text-[12px] font-semibold mb-[2px] block">Access Hours</label>
-                    <p className="font-bold text-white text-[15px]">24/7</p>
-                </div>
-                <div>
-                    <label className="text-white/80 text-[12px] font-semibold mb-[2px] block">Assigned To</label>
-                    <p className="font-bold text-white text-[15px]">Unit #305 - Sarah Johnson</p>
-                </div>
-                <div>
-                    <label className="text-white/80 text-[12px] font-semibold mb-[2px] block">Access</label>
-                    <p className="font-bold text-white text-[15px]">Card</p>
-                </div>
+                {accessUsageData.map((item, idx) => (
+                    <div key={idx}>
+                        <label className="text-white/80 text-[12px] font-semibold mb-[2px] block">{item.label}</label>
+                        <p className="font-bold text-white text-[15px]">{item.value}</p>
+                    </div>
+                ))}
             </div>
 
             <div className="flex flex-col gap-3 mb-8">
@@ -97,28 +98,19 @@ const Storage = () => {
             <hr className="border-white/30 mb-5" />
 
             <div className="grid grid-cols-2 gap-y-6 mb-8">
-                <div>
-                    <label className="text-white/80 text-[12px] font-semibold mb-[2px] block">Start Date</label>
-                    <p className="font-bold text-white text-[15px]">2025-06-01</p>
-                </div>
-                <div>
-                    <label className="text-white/80 text-[12px] font-semibold mb-[2px] block">End Date</label>
-                    <p className="font-bold text-white text-[15px]">2026-06-01</p>
-                </div>
-                <div>
-                    <label className="text-white/80 text-[12px] font-semibold mb-[2px] block">Monthly Fee</label>
-                    <div className="flex items-baseline gap-1">
-                        <span className="text-[11px] font-bold text-white/70 uppercase">Qar</span>
-                        <p className="font-bold text-white text-[15px]">120</p>
+                {allocationDetailsData.map((item, idx) => (
+                    <div key={idx}>
+                        <label className="text-white/80 text-[12px] font-semibold mb-[2px] block">{item.label}</label>
+                        {item.currency ? (
+                            <div className="flex items-baseline gap-1">
+                                <span className="text-[11px] font-bold text-white/70 uppercase">{item.currency}</span>
+                                <p className="font-bold text-white text-[15px]">{item.value}</p>
+                            </div>
+                        ) : (
+                            <p className="font-bold text-white text-[15px]">{item.value}</p>
+                        )}
                     </div>
-                </div>
-                <div>
-                    <label className="text-white/80 text-[12px] font-semibold mb-[2px] block">Deposit</label>
-                    <div className="flex items-baseline gap-1">
-                        <span className="text-[11px] font-bold text-white/70 uppercase">Qar</span>
-                        <p className="font-bold text-white text-[15px]">240</p>
-                    </div>
-                </div>
+                ))}
             </div>
 
             {/* Stored Items Section */}

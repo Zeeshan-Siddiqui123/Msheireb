@@ -58,14 +58,16 @@ const Parking = ({ onRegister }: ParkingProps) => {
         </div>
       ))}
       
-      <div className="mt-4 flex justify-center w-full">
-        <GlassButton 
-          onClick={onRegister} 
-          className="px-10 py-2 h-auto text-[15px] font-medium w-full max-w-[400px] rounded-full"
-        >
-          + Register New Vehicle
-        </GlassButton>
-      </div>
+      {onRegister && (
+        <div className="mt-4 flex justify-center w-full">
+          <GlassButton 
+            onClick={onRegister} 
+            className="px-10 py-2 h-auto text-[15px] font-medium w-full max-w-[400px] rounded-full"
+          >
+            + Register New Vehicle
+          </GlassButton>
+        </div>
+      )}
     </div>
   );
 }
