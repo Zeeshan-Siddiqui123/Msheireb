@@ -35,32 +35,32 @@ export default function ProfileCard({
             <img src={avatarUrl} alt={name} className="w-full h-full object-cover" />
           </div>
           <div className="">
-            <h2 className="text-xl font-bold">{name}</h2>
+            <h2 className="text-heading-primary">{name}</h2>
           </div>
         </div>
 
         {/* Stats Grid */}
         <div className="grid grid-cols-3 gap-4 w-full mb-6">
           <div>
-            <p className="text-[10px] font-regular">Leasing Type</p>
-            <p className="text-sm font-bold">{leasingType}</p>
+            <p className="label-small-regular">Leasing Type</p>
+            <p className="label-bold-center">{leasingType}</p>
           </div>
           <div>
-            <p className="text-[10px] font-regular">Valid Until</p>
-            <p className="text-sm font-bold">{validUntil}</p>
+            <p className="label-small-regular">Valid Until</p>
+            <p className="label-bold-center">{validUntil}</p>
           </div>
           <div>
-            <p className="text-[10px] font-regular">Family Members</p>
-            <p className="text-sm font-bold">{familyMembers}</p>
+            <p className="label-small-regular">Family Members</p>
+            <p className="label-bold-center">{familyMembers}</p>
           </div>
           <div>
-            <p className="text-[10px] font-regular">Nationality</p>
-            <p className="text-sm font-bold">{nationality}</p>
+            <p className="label-small-regular">Nationality</p>
+            <p className="label-bold-center">{nationality}</p>
           </div>
 
           <div className="col-span-2">
-            <p className="text-[10px] font-regular">Building Ref.</p>
-            <p className="text-sm font-bold tracking-wider">{buildingRef}</p>
+            <p className="label-small-regular">Building Ref.</p>
+            <p className="label-bold-center">{buildingRef}</p>
           </div>
         </div>
 

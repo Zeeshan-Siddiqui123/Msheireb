@@ -46,7 +46,8 @@
 
 @layer base {
   body {
-    @apply font-sf-pro antialiased bg-no-repeat bg-cover bg-top min-h-full;
+    @apply antialiased subpixel-antialiased font-sf-pro bg-no-repeat bg-cover bg-top min-h-full;
+    font-feature-settings: "cv11", "ss01";
     background-image: url('./assets/BG.png');
   }
 
@@ -56,6 +57,47 @@
 }
 
 @layer components {
+  .text-inter-xs {
+    @apply font-inter font-regular text-10 leading-14 ;
+  }
+
+  .text-heading-primary {
+  @apply font-sf-pro font-bold text-15.6 tracking-tightest;
+}
+.heading-medium-bold {
+    @apply font-sf-pro font-bold text-18 leading-20 tracking-tightest;
+  }
+  .heading-medium-semibold {
+    @apply font-sf-pro font-semibold text-16 leading-20 tracking-tightest;
+  }
+.label-bold-center {
+    @apply font-sf-pro font-bold text-12 leading-16 tracking-tightest ;
+  }
+  .label-small-regular {
+    @apply font-sf-pro font-regular text-8 leading-12 tracking-normal;
+  }
+  .label-small-semibold {
+    @apply font-sf-pro font-semibold text-[12.83px] leading-[15.68px] tracking-tightest;
+  }
+  .text-small-regular {
+    @apply font-sf-pro font-regular text-12 leading-16 tracking-tightest;
+  }
+  .text-small-medium {
+    @apply font-sf-pro font-medium text-12 leading-16 tracking-tightest;
+  }
+   .body-regular {
+    @apply font-sf-pro font-regular text-14 leading-18 tracking-tightest;
+  }
+  .text-regular-bold {
+    @apply font-sf-pro font-bold text-14 leading-18 tracking-tightest;
+  }
+  .btn-text-regular {
+    @apply font-sf-pro font-regular text-12 leading-16 tracking-tightest ;
+    vertical-align: middle; /* for inline or inline-block elements */
+  }
+  .tabs-heading-semi {
+    @apply font-sf-pro font-semibold text-14 leading-18 tracking-tightest text-center;
+  }
   .glass-panel {
     @apply backdrop-blur-glass border border-white/20 shadow-glass-nav;
   }
@@ -80,4 +122,8 @@
   .nav-link-active {
     @apply text-white relative font-medium after:content-[''] after:absolute after:bottom-[-5px] after:left-0 after:w-full after:h-[2px] after:bg-white after:rounded-full;
   }
+}
+
+@layer utilities {
+  
 }

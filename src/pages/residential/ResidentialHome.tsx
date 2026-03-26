@@ -11,6 +11,8 @@ import stepsIcon from '../../assets/svg/steps-icon.svg'
 import awardIcon from '../../assets/svg/award-icon.svg'
 
 import { Airplay, Lock, Lightbulb, Settings2 } from 'lucide-react'
+import { LeftSidebarContent } from '../../components/common/LeftSidebarContent'
+import { RightSidebarContent } from '../../components/common/RightSidebarContent'
 
 export default function ResidentialHome() {
   const bgImg1 = '/src/assets/discover_1.jpg';
@@ -20,35 +22,12 @@ export default function ResidentialHome() {
   const bgImg5 = '/src/assets/discover_5.jpg';
   const bgImg6 = '/src/assets/discover_6.jpg';
 
-  const quickActionsData = [
-    { icon: <Airplay size={24} strokeWidth={1.5} />, label: "HVAC" },
-    { icon: <Lock size={24} strokeWidth={1.5} />, label: "Security" },
-    { icon: <Lightbulb size={24} strokeWidth={1.5} />, label: "Lighting" },
-    { icon: <Settings2 size={24} strokeWidth={1.5} />, label: "Automation" },
-  ];
-
-  const leftSidebar = (
-    <ProfileCard
-      name="Rakan"
-      leasingType="Residential"
-      validUntil="10/26"
-      nationality="Expat"
-      familyMembers={4}
-      buildingRef="UNASSIGNED"
-    />
-  );
-
-  const rightSidebar = (
-    <>
-      <h2 className="text-lg font-bold mb-4 ">Quick Actions</h2>
-      <QuickActions actions={quickActionsData} />
-    </>
-  );
+ 
 
   return (
-    <DashboardLayout leftSidebar={leftSidebar} rightSidebar={rightSidebar}>
+    <DashboardLayout leftSidebar={<LeftSidebarContent/>} rightSidebar={<RightSidebarContent/>}>
       <section>
-        <h2 className="text-lg font-bold mb-4 ">My Home</h2>
+        <h2 className="heading-medium-bold mb-4 ">My Home</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <StatCard
             title="Temperature"
@@ -74,7 +53,7 @@ export default function ResidentialHome() {
       </section>
 
       <section>
-        <h2 className="text-lg font-bold mb-4 ">Discover</h2>
+        <h2 className="heading-medium-bold mb-4 ">Discover</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           <DiscoverCard title="Apartment Details" bgUrl={bgImg1} href="/appartment-details" />
           <DiscoverCard title="Payments and Invoices" bgUrl={bgImg2} />

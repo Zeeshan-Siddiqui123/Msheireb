@@ -24,7 +24,7 @@ export default function QuickActions({ actions }: QuickActionsProps) {
             <div className="p-3 rounded-full bg-white/5  group-hover:bg-white/20 transition shadow-inner">
               {action.icon}
             </div>
-            <span className="text-xs font-medium">{action.label}</span>
+            <span className="text-small-regular">{action.label}</span>
           </button>
         ))}
       </div>
