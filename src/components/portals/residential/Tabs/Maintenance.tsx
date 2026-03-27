@@ -2,12 +2,30 @@ import GlassButton from "../../../common/GlassButton";
 import QuickActionsWrapper from "../../../common/QuickActionsWrapper";
 import MaintenanceServices from "./MaintenanceServices";
 
+import MaintenanceRequestForm from "./MaintenanceRequestForm";
+
 interface MaintenanceProps {
     showServices: boolean;
     setShowServices: (value: boolean) => void;
+    showForm: boolean;
+    setShowForm: (value: boolean) => void;
+    selectedCategory: string;
+    setSelectedCategory: (value: string) => void;
 }
 
-const Maintenance = ({ showServices, setShowServices }: MaintenanceProps) => {
+const Maintenance = ({ 
+    showServices, 
+    setShowServices, 
+    showForm, 
+    setShowForm, 
+    selectedCategory, 
+    setSelectedCategory 
+}: MaintenanceProps) => {
+
+    const handleCategorySelect = (category: string) => {
+        setSelectedCategory(category);
+        setShowForm(true);
+    };
 
     return (
         <QuickActionsWrapper 
@@ -29,7 +47,13 @@ const Maintenance = ({ showServices, setShowServices }: MaintenanceProps) => {
             )}
 
             
-            {showServices && <MaintenanceServices />}
+            {showServices && !showForm && (
+                <MaintenanceServices onCategorySelect={handleCategorySelect} />
+            )}
+
+            {showForm && (
+                <MaintenanceRequestForm category={selectedCategory}  />
+            )}
 
         </QuickActionsWrapper>
     );

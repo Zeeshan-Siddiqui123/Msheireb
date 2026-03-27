@@ -14,6 +14,8 @@ export default function HomeServices() {
   const navigate = useNavigate();
   const [selectedTab, setSelectedTab] = useState("services");
   const [showServices, setShowServices] = useState(false);
+  const [showForm, setShowForm] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState("");
 
   // Tab content mapping
   const tabContent = {
@@ -22,10 +24,14 @@ export default function HomeServices() {
       desc: "Choose a category to help us understand the problem",
     },
     maintenance: {
-      title: showServices ? "Create New Request": "My Services" ,
-      desc: showServices 
-        ? "Book services and manage maintenance requests"
-        : "Choose a category to help us understand the problem",
+      title: showForm 
+        ? "Fill in your request" 
+        : showServices ? "Create New Request" : "My Services",
+      desc: showForm 
+        ? "Please provide the details below" 
+        : showServices 
+          ? "Book services and manage maintenance requests"
+          : "Choose a category to help us understand the problem",
     },
     mybooking: {
       title: "My Bookings",
@@ -67,8 +73,14 @@ export default function HomeServices() {
         <div className="relative flex items-center justify-center mb-1">
           <button
             onClick={() => {
-              if (selectedTab === 'maintenance' && showServices) {
-                setShowServices(false);
+              if (selectedTab === 'maintenance') {
+                if (showForm) {
+                  setShowForm(false);
+                } else if (showServices) {
+                  setShowServices(false);
+                } else {
+                  navigate('/');
+                }
               } else {
                 navigate('/');
               }
@@ -87,31 +99,46 @@ export default function HomeServices() {
 
         {/* Tabs Area */}
         <div className="w-full flex-grow flex flex-col">
-          <Tabs
-            aria-label="Home Services Options"
-            fullWidth
-            selectedKey={selectedTab}
-            onSelectionChange={(key) => setSelectedTab(key as string)}
-            classNames={{
-              tabList: "bg-white/20 rounded-full border border-white/10 mb-2 gap-2",
-              cursor: "bg-white rounded-full drop-shadow-sm",
-              tab: "h-9",
-              tabContent: "group-data-[selected=true]:text-black group-data-[selected=true]:font-bold text-white/95 font-medium text-[15px] tracking-wide"
-            }}
-          >
-            <Tab key="services" title="Services">
-              <Services />
-            </Tab>
-            <Tab key="maintenance" title="Maintenance">
-              <Maintenance 
-                showServices={showServices} 
-                setShowServices={setShowServices} 
-              />
-            </Tab>
-            <Tab key="mybooking" title="My Booking">
-              <Bookings />
-            </Tab>
-          </Tabs>
+          {showForm ? (
+            <Maintenance 
+              showServices={showServices} 
+              setShowServices={setShowServices} 
+              showForm={showForm}
+              setShowForm={setShowForm}
+              selectedCategory={selectedCategory}
+              setSelectedCategory={setSelectedCategory}
+            />
+          ) : (
+            <Tabs
+              aria-label="Home Services Options"
+              fullWidth
+              selectedKey={selectedTab}
+              onSelectionChange={(key) => setSelectedTab(key as string)}
+              classNames={{
+                tabList: "bg-white/20 rounded-full border border-white/10 mb-2 gap-2",
+                cursor: "bg-white rounded-full drop-shadow-sm",
+                tab: "h-9",
+                tabContent: "group-data-[selected=true]:text-black group-data-[selected=true]:font-bold text-white/95 font-medium text-[15px] tracking-wide"
+              }}
+            >
+              <Tab key="services" title="Services">
+                <Services />
+              </Tab>
+              <Tab key="maintenance" title="Maintenance">
+                <Maintenance 
+                  showServices={showServices} 
+                  setShowServices={setShowServices} 
+                  showForm={showForm}
+                  setShowForm={setShowForm}
+                  selectedCategory={selectedCategory}
+                  setSelectedCategory={setSelectedCategory}
+                />
+              </Tab>
+              <Tab key="mybooking" title="My Booking">
+                <Bookings />
+              </Tab>
+            </Tabs>
+          )}
         </div>
       </section>
     </DashboardLayout>

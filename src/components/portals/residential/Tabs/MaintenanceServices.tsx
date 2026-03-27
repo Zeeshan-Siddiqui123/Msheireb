@@ -13,18 +13,20 @@ const services = [
   { title: "Plumbing", img: "src/assets/plumbing.png" },
 ];
 
-const MaintenanceServices = () => {
+const MaintenanceServices = ({ onCategorySelect }: { onCategorySelect: (category: string) => void }) => {
   return (
     <div className="w-full max-w-5xl grid grid-cols-2 gap-4">
       
       {services.map((item, index) => (
-        <QuickActionsWrapper className="w-full">
+        <QuickActionsWrapper className="w-full" >
         <div
           key={index}
+          onClick={() => onCategorySelect(item.title)}
           className="
             flex items-center gap-4             
             transition-all duration-300
             cursor-pointer
+            hover:scale-[1.02] active:scale-95
           "
         >
           <img
