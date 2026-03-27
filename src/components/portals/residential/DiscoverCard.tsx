@@ -21,14 +21,13 @@ export default function DiscoverCard({ title, bgUrl, href }: DiscoverCardProps) 
       <div className="relative z-10 flex flex-col items-center w-full">
         <h3 className="text-white font-semibold text-center mb-3 text-sm md:text-base">{title}</h3>
         <GlassButton
-          className=""
+          className="bg-black/70  w-full shadow-[inset_0_-25px_15px_rgba(255,255,255,0.2),inset_0_-2px_6px_rgba(0,0,0,0.5)]"
+          size="small"
           onClick={() => {
             if (href) {
               navigate(href);
             }
           }}
-          // size="large"
-          // className="w-full rounded-full"
         >
           Explore
         </GlassButton>

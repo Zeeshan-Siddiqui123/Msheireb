@@ -1,5 +1,6 @@
+// import { ReactNode } from "react";
 import type { ReactNode } from "react";
-import QuickActionsWrapper from "./QuickActionsWrapper";
+import QuickActionsWrapper from "../../common/QuickActionsWrapper";
 
 interface QuickActionItem {
   icon: ReactNode;
@@ -13,8 +14,8 @@ export interface QuickActionsProps {
 
 export default function QuickActions({ actions }: QuickActionsProps) {
   return (
-    <QuickActionsWrapper className="px-4 py-12 w-full h-auto">
-      <div className="grid grid-cols-2  gap-y-12 gap-x-12 w-full place-items-center">
+    <QuickActionsWrapper className="p-8 w-full h-auto">
+      <div className="grid grid-cols-2 gap-y-12 gap-x-12 w-full place-items-center">
         {actions.map((action, index) => (
           <button
             key={index}
