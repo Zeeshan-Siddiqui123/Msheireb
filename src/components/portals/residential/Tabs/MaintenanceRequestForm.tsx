@@ -1,6 +1,6 @@
 import { Select, SelectItem, Textarea } from '@heroui/react';
 import QuickActionsWrapper from '../../../common/QuickActionsWrapper';
-import { ImageIcon } from 'lucide-react';
+import { CameraIcon } from 'lucide-react';
 
 interface MaintenanceRequestFormProps {
     category: string;
@@ -17,14 +17,25 @@ const MaintenanceRequestForm = ({ category }: MaintenanceRequestFormProps) => {
                         Category
                     </label>
                     <Select
-                        isDisabled
                         defaultSelectedKeys={[category]}
                         className="w-full"
+                        renderValue={(items) =>
+                            items.map((item) => (
+                                <div key={item.key} className="text-white font-medium text-sm">
+                                    {item.textValue}
+                                </div>
+                            ))
+                        }
                         classNames={{
                             trigger: [
-                                "bg-white/10 border border-white/20 rounded-xl min-h-[46px]",
-                                "hover:bg-white/15 transition-colors duration-200",
-                                "data-[hover=true]:bg-white/15",
+                                "bg-white/10 rounded-xl min-h-[46px]",
+                                "hover:!bg-white/15 transition-colors duration-200",
+                                "data-[hover=true]:!bg-white/15",
+                                "group-data-[focus=true]:!bg-white/10",
+                                "group-data-[focus=true]:!border-0",
+                                "group-data-[focus=true]:!shadow-none",
+                                "data-[focus-visible=true]:!ring-0",
+                                "data-[focus-visible=true]:!outline-none",
                             ].join(" "),
                             value: "text-white font-medium text-sm",
                             selectorIcon: "text-white/60",
@@ -53,9 +64,14 @@ const MaintenanceRequestForm = ({ category }: MaintenanceRequestFormProps) => {
                         }
                         classNames={{
                             trigger: [
-                                "bg-white/10 border border-white/20 rounded-xl min-h-[46px]",
-                                "hover:bg-white/15 transition-colors duration-200",
-                                "data-[hover=true]:bg-white/15",
+                                "bg-white/10 rounded-xl min-h-[46px]",
+                                "hover:!bg-white/15 transition-colors duration-200",
+                                "data-[hover=true]:!bg-white/15",
+                                "group-data-[focus=true]:!bg-white/10",
+                                "group-data-[focus=true]:!border-0",
+                                "group-data-[focus=true]:!shadow-none",
+                                "data-[focus-visible=true]:!ring-0",
+                                "data-[focus-visible=true]:!outline-none",
                             ].join(" "),
                             value: "text-white font-medium text-sm",
                             selectorIcon: "text-white/60",
@@ -80,9 +96,14 @@ const MaintenanceRequestForm = ({ category }: MaintenanceRequestFormProps) => {
                         className="w-full"
                         classNames={{
                             inputWrapper: [
-                                "bg-white/10 border border-white/20 rounded-xl",
-                                "hover:bg-white/15 transition-colors duration-200",
-                                "data-[hover=true]:bg-white/15",
+                                "bg-white/10 rounded-xl",
+                                "hover:!bg-white/15 transition-colors duration-200",
+                                "data-[hover=true]:!bg-white/15",
+                                "group-data-[focus=true]:!bg-white/10",
+                                "group-data-[focus=true]:!border-white",
+                                "group-data-[focus=true]:!shadow-none",
+                                "data-[focus-visible=true]:!ring-0",
+                                "data-[focus-visible=true]:!outline-none",
                                 "!transition-colors",
                             ].join(" "),
                             input: "text-white placeholder:text-white/40 text-sm resize-none",
@@ -97,7 +118,7 @@ const MaintenanceRequestForm = ({ category }: MaintenanceRequestFormProps) => {
                     </label>
                     <div
                         className={[
-                            "w-full rounded-2xl border border-dashed border-white/30",
+                            "w-full rounded-2xl border border-white/30",
                             "flex flex-col items-center justify-center gap-3",
                             "cursor-pointer py-10",
                             "hover:bg-white/5 transition-colors duration-200 group",
@@ -105,15 +126,15 @@ const MaintenanceRequestForm = ({ category }: MaintenanceRequestFormProps) => {
                     >
                         <div
                             className={[
-                                "w-14 h-14 rounded-2xl border border-white/20 bg-white/10",
+                                "w-28 h-28 rounded-xl border-dashed border border-white",
                                 "flex items-center justify-center",
                                 "group-hover:bg-white/15 transition-colors duration-200",
                             ].join(" ")}
                         >
-                            <ImageIcon
+                            <CameraIcon
                                 size={26}
                                 strokeWidth={1.25}
-                                className="text-white/50 group-hover:text-white/80 transition-colors duration-200"
+                                className="text-white"
                             />
                         </div>
                         <span className="text-white/60 text-sm font-medium group-hover:text-white/80 transition-colors duration-200">
