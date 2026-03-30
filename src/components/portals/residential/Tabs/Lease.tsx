@@ -1,7 +1,12 @@
+import { useDisclosure } from "@heroui/react";
+import LeaseRenewalModal from "../Modals/LeaseRenewalModal";
 import GlassButton from "../../../common/GlassButton";
 import { Download, ClipboardList } from "lucide-react";
+import QuickActionsWrapper from "../../../common/QuickActionsWrapper";
 
 const Lease = () => {
+    const { isOpen, onOpen, onClose } = useDisclosure();
+    
     const documents = [
         { name: "Lease Agreement", meta: "PDF • 2.4 MB • Jan 15, 2026" },
         { name: "Move-in Checklist", meta: "PDF • 2.4 MB • Jan 15, 2026" },
@@ -9,10 +14,15 @@ const Lease = () => {
         { name: "Amenity Rules", meta: "PDF • 2.4 MB • Jan 15, 2026" },
     ];
 
+    const handleRequestRenewal = () => {
+        console.log("Requesting renewal...");
+        onClose();
+    };
+
     return (
         <div className="flex flex-col gap-4 mt-4 w-full">
             {/* Lease Information Card */}
-            <div className="w-full bg-white/10 rounded-[20px] p-6 border border-white/20 backdrop-blur-md shadow-lg text-left relative overflow-hidden">
+            <QuickActionsWrapper className="bg-white/10 backdrop-blur-md shadow-lg text-left">
                 <div className="flex justify-between items-center mb-4">
                     <h2 className="text-[17px] font-bold text-white">Lease Information</h2>
                 </div>
@@ -36,21 +46,24 @@ const Lease = () => {
                         <p className="font-bold text-white text-[15px]">120 days</p>
                     </div>
                     
-                    <div className="mt-2 flex border border-white/30 rounded-[14px] bg-white/5 items-center justify-center flex-col p-6 text-center shadow-inner">
+                    <div className="mt-2 flex border rounded-lg border-white flex-col py-4 px-16 ml-1 text-center">
                         <p className="text-[16px] font-bold text-white mb-2 tracking-wide">Lease Renewal Available</p>
-                        <p className="text-[12px] text-white/90 mb-5 leading-relaxed">
+                        <p className="text-[15px] text-white/90 mb-5 leading-relaxed">
                             Your lease renewal option is available. <br />
                             Contact management to discuss renewal terms.
                         </p>
-                        <GlassButton className="px-10 py-2.5 h-auto text-[14px] font-medium w-full max-w-[320px] rounded-full">
+                        <GlassButton 
+                            onClick={onOpen}
+                            className="px-10 py-2.5 h-auto text-[14px] font-medium w-full rounded-full"
+                        >
                             Request Storage Renewal
                         </GlassButton>
                     </div>
                 </div>
-            </div>
+            </QuickActionsWrapper>
 
             {/* Documents & Contracts Card */}
-            <div className="w-full bg-white/10 rounded-[20px] p-6 border border-white/20 backdrop-blur-md shadow-lg text-left relative overflow-hidden mb-4">
+            <QuickActionsWrapper className="w-full backdrop-blur-md shadow-lg text-left relative overflow-hidden mb-4">
                 <h2 className="text-[17px] font-bold text-white mb-4">Documents & Contracts</h2>
                 <hr className="border-white/30 mb-5" />
                 
@@ -72,7 +85,16 @@ const Lease = () => {
                         </div>
                     ))}
                 </div>
-            </div>
+            </QuickActionsWrapper>
+
+            {/* Modal */}
+            <LeaseRenewalModal
+                isOpen={isOpen}
+                onClose={onClose}
+                expiryDate="Jan 14, 2025"
+                daysRemaining={120}
+                onRequestRenewal={handleRequestRenewal}
+            />
         </div>
     );
 }

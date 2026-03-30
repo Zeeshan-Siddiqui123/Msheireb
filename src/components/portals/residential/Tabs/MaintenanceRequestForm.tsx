@@ -28,7 +28,7 @@ const MaintenanceRequestForm = ({ category }: MaintenanceRequestFormProps) => {
                         }
                         classNames={{
                             trigger: [
-                                "bg-white/10 rounded-xl min-h-[46px]",
+                                "bg-white/10 border border-white rounded-xl min-h-[46px]",
                                 "hover:!bg-white/15 transition-colors duration-200",
                                 "data-[hover=true]:!bg-white/15",
                                 "group-data-[focus=true]:!bg-white/10",
@@ -54,7 +54,7 @@ const MaintenanceRequestForm = ({ category }: MaintenanceRequestFormProps) => {
                     <Select
                         placeholder="Ceiling issues"
                         defaultSelectedKeys={["ceiling"]}
-                        className="w-full"
+                        className="w-ful"
                         renderValue={(items) =>
                             items.map((item) => (
                                 <div key={item.key} className="text-white font-medium text-sm">
@@ -64,7 +64,7 @@ const MaintenanceRequestForm = ({ category }: MaintenanceRequestFormProps) => {
                         }
                         classNames={{
                             trigger: [
-                                "bg-white/10 rounded-xl min-h-[46px]",
+                                "bg-white/10 border border-white rounded-xl min-h-[46px]",
                                 "hover:!bg-white/15 transition-colors duration-200",
                                 "data-[hover=true]:!bg-white/15",
                                 "group-data-[focus=true]:!bg-white/10",
@@ -96,7 +96,7 @@ const MaintenanceRequestForm = ({ category }: MaintenanceRequestFormProps) => {
                         className="w-full"
                         classNames={{
                             inputWrapper: [
-                                "bg-white/10 rounded-xl",
+                                "bg-white/10 border border-white rounded-xl",
                                 "hover:!bg-white/15 transition-colors duration-200",
                                 "data-[hover=true]:!bg-white/15",
                                 "group-data-[focus=true]:!bg-white/10",
@@ -118,7 +118,7 @@ const MaintenanceRequestForm = ({ category }: MaintenanceRequestFormProps) => {
                     </label>
                     <div
                         className={[
-                            "w-full rounded-2xl border border-white/30",
+                            "w-full rounded-2xl border border-white",
                             "flex flex-col items-center justify-center gap-3",
                             "cursor-pointer py-10",
                             "hover:bg-white/5 transition-colors duration-200 group",
