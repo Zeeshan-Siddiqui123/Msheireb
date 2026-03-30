@@ -45,7 +45,7 @@ export default function ProfileCard({
     {/* <MoreExamples/> */}
     <GlassCard className="text-white h-fit">
       {/* Banner Image */}
-      <div className="h-24 w-full bg-[url('/src/assets/profile_bg.png')] bg-no-repeat  bg-center opacity-80 "></div>
+      <div className="h-24 w-full rounded-xl bg-[url('/src/assets/profile_bg.png')] bg-no-repeat opacity-80 "></div>
 
       {/* Profile Info */}
       <div className="px-6 pb-6 relative flex flex-col items-center">

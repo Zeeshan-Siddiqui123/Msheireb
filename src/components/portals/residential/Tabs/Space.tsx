@@ -1,4 +1,6 @@
-import QuickActionsWrapper from "../QuickActionsWrapper"
+// import QuickActionsWrapper from ""
+
+import QuickActionsWrapper from "../../../common/QuickActionsWrapper"
 
 const Space = () => {
     return (

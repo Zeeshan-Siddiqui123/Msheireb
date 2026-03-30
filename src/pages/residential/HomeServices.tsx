@@ -1,38 +1,39 @@
-import { Airplay, Lightbulb, Lock, Settings2, ChevronLeft } from 'lucide-react';
-import { Tabs, Tab } from '@heroui/react';
+import PageHeader from '../../components/common/PageHeader';
 import { useNavigate } from 'react-router-dom';
 import DashboardLayout from '../../components/common/DashboardLayout';
-import ProfileCard from '../../components/portals/residential/ProfileCard';
-import QuickActions from '../../components/portals/residential/QuickActions';
 import Services from '../../components/portals/residential/Tabs/Services';
 import Maintenance from '../../components/portals/residential/Tabs/Maintenance';
 import Bookings from '../../components/portals/residential/Tabs/Bookings';
 import { LeftSidebarContent } from '../../components/common/LeftSidebarContent';
 import { RightSidebarContent } from '../../components/common/RightSidebarContent';
 import { useState } from 'react';
-import { GlassTabs } from '../../components/common/GlassTabs';
-
 
 export default function HomeServices() {
   const navigate = useNavigate();
+
+  // Tabs state
   const [selectedTab, setSelectedTab] = useState("services");
+
+  // Maintenance internal state
   const [showServices, setShowServices] = useState(false);
   const [showForm, setShowForm] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState("");
 
-  // Tab content mapping
+  // 🔹 Header content mapping
   const tabContent = {
     services: {
       title: "My Services",
       desc: "Choose a category to help us understand the problem",
     },
     maintenance: {
-      title: showForm 
-        ? "Fill in your request" 
-        : showServices ? "Create New Request" : "My Services",
-      desc: showForm 
-        ? "Please provide the details below" 
-        : showServices 
+      title: showForm
+        ? "Fill in your request"
+        : showServices
+          ? "Create New Request"
+          : "My Services",
+      desc: showForm
+        ? ""
+        : showServices
           ? "Book services and manage maintenance requests"
           : "Choose a category to help us understand the problem",
     },
@@ -43,86 +44,69 @@ export default function HomeServices() {
   };
 
   const currentContent = tabContent[selectedTab as keyof typeof tabContent];
-   const [activeTab, setActiveTab] = useState("services");
 
-   const homeServiceTabs = [
-    { 
-      key: "services", 
-      title: "Services", 
-      content: <Services /> 
-    },
-    { 
-      key: "maintenance", 
-      title: "Maintenance", 
-      content: (
-        <Maintenance 
-          showServices={showServices} 
-          setShowServices={setShowServices} 
-          showForm={showForm}
-          setShowForm={setShowForm}
-          selectedCategory={selectedCategory}
-          setSelectedCategory={setSelectedCategory}
-        />
-      ) 
-    },
-    { 
-      key: "mybooking", 
-      title: "My Booking", 
-      content: <Bookings /> 
-    }
+  // 🔹 Tabs (ONLY navigation, no content)
+  const homeServiceTabs = [
+    { key: "services", title: "Services" },
+    { key: "maintenance", title: "Maintenance" },
+    { key: "mybooking", title: "My Booking" }
   ];
 
+  // 🔹 Back handling
+  const handleBack = () => {
+    if (selectedTab === 'maintenance') {
+      if (showForm) {
+        setShowForm(false);
+      } else if (showServices) {
+        setShowServices(false);
+      } else {
+        navigate('/');
+      }
+    } else {
+      navigate('/');
+    }
+  };
 
   return (
-    <DashboardLayout leftSidebar={<LeftSidebarContent/>} rightSidebar={<RightSidebarContent/>}>
+    <DashboardLayout
+      leftSidebar={<LeftSidebarContent />}
+      rightSidebar={<RightSidebarContent />}
+    >
       <section className="flex flex-col h-full w-full max-w-3xl mx-auto px-4 py-2">
-        {/* Header Area */}
-        <div className="relative flex items-center justify-center mb-1">
-          <button
-            onClick={() => {
-              if (selectedTab === 'maintenance') {
-                if (showForm) {
-                  setShowForm(false);
-                } else if (showServices) {
-                  setShowServices(false);
-                } else {
-                  navigate('/');
-                }
-              } else {
-                navigate('/');
-              }
-            }}
-            className="absolute left-0 text-white hover:text-white/80 transition-colors cursor-pointer"
-          >
-            <ChevronLeft size={28} strokeWidth={2} />
-          </button>
-          <h1 className="heading-medium-bold tracking-wide mb-6">
-            {currentContent.title}
-          </h1>
-        </div>
-        <p className="body-regular text-center mb-6">
-          {currentContent.desc}
-        </p>
 
-        {/* Tabs Area */}
-        <div className="w-full flex-grow flex flex-col">
-          {showForm ? (
-            <Maintenance 
-              showServices={showServices} 
-              setShowServices={setShowServices} 
+        {/* 🔹 Header + Tabs */}
+        <PageHeader
+          title={currentContent.title}
+          description={currentContent.desc}
+          onBack={handleBack}
+          showTabs={!showForm} // 👈 FORM pe tabs hide
+          tabs={homeServiceTabs}
+          selectedTab={selectedTab}
+          onTabChange={(key) => setSelectedTab(key)}
+        />
+
+        {/* 🔹 Content Area */}
+        <div className="w-full flex-grow flex flex-col mt-4">
+
+          {selectedTab === "services" && (
+            <Services />
+          )}
+
+          {selectedTab === "maintenance" && (
+            <Maintenance
+              showServices={showServices}
+              setShowServices={setShowServices}
               showForm={showForm}
               setShowForm={setShowForm}
               selectedCategory={selectedCategory}
               setSelectedCategory={setSelectedCategory}
             />
-          ) : (
-             <GlassTabs
-          items={homeServiceTabs}
-          ariaLabel="Home Services Options"
-          selectedKey={selectedTab}
-          onSelectionChange={(key) => setSelectedTab(key as string)}
-        />
           )}
+
+          {selectedTab === "mybooking" && (
+            <Bookings />
+          )}
+
         </div>
       </section>
     </DashboardLayout>

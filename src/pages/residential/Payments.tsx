@@ -1,0 +1,81 @@
+import PageHeader from '../../components/common/PageHeader';
+import DashboardLayout from '../../components/common/DashboardLayout';
+import { LeftSidebarContent } from '../../components/common/LeftSidebarContent';
+import { RightSidebarContent } from '../../components/common/RightSidebarContent';
+import { useState } from 'react';
+import Reciepts from '../../components/portals/residential/Tabs/Reciepts';
+import Upcoming from '../../components/portals/residential/Tabs/Upcoming';
+import History from '../../components/portals/residential/Tabs/History';
+
+const Payments = () => {
+    const [selectedTab, setSelectedTab] = useState("reciepts");
+
+    // Tab content mapping
+    const tabContent = {
+        reciepts: {
+            title: "Payments and Receipts",
+            desc: "Manage your payments and receipts",
+        },
+        upcoming: {
+            title: "Payments and Receipts",
+            desc: "Manage your payments and receipts",
+        },
+        history: {
+            title: "Payments and Receipts",
+            desc: "Manage your payments and receipts",
+        }
+    };
+
+    const currentContent = tabContent[selectedTab as keyof typeof tabContent] || tabContent.reciepts;
+
+    const homeServiceTabs = [
+        {
+            key: "reciepts",
+            title: "Reciepts",
+            content: <Reciepts />
+        },
+        {
+            key: "upcoming",
+            title: "Upcoming",
+            content: <Upcoming />
+        },
+        {
+            key: "history",
+            title: "History",
+            content: <History />
+        }
+    ];
+
+    return (
+        <DashboardLayout leftSidebar={<LeftSidebarContent />} rightSidebar={<RightSidebarContent />}>
+            <section className="flex flex-col h-full w-full max-w-3xl mx-auto px-4 py-2">
+                <PageHeader
+                    title={currentContent.title}
+                    description={currentContent.desc}
+                    backPath="/"
+                    showTabs={true}
+                    tabs={homeServiceTabs.map(tab => ({
+                        key: tab.key,
+                        title: tab.title
+                    }))}
+                    selectedTab={selectedTab}
+                    onTabChange={setSelectedTab}
+
+                    belowTabsContent={
+                        <div className='flex -mt-3 flex-col items-center justify-center border gap-2 border-white w-full py-3 rounded-lg'>
+                            <p>Outstanding Amount</p>
+                            <p className="heading-medium-bold">QAR 2,500</p>
+                        </div>
+                    }
+                />
+                <div className="w-full flex-grow flex flex-col mt-6">
+                    {selectedTab === "reciepts" && <Reciepts />}
+                    {selectedTab === "upcoming" && <Upcoming />}
+                    {selectedTab === "history" && <History />}
+                </div>
+            </section>
+        </DashboardLayout>
+    );
+}
+
+export default Payments;
