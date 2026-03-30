@@ -59,7 +59,7 @@ export default function ResidentialHome() {
           <DiscoverCard title="Payments and Invoices" bgUrl={bgImg2} />
           <DiscoverCard title="Facility Booking" bgUrl={bgImg3} />
           <DiscoverCard title="Visitor Management" bgUrl={bgImg4} />
-          <DiscoverCard title="Home Services" bgUrl={bgImg5} />
+          <DiscoverCard title="Home Services" bgUrl={bgImg5} href='/home-services' />
           <DiscoverCard title="Offers and Promotions" bgUrl={bgImg6} />
         </div>
       </section>

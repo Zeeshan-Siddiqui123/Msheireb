@@ -4,11 +4,11 @@ import GlassButton from '../../components/common/GlassButton';
 export default function RegisterVehicle({ onBack }: { onBack: () => void }) {
   const Field = ({ label, value, required = false }: { label: string, value: string, required?: boolean }) => (
     <div className="flex flex-col gap-1.5">
-      <label className="text-white font-bold text-[12px] ml-1">
+      <label className="label-bold-center ml-1">
         {label}{required && "*"}
       </label>
       <div className="relative">
-        <select className="w-full appearance-none bg-white/10 border border-white/40 rounded-[10px] text-white/90 px-4 py-2.5 outline-none focus:border-white/80 font-medium text-[14px]">
+        <select className="w-full appearance-none bg-transparent border border-white/40 rounded-[10px]  px-4 py-2.5 outline-none focus:border-white/80 body-regular">
           <option>{value}</option>
         </select>
         <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 text-white/80" size={18} />
@@ -26,11 +26,11 @@ export default function RegisterVehicle({ onBack }: { onBack: () => void }) {
         >
           <ChevronLeft size={28} strokeWidth={2} />
         </button>
-        <h1 className="text-[18px] font-bold text-white tracking-wide">Register New Vehicle</h1>
+        <h1 className="heading-medium-bold">Register New Vehicle</h1>
       </div>
 
       {/* Form Container */}
-      <div className="w-full bg-white/10 rounded-[16px] p-6 border border-white/20 backdrop-blur-md shadow-lg flex flex-col gap-4">
+      <div className="w-full  rounded-[16px] p-6 border border-white/20 backdrop-blur-md shadow-lg flex flex-col gap-4">
         
         <Field label="Community/Building" value="A10 Townhouse" />
         <Field label="Apartment/Unit No" value="1405" />

@@ -23,6 +23,7 @@ export default {
             'bg': '#E5F1FF',
             '100': '#80BDFF',
             '50': '#CCE5FF',
+            "border-shade": "#CDEBFF"
           },
           accent: '#D9D9D9',
         },
@@ -38,6 +39,9 @@ export default {
           '200': '#E5E5E5',
           '100': '#F2F2F2',
           '50': '#F9F9F9',
+        },
+        green:{
+          'main':"#28806F"
         },
         pill: {
           'main': '#2D806F',
@@ -55,9 +59,10 @@ export default {
          🔤 TYPOGRAPHY
       ========================== */
       fontFamily: {
-        sans: ['"SF Pro Display"', 'sans-serif'],
-        'sf-pro': ['"SF Pro Display"', 'sans-serif'],
+        sans: ['"SF Pro Display"', 'Helvetica'],
+        'sf-pro': ['"SF Pro Display"', 'Helvetica'],
         'inter': ['Inter', 'sans-serif'], 
+        'arial': ['Arial', 'sans-serif'],
       },
 
       // fontSize: {
@@ -140,6 +145,8 @@ export default {
         /* Strong depth (Figma depth ~100+) */
         'glass-depth':
           '0 12px 40px rgba(0,0,0,0.35)',
+
+          'figma-drop': '0 9.35px 28.05px 0 rgba(0, 0, 0, 0.15)',
       },
 
       /* =========================

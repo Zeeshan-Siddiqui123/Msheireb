@@ -1,7 +1,9 @@
+import QuickActionsWrapper from "../QuickActionsWrapper"
 
 const Space = () => {
     return (
-        <div className="mt-4 w-full bg-white/10 rounded-lg p-6 border border-white/20 backdrop-blur-sm shadow-lg text-left relative overflow-hidden">
+        <QuickActionsWrapper>
+        <div className=" w-full text-left relative overflow-hidden">
             <div className="flex justify-between items-center mb-4">
                 <h2 className="heading-medium-semibold">Unit A-1205</h2>
                 <span className="bg-white text-inter-xs px-3 py-1 rounded-full uppercase text-black">Active</span>
@@ -31,6 +33,7 @@ const Space = () => {
                 </div>
             </div>
         </div>
+        </QuickActionsWrapper>
     )
 }
 

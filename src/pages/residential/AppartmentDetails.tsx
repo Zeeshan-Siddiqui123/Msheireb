@@ -12,10 +12,35 @@ import Storage from '../../components/portals/residential/Tabs/Storage';
 import RegisterVehicle from './RegisterVehicle';
 import { RightSidebarContent } from '../../components/common/RightSidebarContent';
 import { LeftSidebarContent } from '../../components/common/LeftSidebarContent';
+import { GlassTabs } from '../../components/common/GlassTabs';
 
 export default function AppartmentDetails() {
   const navigate = useNavigate();
   const [isRegistering, setIsRegistering] = useState(false);
+  const [activeTab, setActiveTab] = useState<string>("space");
+
+  const apartmentTabs = [
+    { 
+      key: "space", 
+      title: "Space", 
+      content: <Space /> 
+    },
+    { 
+      key: "lease", 
+      title: "Lease", 
+      content: <Lease /> 
+    },
+    { 
+      key: "parking", 
+      title: "Parking", 
+      content: <Parking onRegister={() => setIsRegistering(true)} /> 
+    },
+    { 
+      key: "storage", 
+      title: "Storage", 
+      content: <Storage  /> 
+    }
+  ];
 
   
   return (
@@ -39,23 +64,12 @@ export default function AppartmentDetails() {
 
             {/* Tabs Area */}
             <div className="w-full flex-grow flex flex-col">
-              <Tabs
-                aria-label="Apartment Options"
-                fullWidth
-                classNames={{
-                  tabList: "bg-white/20 rounded-full border border-white/10 mb-2 gap-2",
-                  cursor: "bg-white rounded-full drop-shadow-sm",
-                  tab: "h-8",
-                  tabContent: "group-data-[selected=true]:text-black group-data-[selected=true]:font-bold text-white/95 tabs-heading-semi"
-                }}
-              >
-                <Tab key="space" title="Space">
-                  <Space />
-                </Tab>
-                <Tab key="lease" title="Lease" ><Lease /></Tab>
-                <Tab key="parking" title="Parking" ><Parking onRegister={() => setIsRegistering(true)} /></Tab>
-                <Tab key="storage" title="Storage" ><Storage /></Tab>
-              </Tabs>
+            <GlassTabs
+        items={apartmentTabs} 
+        ariaLabel="Apartment management"
+        selectedKey={activeTab}
+        onSelectionChange={(key) => setActiveTab(key as string)}
+      />
             </div>
           </>
         )}

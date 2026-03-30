@@ -28,7 +28,7 @@ const Parking = ({ onRegister }: ParkingProps) => {
   return (
     <div className="flex flex-col gap-4 mt-4 w-full">
       {vehicles.map((vehicle) => (
-        <div key={vehicle.id} className="w-full bg-white/10 rounded-[14px] p-5 border border-white/20 backdrop-blur-md shadow-lg text-left relative overflow-hidden transition-all duration-300 hover:bg-white/15">
+        <div key={vehicle.id} className="w-full  rounded-[14px] p-5 border border-white/20 backdrop-blur-md shadow-lg text-left relative overflow-hidden transition-all duration-300 hover:bg-white/15">
           <div className="flex justify-between items-start">
             <div className="flex gap-4 items-center">
               <div className="bg-[#e0eefa] text-black p-3 rounded-[12px] shadow-sm flex items-center justify-center">
@@ -58,14 +58,16 @@ const Parking = ({ onRegister }: ParkingProps) => {
         </div>
       ))}
       
-      <div className="mt-4 flex justify-center w-full">
-        <GlassButton 
-          onClick={onRegister} 
-          className="px-10 py-2 h-auto text-[15px] font-medium w-full max-w-[400px] rounded-full"
-        >
-          + Register New Vehicle
-        </GlassButton>
-      </div>
+      {onRegister && (
+        <div className="mt-4 flex justify-center w-full">
+          <GlassButton 
+            onClick={onRegister} 
+            className="px-10 py-2 h-auto text-[15px] font-medium w-full max-w-[400px] rounded-full"
+          >
+            + Register New Vehicle
+          </GlassButton>
+        </div>
+      )}
     </div>
   );
 }

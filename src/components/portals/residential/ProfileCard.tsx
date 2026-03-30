@@ -12,6 +12,24 @@ export interface ProfileCardProps {
   onEditProfile?: () => void;
 }
 
+
+// function MoreExamples() {
+//   return (
+//     <div className="">
+//       <div className="flex w-full max-w-[384px] flex-col items-center justify-center gap-8 rounded-[36px] bg-[#ffffff1a] px-8 py-12 shadow-[0px_25px_50px_-12px_#00000040] relative backdrop-blur-md">
+//         <div className="flex h-0.5 flex-none items-start bg-[#ffffff99] absolute left-[36px] right-[36px] top-0" />
+//         <div className="flex h-0.5 flex-none items-start bg-[#ffffff99] absolute bottom-0 left-[36px] right-[36px]" />
+//         <div className="flex w-0.5 items-start bg-[#ffffff99] absolute bottom-[36px] left-0 top-[36px]" />
+//         <div className="flex w-0.5 items-start bg-[#ffffff99] absolute bottom-[36px] right-0 top-[36px]" />
+//         <div className="flex h-9 w-9 flex-none items-start rounded-tl-[36px] border-t-2 border-l-2 border-solid border-[#ffffff99] absolute left-0 top-0" />
+//         <div className="flex h-9 w-9 flex-none items-start rounded-br-[36px] border-r-2 border-b-2 border-solid border-[#ffffff99] absolute bottom-0 right-0" />
+      
+       
+        
+//       </div>
+//     </div>
+//   );
+// }
 export default function ProfileCard({
   name,
   avatarUrl = "https://i.pravatar.cc/150?u=a04258a2462d826712d",
@@ -23,6 +41,8 @@ export default function ProfileCard({
   onEditProfile
 }: ProfileCardProps) {
   return (
+    <>
+    {/* <MoreExamples/> */}
     <GlassCard className="text-white h-fit">
       {/* Banner Image */}
       <div className="h-24 w-full bg-[url('/src/assets/profile_bg.png')] bg-no-repeat  bg-center opacity-80 "></div>
@@ -66,12 +86,14 @@ export default function ProfileCard({
 
         {/* Action Button */}
         <GlassButton
-          className="w-full rounded-full"
+          buttonClassName="shadow-figma-drop rounded-full btn-text-regular"
           onClick={onEditProfile}
         >
           Edit Profile
         </GlassButton>
       </div>
     </GlassCard>
+    </>
+    
   );
 }
