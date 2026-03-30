@@ -28,31 +28,31 @@ const Parking = ({ onRegister }: ParkingProps) => {
   return (
     <div className="flex flex-col gap-4 mt-4 w-full">
       {vehicles.map((vehicle) => (
-        <div key={vehicle.id} className="w-full bg-white/10 rounded-[14px] p-5 border border-white/20 backdrop-blur-md shadow-lg text-left relative overflow-hidden transition-all duration-300 hover:bg-white/15">
+        <div key={vehicle.id} className="w-full  rounded-[14px] p-5 border border-white/20 backdrop-blur-md shadow-lg text-left relative overflow-hidden transition-all duration-300 hover:bg-white/15">
           <div className="flex justify-between items-start">
             <div className="flex gap-4 items-center">
               <div className="bg-[#e0eefa] text-black p-3 rounded-[12px] shadow-sm flex items-center justify-center">
                 <CarFront size={28} strokeWidth={2} />
               </div>
               <div className="flex flex-col">
-                <h3 className="text-[16px] font-bold text-white mb-0.5">{vehicle.model}</h3>
-                <p className="text-[13px] text-white/80">{vehicle.details}</p>
+                <h3 className="text-small-semibold mb-0.5">{vehicle.model}</h3>
+                <p className="text-small-regular">{vehicle.details}</p>
               </div>
             </div>
-            <span className="bg-fuchsia-50/90 text-gray-800 text-[10px] font-bold px-3 py-1 mt-1 rounded-full uppercase tracking-wider backdrop-blur-md shadow-sm">
+            <span className="text-inter-xs bg-white text-gray-800 px-3 py-1 mt-1 rounded-full  tracking-wider backdrop-blur-md shadow-sm">
               {vehicle.status}
             </span>
           </div>
           
           <div className="flex justify-between items-center mt-6 pr-4">
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 text-small-regular">
               <CircleParking className="text-white" size={18} strokeWidth={2} />
-              <span className="text-[13px] text-white/80">Parking Spot</span>
-              <span className="text-[13px] font-medium text-white ml-2">{vehicle.spot}</span>
+              <span className="">Parking Spot</span>
+              <span className=" ml-2">{vehicle.spot}</span>
             </div>
-            <div className="flex items-center gap-2">
-              <span className="text-[13px] text-white/80">Last Activity</span>
-              <span className="text-[13px] font-medium text-white ml-2">{vehicle.lastActivity}</span>
+            <div className="flex items-center gap-2 text-small-regular">
+              <span className="">Last Activity</span>
+              <span className=" ml-2">{vehicle.lastActivity}</span>
             </div>
           </div>
         </div>

@@ -14,7 +14,7 @@ export default function Navigation() {
   return (
     <>
       {/* Navbar */}
-      <nav className="w-full sticky top-0 z-50 glass-panel">
+      <nav className="w-full sticky top-0 z-50 ">
         <div className="max-w-[1440px] h-[64px] sm:h-[72px] lg:h-[88px] mx-auto px-4 sm:px-6 lg:px-12 flex items-center justify-between">
 
           {/* Left: Logo + Mobile Hamburger */}
@@ -65,7 +65,7 @@ export default function Navigation() {
                 <input
                   type="text"
                   placeholder="Search"
-                  className="glass-input h-[36px] sm:h-[40px] lg:h-[44px] pl-9 sm:pl-10 lg:pl-12 pr-9 sm:pr-10 lg:pr-12 text-xs sm:text-sm text-white placeholder:text-white focus:bg-white/10 focus:border-white/30 focus:shadow-glass-input w-[clamp(140px,20vw,320px)]"
+                  className="glass-input h-[36px] sm:h-[40px] lg:h-[44px] pl-9 sm:pl-10 lg:pl-12 pr-9 sm:pr-10 lg:pr-12 text-xs sm:text-sm text-white placeholder:text-white  "
                 />
                 <button className="absolute right-3 sm:right-4 z-10 text-white/50 hover:text-white/80 transition-colors">
                   <img src={micIcon} alt="mic" className="h-[18px] w-auto brightness-0 invert" />

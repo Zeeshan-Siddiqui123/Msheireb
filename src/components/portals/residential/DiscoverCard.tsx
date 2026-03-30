@@ -19,7 +19,7 @@ export default function DiscoverCard({ title, bgUrl, href }: DiscoverCardProps) 
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent transition-opacity group-hover:opacity-90"></div>
 
       <div className="relative z-10 flex flex-col items-center w-full">
-        <h3 className="text-white font-semibold text-center mb-3 text-sm md:text-base">{title}</h3>
+        <h3 className="label-small-semibold mb-3">{title}</h3>
         <GlassButton
           className="bg-black/70  w-full shadow-[inset_0_-25px_15px_rgba(255,255,255,0.2),inset_0_-2px_6px_rgba(0,0,0,0.5)]"
           size="small"

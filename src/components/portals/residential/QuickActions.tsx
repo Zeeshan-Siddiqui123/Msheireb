@@ -25,7 +25,7 @@ export default function QuickActions({ actions }: QuickActionsProps) {
             <div className="text-white drop-shadow-md">
               {action.icon}
             </div>
-            <span className="text-[17px] font-medium tracking-wide">{action.label}</span>
+            <span className="text-small-regular">{action.label}</span>
           </button>
         ))}
       </div>

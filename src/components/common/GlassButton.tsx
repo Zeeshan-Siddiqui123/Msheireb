@@ -8,6 +8,7 @@ interface GlassButtonProps {
   className?: string;
   disabled?: boolean;
   size?: "small" | "large";
+  buttonClassName?: string;
 }
 
 const GlassButton: React.FC<GlassButtonProps> = ({
@@ -16,10 +17,11 @@ const GlassButton: React.FC<GlassButtonProps> = ({
   className = "",
   disabled = false,
   size = "small",
+  buttonClassName
 }) => {
   const sizeStyles: Record<"small" | "large", string> = {
-    small: "px-16 py-1.5 text-base rounded-3xl",
-    large: "px-22 py-3.5 text-lg rounded-3xl",
+    small: "px-10 py-1.5  rounded-3xl",
+    large: "px-22 py-3.5  rounded-3xl",
   };
 
   return (
@@ -28,13 +30,14 @@ const GlassButton: React.FC<GlassButtonProps> = ({
         onClick={onClick}
         disabled={disabled}
         className={`
-          text-white font-medium
-          transition-all duration-300
+          text-white duration-300
           disabled:opacity-50
           disabled:cursor-not-allowed
           bg-transparent
           w-full h-full cursor-pointer
+          btn-text-regular backdrop:blur-1
           ${sizeStyles[size]}
+        ${buttonClassName}
         `}
       >
         {children}
