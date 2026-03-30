@@ -1,0 +1,419 @@
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('./assets/fonts/SF-Pro-Display-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('./assets/fonts/SF-Pro-Display-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('./assets/fonts/SF-Pro-Display-Semibold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('./assets/fonts/SF-Pro-Display-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('./assets/fonts/SF-Pro-Display-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('./assets/fonts/SF-Pro-Display-Thin.otf') format('opentype');
+  font-weight: 100;
+  font-style: normal;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+
+  button,
+  input,
+  select,
+  textarea {
+    @apply appearance-none bg-transparent border-0 outline-none;
+  }
+}
+
+
+
+:root {
+  --bg: rgba(236, 247, 255, 1);
+  --blue-100: rgba(205, 235, 255, 1);
+  --blue-200: rgba(141, 208, 255, 1);
+  --cerulean-blue: rgba(0, 122, 255, 1);
+  --color-primary: rgba(51, 66, 91, 1);
+  --color-secondary: rgba(171, 181, 197, 1);
+  --green: rgba(40, 128, 111, 1);
+  --grey-100: rgba(245, 245, 245, 1);
+  --grey-1000: rgba(17, 17, 17, 1);
+  --grey-200: rgba(230, 230, 230, 1);
+  --grey-300: rgba(217, 217, 217, 1);
+  --grey-400: rgba(179, 179, 179, 1);
+  --grey-500: rgba(117, 117, 117, 1);
+  --grey-600: rgba(68, 68, 68, 1);
+  --grey-700: rgba(56, 56, 56, 1);
+  --grey-800: rgba(44, 44, 44, 1);
+  --grey-900: rgba(30, 30, 30, 1);
+  --red: rgba(178, 22, 52, 1);
+  --SF-pro-bold-12-font-family: "SF Pro", Helvetica;
+  --SF-pro-bold-12-font-size: 12px;
+  --SF-pro-bold-12-font-style: normal;
+  --SF-pro-bold-12-font-weight: 700;
+  --SF-pro-bold-12-letter-spacing: -0.24px;
+  --SF-pro-bold-12-line-height: 16px;
+  --SF-pro-bold-14-font-family: "SF Pro", Helvetica;
+  --SF-pro-bold-14-font-size: 14px;
+  --SF-pro-bold-14-font-style: normal;
+  --SF-pro-bold-14-font-weight: 700;
+  --SF-pro-bold-14-letter-spacing: -0.28px;
+  --SF-pro-bold-14-line-height: 18px;
+  --SF-pro-bold-16-font-family: "SF Pro", Helvetica;
+  --SF-pro-bold-16-font-size: 16px;
+  --SF-pro-bold-16-font-style: normal;
+  --SF-pro-bold-16-font-weight: 700;
+  --SF-pro-bold-16-letter-spacing: -0.32px;
+  --SF-pro-bold-16-line-height: 20px;
+  --SF-pro-bold-18-font-family: "SF Pro", Helvetica;
+  --SF-pro-bold-18-font-size: 18px;
+  --SF-pro-bold-18-font-style: normal;
+  --SF-pro-bold-18-font-weight: 700;
+  --SF-pro-bold-18-letter-spacing: 0px;
+  --SF-pro-bold-18-line-height: 22px;
+  --SF-pro-medium-10-font-family: "SF Pro", Helvetica;
+  --SF-pro-medium-10-font-size: 10px;
+  --SF-pro-medium-10-font-style: normal;
+  --SF-pro-medium-10-font-weight: 500;
+  --SF-pro-medium-10-letter-spacing: -0.2px;
+  --SF-pro-medium-10-line-height: 14px;
+  --SF-pro-medium-12-font-family: "SF Pro", Helvetica;
+  --SF-pro-medium-12-font-size: 12px;
+  --SF-pro-medium-12-font-style: normal;
+  --SF-pro-medium-12-font-weight: 500;
+  --SF-pro-medium-12-letter-spacing: -0.24px;
+  --SF-pro-medium-12-line-height: 16px;
+  --SF-pro-medium-14-font-family: "SF Pro", Helvetica;
+  --SF-pro-medium-14-font-size: 14px;
+  --SF-pro-medium-14-font-style: normal;
+  --SF-pro-medium-14-font-weight: 500;
+  --SF-pro-medium-14-letter-spacing: -0.28px;
+  --SF-pro-medium-14-line-height: 18px;
+  --SF-pro-medium-16-1-font-family: "SF Pro", Helvetica;
+  --SF-pro-medium-16-1-font-size: 16px;
+  --SF-pro-medium-16-1-font-style: normal;
+  --SF-pro-medium-16-1-font-weight: 500;
+  --SF-pro-medium-16-1-letter-spacing: -0.32px;
+  --SF-pro-medium-16-1-line-height: 22px;
+  --SF-pro-medium-16-font-family: "SF Pro", Helvetica;
+  --SF-pro-medium-16-font-size: 16px;
+  --SF-pro-medium-16-font-style: normal;
+  --SF-pro-medium-16-font-weight: 500;
+  --SF-pro-medium-16-letter-spacing: -0.32px;
+  --SF-pro-medium-16-line-height: 20px;
+  --SF-pro-medium-18-font-family: "SF Pro", Helvetica;
+  --SF-pro-medium-18-font-size: 18px;
+  --SF-pro-medium-18-font-style: normal;
+  --SF-pro-medium-18-font-weight: 500;
+  --SF-pro-medium-18-letter-spacing: -0.36px;
+  --SF-pro-medium-18-line-height: 22px;
+  --SF-pro-medium-8-font-family: "SF Pro", Helvetica;
+  --SF-pro-medium-8-font-size: 8px;
+  --SF-pro-medium-8-font-style: normal;
+  --SF-pro-medium-8-font-weight: 500;
+  --SF-pro-medium-8-letter-spacing: 0px;
+  --SF-pro-medium-8-line-height: 10px;
+  --SF-pro-regular-10-font-family: "SF Pro", Helvetica;
+  --SF-pro-regular-10-font-size: 10px;
+  --SF-pro-regular-10-font-style: normal;
+  --SF-pro-regular-10-font-weight: 400;
+  --SF-pro-regular-10-letter-spacing: -0.2px;
+  --SF-pro-regular-10-line-height: 14px;
+  --SF-pro-regular-12-font-family: "SF Pro", Helvetica;
+  --SF-pro-regular-12-font-size: 12px;
+  --SF-pro-regular-12-font-style: normal;
+  --SF-pro-regular-12-font-weight: 400;
+  --SF-pro-regular-12-letter-spacing: -0.24px;
+  --SF-pro-regular-12-line-height: 16px;
+  --SF-pro-regular-14-font-family: "SF Pro", Helvetica;
+  --SF-pro-regular-14-font-size: 14px;
+  --SF-pro-regular-14-font-style: normal;
+  --SF-pro-regular-14-font-weight: 400;
+  --SF-pro-regular-14-letter-spacing: -0.28px;
+  --SF-pro-regular-14-line-height: 18.000001907348633px;
+  --SF-pro-regular-16-font-family: "SF Pro", Helvetica;
+  --SF-pro-regular-16-font-size: 16px;
+  --SF-pro-regular-16-font-style: normal;
+  --SF-pro-regular-16-font-weight: 400;
+  --SF-pro-regular-16-letter-spacing: -0.32px;
+  --SF-pro-regular-16-line-height: 20px;
+  --SF-pro-regular-18-font-family: "SF Pro", Helvetica;
+  --SF-pro-regular-18-font-size: 18px;
+  --SF-pro-regular-18-font-style: normal;
+  --SF-pro-regular-18-font-weight: 400;
+  --SF-pro-regular-18-letter-spacing: -0.36px;
+  --SF-pro-regular-18-line-height: 22px;
+  --SF-pro-semibold-10-font-family: "SF Pro", Helvetica;
+  --SF-pro-semibold-10-font-size: 10px;
+  --SF-pro-semibold-10-font-style: normal;
+  --SF-pro-semibold-10-font-weight: 400;
+  --SF-pro-semibold-10-letter-spacing: 0px;
+  --SF-pro-semibold-10-line-height: 14px;
+  --SF-pro-semibold-14-font-family: "SF Pro", Helvetica;
+  --SF-pro-semibold-14-font-size: 14px;
+  --SF-pro-semibold-14-font-style: normal;
+  --SF-pro-semibold-14-font-weight: 400;
+  --SF-pro-semibold-14-letter-spacing: -0.28px;
+  --SF-pro-semibold-14-line-height: 18px;
+  --SF-pro-semibold-16-font-family: "SF Pro", Helvetica;
+  --SF-pro-semibold-16-font-size: 16px;
+  --SF-pro-semibold-16-font-style: normal;
+  --SF-pro-semibold-16-font-weight: 400;
+  --SF-pro-semibold-16-letter-spacing: -0.32px;
+  --SF-pro-semibold-16-line-height: 20px;
+  --SF-pro-semibold-18-font-family: "SF Pro", Helvetica;
+  --SF-pro-semibold-18-font-size: 18px;
+  --SF-pro-semibold-18-font-style: normal;
+  --SF-pro-semibold-18-font-weight: 400;
+  --SF-pro-semibold-18-letter-spacing: -0.36px;
+  --SF-pro-semibold-18-line-height: 22px;
+  --SF-pro-semibold-all-caps-font-family: "SF Pro", Helvetica;
+  --SF-pro-semibold-all-caps-font-size: 12px;
+  --SF-pro-semibold-all-caps-font-style: normal;
+  --SF-pro-semibold-all-caps-font-weight: 400;
+  --SF-pro-semibold-all-caps-letter-spacing: 0px;
+  --SF-pro-semibold-all-caps-line-height: 16px;
+  --style-stroke-regular: 2px;
+  --white: rgba(255, 255, 255, 1);
+}
+
+:root {
+  --animate-spin: spin 1s linear infinite;
+}
+
+.animate-fade-in {
+  animation: fade-in 1s var(--animation-delay, 0s) ease forwards;
+}
+
+.animate-fade-up {
+  animation: fade-up 1s var(--animation-delay, 0s) ease forwards;
+}
+
+.animate-marquee {
+  animation: marquee var(--duration) infinite linear;
+}
+
+.animate-marquee-vertical {
+  animation: marquee-vertical var(--duration) linear infinite;
+}
+
+.animate-shimmer {
+  animation: shimmer 8s infinite;
+}
+
+.animate-spin {
+  animation: var(--animate-spin);
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+@keyframes image-glow {
+  0% {
+    opacity: 0;
+    animation-timing-function: cubic-bezier(0.74, 0.25, 0.76, 1);
+  }
+
+  10% {
+    opacity: 0.7;
+    animation-timing-function: cubic-bezier(0.12, 0.01, 0.08, 0.99);
+  }
+
+  to {
+    opacity: 0.4;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fade-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes shimmer {
+
+  0%,
+  90%,
+  to {
+    background-position: calc(-100% - var(--shimmer-width)) 0;
+  }
+
+  30%,
+  60% {
+    background-position: calc(100% + var(--shimmer-width)) 0;
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translate(0);
+  }
+
+  to {
+    transform: translateX(calc(-100% - var(--gap)));
+  }
+}
+
+@keyframes marquee-vertical {
+  0% {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(calc(-100% - var(--gap)));
+  }
+}
+
+@layer base {
+  body {
+    @apply antialiased subpixel-antialiased font-sf-pro bg-no-repeat bg-cover bg-top min-h-full;
+    font-feature-settings: "cv11", "ss01";
+    background-image: url('./assets/BG.png');
+  }
+
+  input::placeholder {
+    @apply font-sf-pro !important;
+  }
+}
+
+@layer components {
+  .text-inter-xs {
+    @apply font-inter font-regular text-10 leading-14;
+  }
+
+  .text-arial-small {
+    @apply font-arial font-regular text-12 leading-16 tracking-normal;
+  }
+
+  .text-heading-primary {
+    @apply font-sf-pro font-bold text-15.6 tracking-tightest;
+  }
+
+  .display-large-uppercase {
+    @apply font-sf-pro font-regular text-[23.54px] leading-[33.62px] tracking-[0.12em] text-center uppercase;
+  }
+
+  .heading-medium-bold {
+    @apply font-sf-pro font-bold text-18 leading-20 tracking-tightest;
+  }
+
+  .heading-medium-semibold {
+    @apply font-sf-pro font-semibold text-16 leading-20 tracking-tightest;
+  }
+
+  .label-bold-center {
+    @apply font-sf-pro font-bold text-12 leading-16 tracking-tightest;
+  }
+
+  .label-small-regular {
+    @apply font-sf-pro font-regular text-8 leading-12 tracking-normal;
+  }
+
+  .label-small-semibold {
+    @apply font-sf-pro font-semibold text-[12.83px] leading-[15.68px] tracking-tightest;
+  }
+
+  .text-small-regular {
+    @apply font-sf-pro font-regular text-12 leading-16 tracking-tightest;
+  }
+
+  .text-small-medium {
+    @apply font-sf-pro font-medium text-12 leading-16 tracking-tightest;
+  }
+
+  .body-regular {
+    @apply font-sf-pro font-regular text-14 leading-18 tracking-tightest;
+  }
+
+  .text-regular-bold {
+    @apply font-sf-pro font-bold text-14 leading-18 tracking-tightest;
+  }
+
+  .text-small-bold {
+    @apply font-sf-pro font-bold text-12 leading-16 tracking-tightest;
+  }
+
+  .btn-text-regular {
+    @apply font-sf-pro font-regular text-12 leading-16 tracking-tightest;
+    vertical-align: middle;
+    /* for inline or inline-block elements */
+  }
+
+  .tabs-heading-semi {
+    @apply font-sf-pro font-semibold text-14 leading-18 tracking-tightest text-center;
+  }
+
+  .glass-panel {
+    @apply backdrop-blur-[12px] border border-white/20 shadow-glass-nav bg-white/10;
+  }
+
+  .glass-card {
+    @apply backdrop-blur-[12px] border border-brand-blue-border-shade rounded-[12px] shadow-sm;
+  }
+
+  .glass-input {
+    @apply bg-glass-input backdrop-blur-glass-ultra border border-glass-border shadow-glass-input rounded-full focus:outline-none transition-all duration-300 font-sf-pro;
+  }
+
+  /* 
+  .glass-drawer {
+    @apply bg-[rgba(10, 20, 50, 0.75)] backdrop-blur-glass border-b border-white/10 shadow-lg;
+  } */
+
+  .nav-link {
+    @apply text-xs xl:text-sm text-brand-accent hover:text-white transition-colors duration-200 font-sf-pro;
+  }
+
+  .nav-link-active {
+    @apply text-white relative font-medium after:content-[''] after:absolute after:bottom-[-5px] after:left-0 after:w-full after:h-[2px] after:bg-white after:rounded-full;
+  }
+}
