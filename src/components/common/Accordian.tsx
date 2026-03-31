@@ -1,11 +1,13 @@
-import { useState } from "react";
-import { ChevronDown, ChevronUp } from "lucide-react";
+import { Accordion, AccordionItem } from "@heroui/react";
+import { ChevronDown, ChevronLeft } from "lucide-react";
 import QuickActionsWrapper from "./QuickActionsWrapper";
 
 export interface AccordianItem {
     id: string;
     title: string;
     subtitle?: string;
+    date?: string;
+    status?: string;
     value?: string;
     icon?: React.ReactNode;
     body: React.ReactNode;
@@ -14,41 +16,84 @@ export interface AccordianItem {
 interface AccordianProps {
     items: AccordianItem[];
     defaultOpenId?: string | null;
+    openItemId?: string | null;
+    onOpenItemIdChange?: (id: string | null) => void;
 }
 
-const Accordian: React.FC<AccordianProps> = ({ items, defaultOpenId = null }) => {
-    const [openItemId, setOpenItemId] = useState<string | null>(defaultOpenId);
+const Accordian: React.FC<AccordianProps> = ({ items, defaultOpenId = null, openItemId, onOpenItemIdChange }) => {
+    const isControlled = openItemId !== undefined;
 
-    const toggle = (id: string) => setOpenItemId((current) => (current === id ? null : id));
+
 
     return (
         <div className="space-y-2">
-            {items.map((item) => {
-                const isOpen = item.id === openItemId;
-                return (
-                    <QuickActionsWrapper key={item.id} className="">
-                        <button
-                            type="button"
-                            onClick={() => toggle(item.id)}
-                            className="w-full flex items-center justify-between gap-3 text-left"
-                        >
-                            <div className="flex items-start flex-col gap-2">
-                                {isOpen && item.icon && <span className="text-white/80">{item.icon}</span>}
-                                <div>
-                                    <p className="heading-small-bold text-white">{item.title}</p>
-                                    {item.subtitle && <p className="text-small-medium text-white/80">{item.subtitle}</p>}
+            {items.map((item) => (
+                <QuickActionsWrapper key={item.id} className="p-0 overflow-hidden">
+                    <Accordion
+                        className="p-0"
+                        itemClasses={{
+                            base: "p-0 m-0",
+                            content: "p-0 m-0",
+                            trigger: "p-0 m-0",
+                            heading: "p-0 m-0",
+                            // divider: "hidden",
+                        }}
+                        selectedKeys={
+                            isControlled
+                                ? openItemId === item.id ? new Set([item.id]) : new Set<string>()
+                                : undefined
+                        }
+                        defaultSelectedKeys={
+                            !isControlled && defaultOpenId === item.id
+                                ? new Set([item.id])
+                                : new Set()
+                        }
+                        onSelectionChange={(keys) => {
+                            if (keys === "all") return;
+                            const keyArray = Array.from(keys) as string[];
+                            const newId = keyArray[0] ?? null;
+                            if (isControlled) {
+                                onOpenItemIdChange?.(newId === item.id ? item.id : null);
+                            }
+                        }}
+                        selectionMode="single"
+                        showDivider={false}
+                    >
+                        <AccordionItem
+                            key={item.id}
+                            textValue={item.title}
+                            classNames={{
+                                base: "p-0 m-0",
+                                content: "p-0 m-0",
+                                trigger: "p-0 m-0",
+                                heading: "p-0 m-0",
+                                // divider: "hidden",
+                            }}
+                            title={
+                                <div className="flex items-center justify-between w-full">
+                                    <div className="flex flex-col gap-0.5">
+                                        <p className="heading-small-bold text-white">{item.title}</p>
+                                        {item.subtitle && (
+                                            <p className="text-small-medium text-white/80">{item.subtitle}</p>
+                                        )}
+                                    </div>
+                                    {item.value && (
+                                        <span className="text-regular-bold text-white">{item.value}</span>
+                                    )}
+                                    
                                 </div>
-                            </div>
-                            <div className="flex items-center gap-2">
-                                {item.value && <span className="text-regular-bold text-white">{item.value}</span>}
-                                {isOpen ? <ChevronUp className="w-5 h-5 text-white" /> : <ChevronDown className="w-5 h-5 text-white" />}
-                            </div>
-                        </button>
-
-                        {isOpen && <div className=" pt-4">{item.body}</div>}
-                    </QuickActionsWrapper>
-                );
-            })}
+                            }
+                            indicator={({ isOpen }) =>
+                                isOpen
+                                    ? <ChevronLeft className="w-5 h-5 text-white" />
+                                    : <ChevronDown className="w-5 h-5 text-white" />
+                            }
+                        >
+                            <div className="pb-4 mt-3">{item.body}</div>
+                        </AccordionItem>
+                    </Accordion>
+                </QuickActionsWrapper>
+            ))}
         </div>
     );
 };

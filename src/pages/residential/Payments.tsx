@@ -62,7 +62,7 @@ const Payments = () => {
                     onTabChange={setSelectedTab}
 
                     belowTabsContent={
-                        <div className='flex -mt-3 flex-col items-center justify-center border gap-2 border-white w-full py-3 rounded-lg'>
+                        <div className='flex -mt-3 flex-col items-center justify-center border gap-2 border-white w-full py-3 rounded-xl'>
                             <p>Outstanding Amount</p>
                             <p className="heading-medium-bold">QAR 2,500</p>
                         </div>

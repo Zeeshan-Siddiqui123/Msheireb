@@ -1,4 +1,4 @@
-import ReceiptAccordian, { type ReceiptItem } from "../accordian/recieptaccordian";
+import ReceiptAccordian, { type ReceiptItem } from "../accordian/RecieptAccordian";
 
 
 const receiptData: ReceiptItem[] = [
