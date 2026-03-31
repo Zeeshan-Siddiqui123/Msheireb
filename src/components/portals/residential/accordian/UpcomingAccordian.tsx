@@ -26,6 +26,8 @@ const UpcomingAccordian = ({ upcomings, defaultOpenId = null, openItemId, onOpen
         id: upcoming.id,
         title: upcoming.title,
         subtitle: `Receipts #${upcoming.upcomingCode}`,
+        date: upcoming.dueDate,
+        status: upcoming.paidDate ? "Paid" : "Due",
         icon: <img src={Upcoming} alt="upcoming" className="w-12 h-12" />,
         body: (
             <div>
@@ -46,7 +48,7 @@ const UpcomingAccordian = ({ upcomings, defaultOpenId = null, openItemId, onOpen
                         <p className="text-small-medium text-white/80">Paid Date</p>
                         <p className="text-regular-bold text-white">{upcoming.paidDate}</p>
                     </div>
-                    
+
                 </div>
                 <div className="flex items-center justify-center">
                     <GlassButton
