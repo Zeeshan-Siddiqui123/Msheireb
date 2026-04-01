@@ -57,8 +57,8 @@ export default function ResidentialHome() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           <DiscoverCard title="Apartment Details" bgUrl={bgImg1} href="/appartment-details" />
           <DiscoverCard title="Payments and Invoices" bgUrl={bgImg2} href='/payments'/>
-          <DiscoverCard title="Facility Booking" bgUrl={bgImg3} />
-          <DiscoverCard title="Visitor Management" bgUrl={bgImg4} />
+          <DiscoverCard title="Facility Booking" bgUrl={bgImg3} href='/facility-booking'/>
+          <DiscoverCard title="Visitor Management" bgUrl={bgImg4} href='/visitor'/>
           <DiscoverCard title="Home Services" bgUrl={bgImg5} href='/home-services' />
           <DiscoverCard title="Offers and Promotions" bgUrl={bgImg6} />
         </div>

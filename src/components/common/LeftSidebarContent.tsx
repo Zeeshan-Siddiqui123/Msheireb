@@ -13,4 +13,4 @@ export const LeftSidebarContent = () => (
     />
     {/* You can easily add more cards here later */}
   </div>
-);
+);  

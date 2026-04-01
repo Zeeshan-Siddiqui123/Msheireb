@@ -28,7 +28,7 @@ const BookingCardContent: React.FC<BookingCardProps> = ({
   icon,
 }) => {
   return (
-    <QuickActionsWrapper className="text-white px-3 py-3  h-full w-full">
+    <div className="text-white py-3  h-full w-full">
       {/* Header: Icon and Status */}
       <div className="flex justify-between items-center mb-6 w-full">
         <div className="w-12 h-12 rounded-xl bg-blue-200 flex items-center justify-center">
@@ -85,7 +85,7 @@ const BookingCardContent: React.FC<BookingCardProps> = ({
           Cancel
         </GlassButton>
       </div>
-    </QuickActionsWrapper>
+    </div>
   );
 };
 

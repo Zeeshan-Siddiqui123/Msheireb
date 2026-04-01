@@ -1,10 +1,11 @@
-import { Card } from "@heroui/react";
 import React from "react";
+import QuickActionsWrapper from "./QuickActionsWrapper";
 
 interface BaseCardProps {
   children?: React.ReactNode;
   className?: string;
   onClick?: () => void;
+  hideBorder?: boolean;
 }
 
 interface SlotProps {
@@ -12,33 +13,32 @@ interface SlotProps {
   className?: string;
 }
 
-const BaseCard = ({ children, className = "", onClick }: BaseCardProps) => {
+const BaseCard = ({ children, className = "", onClick, hideBorder = false }: BaseCardProps) => {
   return (
-    <Card
-      className={`${className}`}
-      onClick={onClick}
-    >
-      {children}
-    </Card>
+    <QuickActionsWrapper className={`w-full ${className}`} hideBorder={hideBorder}>
+      <div className="w-full" onClick={onClick}>
+        {children}
+      </div>
+    </QuickActionsWrapper>
   );
 };
 
 export const CardHeader = ({ children, className = "" }: SlotProps) => (
-  <CardHeader className={`${className}`}>
+  <div className={`w-full ${className}`}>
     {children}
-  </CardHeader>
+  </div>
 );
 
 export const CardBody = ({ children, className = "" }: SlotProps) => (
-  <CardBody className={`${className}`}>
+  <div className={`w-full ${className}`}>
     {children}
-  </CardBody>
+  </div>
 );
 
 export const CardFooter = ({ children, className = "" }: SlotProps) => (
-  <CardFooter className={`${className}`}>
+  <div className={`w-full ${className}`}>
     {children}
-  </CardFooter>
+  </div>
 );
 
 export default BaseCard;

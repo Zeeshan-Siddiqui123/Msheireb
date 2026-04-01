@@ -1,6 +1,5 @@
 import HistoryAccordian, { type HistoryItem } from "../accordian/HistoryAccordian";
 import BaseCard, { CardBody, CardHeader } from "../../../common/BaseCard";
-import QuickActionsWrapper from "../../../common/QuickActionsWrapper";
 
 const historyData: HistoryItem[] = [
   {
@@ -16,14 +15,27 @@ const historyData: HistoryItem[] = [
 
 const History = () => {
   return (
-    <section className="space-y-4 w-full">
+    <section className="space-y-6 w-full">
       <HistoryAccordian histories={historyData} />
-      <QuickActionsWrapper>
+
       <BaseCard>
-        <CardHeader></CardHeader>
-        <CardBody></CardBody>
+        <CardHeader>
+          <div className="flex items-start justify-between gap-3">
+            <div>
+              <h3 className="heading-medium-semibold text-white">Rent Payment - December 2025</h3>
+              <p className="text-small-regular text-white/90">Today, 3:00 PM</p>
+            </div>
+            <span className="rounded-full bg-white px-3 py-1 text-small-regular text-black/80">
+              Completed
+            </span>
+          </div>
+        </CardHeader>
+
+        <CardBody className="mt-3">
+          <p className="text-small-regular uppercase tracking-wider text-white/90">Amount</p>
+          <p className="heading-medium-bold text-white ">QAR 2,500</p>
+        </CardBody>
       </BaseCard>
-      </QuickActionsWrapper>
     </section>
   );
 };
