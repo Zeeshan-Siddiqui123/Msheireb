@@ -2,26 +2,18 @@ import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import CornerInput from '../../components/common/CornerInput';
 import CornerSelect from '../../components/common/CornerSelect';
-import AuthButton from '../../components/common/AuthButton';
+import GlassButton from '../../components/common/GlassButton';
+import AuthHeader from '../../components/common/AuthHeader';
+import { SelectItem } from '@heroui/react';
 
 const SignUp = () => {
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
 
+
   return (
-    <div className="w-full h-full flex flex-col items-center pt-4 sm:pt-10">
-      {/* Header with Back Arrow */}
-      <div className="relative w-full max-w-sm flex items-center justify-center mb-10">
-        <button
-          onClick={() => navigate(-1)}
-          className="absolute left-0 p-1 text-white hover:text-white transition-colors"
-        >
-          <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 19l-7-7 7-7" />
-          </svg>
-        </button>
-        <p className="text-base-regular text-white tracking-wide font-regular">Create an account</p>
-      </div>
+    <div className="w-full h-full flex flex-col items-center pt-4 sm:pt-10 relative">
+      <AuthHeader title="Create an account" />
 
       {/* Single Scrollable Form Container */}
       <div className="w-full max-w-sm ">
@@ -39,16 +31,33 @@ const SignUp = () => {
           />
 
           {/* Nationality */}
-          <CornerSelect label="Nationality">
-            <option value="">Select your nationality</option>
-            <option value="qatari">Qatari</option>
-            <option value="others">Others</option>
+          <CornerSelect
+            label="Nationality"
+            placeholder="Select your nationality"
+            onSelectionChange={(keys) => {
+              const selected = Array.from(keys)[0];
+              console.log("Selected Nationality:", selected);
+            }}
+          >
+            <SelectItem key="qatari" textValue="Qatari">Qatari</SelectItem>
+            <SelectItem key="emirati" textValue="Emirati">Emirati</SelectItem>
+            <SelectItem key="saudi" textValue="Saudi">Saudi</SelectItem>
+            <SelectItem key="others" textValue="Others">Others</SelectItem>
           </CornerSelect>
 
           {/* Mobile Number */}
-          <CornerSelect label="Mobile Number*">
-            <option value="+974">+974</option>
-            <option value="+91">+91</option>
+          <CornerSelect
+            label="Mobile Number*"
+            placeholder="Select country code"
+            onSelectionChange={(keys) => {
+              const selected = Array.from(keys)[0];
+              console.log("Selected Code:", selected);
+            }}
+          >
+            <SelectItem key="+974" textValue="+974">+974 (Qatar)</SelectItem>
+            <SelectItem key="+966" textValue="+966">+966 (KSA)</SelectItem>
+            <SelectItem key="+971" textValue="+971">+971 (UAE)</SelectItem>
+            <SelectItem key="+91" textValue="+91">+91 (India)</SelectItem>
           </CornerSelect>
 
           {/* Email Id */}
@@ -85,12 +94,14 @@ const SignUp = () => {
           />
 
           <div className="mt-4">
-            <AuthButton
-              onClick={() => navigate('/success')}
+            <GlassButton
+              onClick={() => navigate('/home')}
               size="large"
+              className="w-full"
+              buttonClassName="w-full shadow-figma-drop"
             >
               Register
-            </AuthButton>
+            </GlassButton>
           </div>
 
           <p className="text-center text-white/70 text-small-regular mt-2">

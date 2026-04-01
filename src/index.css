@@ -366,6 +366,10 @@
     @apply font-sf-pro font-regular text-12 leading-16 tracking-tightest;
   }
 
+  .text-base-regular {
+    @apply font-sf-pro font-regular text-18 leading-[15.68px] tracking-tightest;
+  }
+
   .text-small-medium {
     @apply font-sf-pro font-medium text-12 leading-16 tracking-tightest;
   }
@@ -409,11 +413,5 @@
     @apply bg-[rgba(10, 20, 50, 0.75)] backdrop-blur-glass border-b border-white/10 shadow-lg;
   } */
 
-  .nav-link {
-    @apply text-xs xl:text-sm text-brand-accent hover:text-white transition-colors duration-200 font-sf-pro;
-  }
 
-  .nav-link-active {
-    @apply text-white relative font-medium after:content-[''] after:absolute after:bottom-[-5px] after:left-0 after:w-full after:h-[2px] after:bg-white after:rounded-full;
-  }
 }

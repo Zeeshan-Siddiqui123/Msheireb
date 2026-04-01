@@ -1,5 +1,6 @@
 import { ChevronLeft, ChevronDown } from 'lucide-react';
 import GlassButton from '../../components/common/GlassButton';
+import QuickActionsWrapper from '../../components/common/QuickActionsWrapper';
 
 export default function RegisterVehicle({ onBack }: { onBack: () => void }) {
   const Field = ({ label, value, required = false }: { label: string, value: string, required?: boolean }) => (
@@ -20,8 +21,8 @@ export default function RegisterVehicle({ onBack }: { onBack: () => void }) {
     <div className="flex flex-col h-full w-full mt-2">
       {/* Header */}
       <div className="relative flex items-center justify-center mb-6">
-        <button 
-          onClick={onBack} 
+        <button
+          onClick={onBack}
           className="absolute left-0 text-white hover:text-white/80 transition-colors cursor-pointer"
         >
           <ChevronLeft size={28} strokeWidth={2} />
@@ -30,38 +31,43 @@ export default function RegisterVehicle({ onBack }: { onBack: () => void }) {
       </div>
 
       {/* Form Container */}
-      <div className="w-full  rounded-[16px] p-6 border border-white/20 backdrop-blur-md shadow-lg flex flex-col gap-4">
-        
-        <Field label="Community/Building" value="A10 Townhouse" />
-        <Field label="Apartment/Unit No" value="1405" />
-        <Field label="Resident Name" value="Ahmed Ali" />
-        <Field label="Resident Type" value="Tenant" />
-        
-        <Field label="Vehicle Plate Number" value="e.g. 372318" required />
-        <Field label="Vehicle Type" value="Car" required />
-        <Field label="Vehicle Brand/Model" value="e.g. Hyundai Creta" required />
-        <Field label="Owner Name" value="Admed Ali" required />
+      <QuickActionsWrapper className="w-full   p-4  ">
+        <div className='w-full flex flex-col gap-4'>
+          <Field label="Community/Building" value="A10 Townhouse" />
+          <Field label="Apartment/Unit No" value="1405" />
+          <Field label="Resident Name" value="Ahmed Ali" />
+          <Field label="Resident Type" value="Tenant" />
 
-        {/* Action Buttons */}
-        <div className="flex gap-4 mt-4 pt-2">
-          <div className="flex-1 group">
-              <GlassButton 
+          <Field label="Vehicle Plate Number" value="e.g. 372318" required />
+          <Field label="Vehicle Type" value="Car" required />
+          <Field label="Vehicle Brand/Model" value="e.g. Hyundai Creta" required />
+          <Field label="Owner Name" value="Admed Ali" required />
+
+          {/* Action Buttons */}
+          <div className="flex gap-4 mt-4 pt-2">
+            <div className="flex-1 group">
+              <GlassButton
                 onClick={onBack}
-                className="w-full rounded-full py-2 text-[15px] font-medium transition-transform group-hover:scale-[1.02]"
+                className='w-full'
+                buttonClassName="shadow-figma-drop"
+                size='large'
               >
-              Submit for Approval
+                Submit for Approval
               </GlassButton>
-          </div>
-          <div className="flex-1 group">
-              <GlassButton 
+            </div>
+            <div className="flex-1 group">
+              <GlassButton
+                size='large'
+                className='w-full'
                 onClick={onBack}
-                className="w-full rounded-full py-2 text-[15px] font-medium opacity-80 transition-transform group-hover:scale-[1.02]"
+                buttonClassName="shadow-figma-drop"
               >
-              Cancel
+                Cancel
               </GlassButton>
+            </div>
           </div>
         </div>
-      </div>
+      </QuickActionsWrapper>
     </div>
   );
 }

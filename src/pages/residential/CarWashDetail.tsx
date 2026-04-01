@@ -6,6 +6,7 @@ import QuickActions from '../../components/portals/residential/QuickActions';
 import GlassCard from '../../components/common/GlassCard';
 import DiscoverCard from '../../components/portals/residential/DiscoverCard';
 import { Button } from '@heroui/react';
+import QuickActionsWrapper from '../../components/common/QuickActionsWrapper';
 
 export default function CarWashDetail() {
   const navigate = useNavigate();
@@ -42,7 +43,7 @@ export default function CarWashDetail() {
         <div className="relative flex items-center justify-center mb-6">
           <button
             onClick={() => navigate(-1)}
-            className="absolute left-0 text-white hover:text-white/80 transition-colors cursor-pointer"
+            className="absolute left-0 text-white hover:text-white/80  cursor-pointer"
           >
             <ChevronLeft size={28} strokeWidth={2} />
           </button>
@@ -59,51 +60,51 @@ export default function CarWashDetail() {
         </div>
 
         {/* Contact Details Section */}
-        <GlassCard className="p-6 mb-8 border border-white/40 rounded-[16px]">
-          <h2 className="text-[17px] font-bold mb-4">Contact Details</h2>
-          <hr className="border-white/30 mb-4" />
+        <QuickActionsWrapper className="p-4 mb-8">
+          <h2 className="heading-medium-bold mb-4">Contact Details</h2>
+          <hr className="border-white z-50 mb-4" />
 
           <div className="space-y-4 text-sm text-white/90">
-            <div>
-              <p className="font-semibold text-white/70 mb-1">Description</p>
-              <p>A convenient car washing service provided in your MDD Car Park, using eco-friendly techniques and high-quality products.</p>
+            <div className=''>
+              <p className=" text-small-regular mb-1">Description</p>
+              <p className='body-regular'>A convenient car washing service provided in your MDD Car Park, using eco-friendly techniques and high-quality products.</p>
             </div>
 
             <div>
-              <p className="font-semibold text-white/70 mb-1">Our car wash service includes:</p>
-              <p>Exterior & Interior cleaning | Tyre Waxing | Polishing</p>
+              <p className="text-small-regular mb-1">Our car wash service includes:</p>
+              <p className='body-regular'>Exterior & Interior cleaning | Tyre Waxing | Polishing</p>
             </div>
 
             <div className="grid grid-cols-1 gap-4">
               <div>
-                <p className="font-semibold text-white/70 mb-1">Service Delivery</p>
-                <p>Morning</p>
-                <p>Delivery on 15 September 2025</p>
+                <p className="text-small-regular mb-1">Service Delivery</p>
+                <p className='body-regular'>Morning</p>
+                <p className='body-regular'>Delivery on 15 September 2025</p>
               </div>
               <div>
-                <p className="font-semibold text-white/70 mb-1">Details</p>
+                <p className="text-small-regular mb-1">Details</p>
                 <p>Exterior Body Wash (Sedan) (*1) - 20 QAR</p>
               </div>
             </div>
 
             <div className="grid grid-cols-1 gap-4 pt-2">
               <div>
-                <p className="font-semibold text-white/70 mb-1">My Information</p>
+                <p className="text-small-regular mb-1">My Information</p>
                 <p>svarghese@msheireb.com</p>
               </div>
               <div>
-                <p className="font-semibold text-white/70 mb-1">My Online Payment</p>
+                <p className="text-small-regular mb-1">My Online Payment</p>
                 <p>Transaction ID:</p>
                 <p>Date: 08 January 2026</p>
                 <p>Amount: 20 QAR</p>
               </div>
             </div>
           </div>
-        </GlassCard>
+        </QuickActionsWrapper>
 
         {/* Related Services Section */}
         <div className="mb-8">
-          <h2 className="text-[17px] font-bold mb-4">Related Services</h2>
+          <h2 className="heading-medium-semibold mb-4">Related Services</h2>
           <div className="w-56">
             <DiscoverCard
               title="Access Cards - Car Park"
@@ -113,64 +114,67 @@ export default function CarWashDetail() {
         </div>
 
         {/* Payment Section */}
-        <GlassCard className="p-3 mb-8 border border-white/40 rounded-[16px] flex flex-col gap-3">
-          <div className="flex items-center justify-between p-3 rounded-lg  hover:bg-white/10 transition-colors">
-            <div className="flex items-center gap-3">
-              <div className="bg-white p-2 rounded-md">
-                <img src="src/assets/apple.png" alt="Apple pay" />
+        <QuickActionsWrapper className="p-4 mb-8 ">
+          <div className='w-full backdrop-blur-[35px]'>
+            <div className="flex items-center justify-between p-3 rounded-lg  hover:bg-white/10 ">
+              <div className="flex items-center gap-3">
+                <div className="bg-white p-2 rounded-md">
+                  <img src="src/assets/apple.png" alt="Apple pay" />
+                </div>
+                <div className="flex flex-col">
+                  <p className="body-regular">Apple Pay</p>
+                  <p className="text-small-regular">Tap and pay quickly with Apple Pay</p>
+                </div>
               </div>
-              <div className="flex flex-col">
-                <p className="font-bold text-sm">Apple Pay</p>
-                <p className="text-[11px] text-white/60">Tap and pay quickly with Apple Pay</p>
+              <div className="relative flex items-center">
+                <input type="radio" name="payment" id="payment-apple" className="peer hidden" defaultChecked />
+                <label
+                  htmlFor="payment-apple"
+                  className="w-5 h-5 rounded-full border-2 border-white/30 peer-checked:border-white flex items-center justify-center cursor-pointer transition-all"
+                >
+                  <div className="w-2.5 h-2.5 rounded-full bg-white scale-0 peer-checked:scale-100 transition-transform"></div>
+                </label>
               </div>
             </div>
-            <div className="relative flex items-center">
-              <input type="radio" name="payment" id="payment-apple" className="peer hidden" defaultChecked />
-              <label 
-                htmlFor="payment-apple" 
-                className="w-5 h-5 rounded-full border-2 border-white/30 peer-checked:border-white flex items-center justify-center cursor-pointer transition-all"
-              >
-                <div className="w-2.5 h-2.5 rounded-full bg-white scale-0 peer-checked:scale-100 transition-transform"></div>
-              </label>
-            </div>
-          </div>
-          <hr className="border-white border-dashed " />
+            <hr className="border-white border-dashed " />
 
-          <div className="flex items-center justify-between p-3 rounded-[12px] bg-white/5 hover:bg-white/10 transition-colors">
-            <div className="flex items-center gap-3">
-              <div className="bg-white p-2 rounded-md">
-                <img src="src/assets/mastercard.png" alt="Apple pay" />
+            <div className="flex items-center justify-between p-3 rounded-[12px] bg-white/5 hover:bg-white/10 ">
+              <div className="flex items-center gap-3">
+                <div className="bg-white p-2 rounded-md">
+                  <img src="src/assets/mastercard.png" alt="Apple pay" />
+                </div>
+                <div className="flex flex-col">
+                  <p className="body-regular">Credit or Debit Card</p>
+                  <p className="text-small-regular">Connect your card for fast & secure</p>
+                </div>
               </div>
-              <div className="flex flex-col">
-                <p className="font-bold text-sm">Credit or Debit Card</p>
-                <p className="text-[11px] text-white/60">Connect your card for fast & secure</p>
-              </div>
+              <Button className="rounded-full bg-transparent text-white border border-white text-sm ">Add</Button>
             </div>
-            <Button className="rounded-full bg-transparent text-white border border-white text-sm ">Add</Button>
-          </div>
-          <hr className="border-white border-dashed " />
+            <hr className="border-white border-dashed " />
 
-          <div className="flex items-center justify-between p-3 rounded-[12px] bg-white/5 hover:bg-white/10 transition-colors">
-            <div className="flex items-center gap-3">
-              <div className="bg-white p-2 rounded-md">
-                <img src="src/assets/gpay.png" alt="Apple pay" />
+            <div className="flex items-center justify-between p-3 rounded-[12px] bg-white/5 hover:bg-white/10 ">
+              <div className="flex items-center gap-3">
+                <div className="bg-white p-2 rounded-md">
+                  <img src="src/assets/gpay.png" alt="Apple pay" />
+                </div>
+                <div className="flex flex-col">
+                  <p className="body-regular">Google Pay</p>
+                  <p className="text-small-regular">Pay in cash when your order arrives</p>
+                </div>
               </div>
-              <div className="flex flex-col">
-                <p className="font-bold text-sm">Google Pay</p>
-                <p className="text-[11px] text-white/60">Pay in cash when your order arrives</p>
+              <div className="relative flex items-center">
+                <input type="radio" name="payment" id="payment-gpay" className="peer hidden" />
+                <label
+                  htmlFor="payment-gpay"
+                  className="w-5 h-5 rounded-full border-2 border-white/30 peer-checked:border-white flex items-center justify-center cursor-pointer transition-all"
+                >
+                  <div className="w-2.5 h-2.5 rounded-full bg-white scale-0 peer-checked:scale-100 transition-transform"></div>
+                </label>
               </div>
             </div>
-            <div className="relative flex items-center">
-              <input type="radio" name="payment" id="payment-gpay" className="peer hidden" />
-              <label 
-                htmlFor="payment-gpay" 
-                className="w-5 h-5 rounded-full border-2 border-white/30 peer-checked:border-white flex items-center justify-center cursor-pointer transition-all"
-              >
-                <div className="w-2.5 h-2.5 rounded-full bg-white scale-0 peer-checked:scale-100 transition-transform"></div>
-              </label>
-            </div>
+
           </div>
-        </GlassCard>
+        </QuickActionsWrapper>
       </section>
     </DashboardLayout>
   );

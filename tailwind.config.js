@@ -25,6 +25,7 @@ export default {
             '50': '#CCE5FF',
             "border-shade": "#CDEBFF"
           },
+          navy: '#002B58',
           accent: '#D9D9D9',
         },
         grey: {
@@ -40,8 +41,8 @@ export default {
           '100': '#F2F2F2',
           '50': '#F9F9F9',
         },
-        green:{
-          'main':"#28806F"
+        green: {
+          'main': "#28806F"
         },
         pill: {
           'main': '#2D806F',
@@ -59,9 +60,9 @@ export default {
          🔤 TYPOGRAPHY
       ========================== */
       fontFamily: {
-        sans: ['"SF Pro Display"', 'Helvetica'],
-        'sf-pro': ['"SF Pro Display"', 'Helvetica'],
-        'inter': ['Inter', 'sans-serif'], 
+        sans: ["SF Pro Display", 'Helvetica'],
+        'sf-pro': ['SF Pro Display', 'Helvetica'],
+        'inter': ['Inter', 'sans-serif'],
         'arial': ['Arial', 'sans-serif'],
       },
 
@@ -76,12 +77,12 @@ export default {
 
       fontSize: {
         // Base scale — size: [fontSize, defaultLineHeight]
-        '8':     ['8px',  '10px'],
-        '10':    ['10px', '14px'],
-        '12':    ['12px', '16px'],
-        '14':    ['14px', '18px'],
-        '16':    ['16px', '20px'],
-        '18':    ['18px', '22px'],
+        '8': ['8px', '10px'],
+        '10': ['10px', '14px'],
+        '12': ['12px', '16px'],
+        '14': ['14px', '18px'],
+        '16': ['16px', '20px'],
+        '18': ['18px', '22px'],
         '15.6': ['15.6px', '20.8px'],
         '12.83': ['12.83px', '15.68px'],
 
@@ -92,7 +93,7 @@ export default {
       },
       lineHeight: {
         '10': '10px',
-         '12': '12px',
+        '12': '12px',
         '14': '14px',
         '15.68': '15.68px',
         '16': '16px',
@@ -102,16 +103,16 @@ export default {
         '30': '30px',
       },
       fontWeight: {
-        thin:      '100',
-        light:     '300',
-        regular:   '400',
-        medium:    '500',
-        semibold:  '600',
-        bold:      '700',
+        thin: '100',
+        light: '300',
+        regular: '400',
+        medium: '500',
+        semibold: '600',
+        bold: '700',
       },
       letterSpacing: {
-  tightest: '1px', // -2%
-},
+        tightest: '1px', // -2%
+      },
 
       /* =========================
          🌫️ GLASS BLUR LEVELS
@@ -146,7 +147,7 @@ export default {
         'glass-depth':
           '0 12px 40px rgba(0,0,0,0.35)',
 
-          'figma-drop': '0 9.35px 28.05px 0 rgba(0, 0, 0, 0.15)',
+        'figma-drop': '0 9.35px 28.05px 0 rgba(0, 0, 0, 0.15)',
       },
 
       /* =========================

@@ -8,7 +8,7 @@ interface MaintenanceRequestFormProps {
 
 const MaintenanceRequestForm = ({ category }: MaintenanceRequestFormProps) => {
     return (
-        <QuickActionsWrapper className="w-full max-w-4xl mx-auto gap-5 bg-white/5">
+        <QuickActionsWrapper className="w-full  p-4 mx-auto gap-5 bg-white/5">
             <div className="w-full space-y-5">
 
                 {/* Category */}
@@ -28,10 +28,10 @@ const MaintenanceRequestForm = ({ category }: MaintenanceRequestFormProps) => {
                         }
                         classNames={{
                             trigger: [
-                                "bg-white/10 border border-white rounded-xl min-h-[46px]",
+                                "bg-transparent border border-white rounded-xl min-h-[46px]",
                                 "hover:!bg-white/15 transition-colors duration-200",
                                 "data-[hover=true]:!bg-white/15",
-                                "group-data-[focus=true]:!bg-white/10",
+                                "group-data-[focus=true]:!bg-transparent",
                                 "group-data-[focus=true]:!border-0",
                                 "group-data-[focus=true]:!shadow-none",
                                 "data-[focus-visible=true]:!ring-0",
@@ -64,10 +64,10 @@ const MaintenanceRequestForm = ({ category }: MaintenanceRequestFormProps) => {
                         }
                         classNames={{
                             trigger: [
-                                "bg-white/10 border border-white rounded-xl min-h-[46px]",
+                                "bg-transparent border border-white rounded-xl min-h-[46px]",
                                 "hover:!bg-white/15 transition-colors duration-200",
                                 "data-[hover=true]:!bg-white/15",
-                                "group-data-[focus=true]:!bg-white/10",
+                                "group-data-[focus=true]:!bg-transparent",
                                 "group-data-[focus=true]:!border-0",
                                 "group-data-[focus=true]:!shadow-none",
                                 "data-[focus-visible=true]:!ring-0",
@@ -96,10 +96,10 @@ const MaintenanceRequestForm = ({ category }: MaintenanceRequestFormProps) => {
                         className="w-full"
                         classNames={{
                             inputWrapper: [
-                                "bg-white/10 border border-white rounded-xl",
+                                "bg-transparent border border-white rounded-xl",
                                 "hover:!bg-white/15 transition-colors duration-200",
                                 "data-[hover=true]:!bg-white/15",
-                                "group-data-[focus=true]:!bg-white/10",
+                                "group-data-[focus=true]:!bg-transparent",
                                 "group-data-[focus=true]:!border-white",
                                 "group-data-[focus=true]:!shadow-none",
                                 "data-[focus-visible=true]:!ring-0",

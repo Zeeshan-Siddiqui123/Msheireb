@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import AuthButton from '../../components/common/AuthButton';
+import GlassButton from '../../components/common/GlassButton';
+import AuthHeader from '../../components/common/AuthHeader';
 
 const VerifyCode = () => {
   const navigate = useNavigate();
@@ -42,18 +43,7 @@ const VerifyCode = () => {
 
   return (
     <div className="w-full h-full flex flex-col items-center pt-4 sm:pt-10 max-w-sm mx-auto">
-      {/* Header with Back Arrow */}
-      <div className="relative w-full flex items-center justify-center mb-16">
-        <button
-          onClick={() => navigate('/forgot-password')}
-          className="absolute left-0 p-1 text-white hover:text-white transition-colors"
-        >
-          <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 19l-7-7 7-7" />
-          </svg>
-        </button>
-        <p className="text-base-regular text-white tracking-wide font-regular">Forgot Password</p>
-      </div>
+      <AuthHeader title="Forgot Password" onBack={() => navigate('/forgot-password')} />
 
       {/* Main Content */}
       <div className="w-full flex flex-col gap-10">
@@ -83,13 +73,14 @@ const VerifyCode = () => {
 
         {/* Verify Button */}
         <div className="px-2">
-          <AuthButton
+          <GlassButton
             onClick={() => navigate('/reset-password')}
             size="large"
             className="w-full"
+            buttonClassName="w-full shadow-figma-drop"
           >
             Verify
-          </AuthButton>
+          </GlassButton>
         </div>
 
         {/* Timer and Resend */}

@@ -1,10 +1,13 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import logoImg from '../../assets/msheireb-logo.png';
+import logoImg from '../../assets/svg/msheireb-logo.svg';
 import searchIcon from '../../assets/svg/search-icon.svg';
 import bellIcon from '../../assets/svg/bell-icon.svg';
 import micIcon from '../../assets/svg/mic-icon.svg';
 import OutlineWrapper from "./OutlineWrapper";
+import GlassFrame from "./GlassFrame";
+import QuickActionsWrapper from "./QuickActionsWrapper";
+import GlassButton from "./GlassButton";
 
 const navLinks = ['Home', 'Explore', 'Navigate', 'Commute', 'More'];
 
@@ -12,7 +15,10 @@ export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <>
+    <QuickActionsWrapper className="w-full p-0 shadow-figma-drop">
+
+
+
       {/* Navbar */}
       <nav className="w-full sticky top-0 z-50 ">
         <div className="max-w-[1440px] h-[64px] sm:h-[72px] lg:h-[88px] mx-auto px-4 sm:px-6 lg:px-12 flex items-center justify-between">
@@ -39,7 +45,7 @@ export default function Navigation() {
           <div className="flex-none hidden lg:flex items-center gap-8 xl:gap-[6rem]">
             <a
               href="#"
-              className="nav-link nav-link-active"
+              className="nav-link text-white  tabs-heading-semi"
             >
               Home
             </a>
@@ -47,7 +53,7 @@ export default function Navigation() {
               <a
                 key={item}
                 href="#"
-                className="nav-link"
+                className="nav-link text-white tabs-heading-semi font-regular"
               >
                 {item}
               </a>
@@ -92,7 +98,7 @@ export default function Navigation() {
         onClick={() => setIsMenuOpen(false)}
       >
         {/* Backdrop */}
-        <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" />
+        {/* <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" /> */}
 
         {/* Drawer Panel */}
         <div
@@ -112,7 +118,7 @@ export default function Navigation() {
             ))}
 
             {/* Mobile Search inside drawer */}
-            <OutlineWrapper>
+            <GlassButton>
               <div className="relative flex items-center mt-1">
                 <div className="absolute left-3 pointer-events-none z-10 opacity-50">
                   <img src={searchIcon} alt="search" className="w-[15px] h-[15px]" />
@@ -120,13 +126,13 @@ export default function Navigation() {
                 <input
                   type="text"
                   placeholder="Search"
-                  className="glass-input w-full h-[40px] pl-9 pr-4 text-sm text-white placeholder:text-white/40"
+                  className="w-full h-[40px] pl-9 pr-4 text-sm text-white 0"
                 />
               </div>
-            </OutlineWrapper>
+            </GlassButton>
           </div>
         </div>
       </div>
-    </>
+    </QuickActionsWrapper>
   );
 }

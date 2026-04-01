@@ -28,7 +28,7 @@ const BookingCardContent: React.FC<BookingCardProps> = ({
   icon,
 }) => {
   return (
-    <QuickActionsWrapper className="text-white px-3 py-3  h-full w-full">
+    <QuickActionsWrapper className="text-white p-4  h-full w-full">
       {/* Header: Icon and Status */}
       <div className="flex justify-between items-center mb-6 w-full">
         <div className="w-12 h-12 rounded-xl bg-blue-200 flex items-center justify-center">
@@ -78,10 +78,10 @@ const BookingCardContent: React.FC<BookingCardProps> = ({
 
       {/* Actions */}
       <div className="flex flex-col md:flex-row lg:flex-col items-center justify-center gap-3 mb-3  w-full ">
-        <GlassButton className="w-full py-1 px-5 ml-1 rounded-full text-lg">
+        <GlassButton size="large" className="w-full  " buttonClassName="shadow-figma-drop">
           Reschedule
         </GlassButton>
-        <GlassButton className="w-full py-1 px-5 ml-1 rounded-full text-lg border-none opacity-80">
+        <GlassButton size="large" className="w-full   " buttonClassName="w-full shadow-figma-drop">
           Cancel
         </GlassButton>
       </div>

@@ -1,6 +1,7 @@
 // import { ReactNode } from "react";
 import type { ReactNode } from "react";
 import QuickActionsWrapper from "../../common/QuickActionsWrapper";
+import GlassFrame from "../../common/GlassFrame";
 
 interface QuickActionItem {
   icon: ReactNode;
@@ -14,7 +15,7 @@ export interface QuickActionsProps {
 
 export default function QuickActions({ actions }: QuickActionsProps) {
   return (
-    <QuickActionsWrapper className="p-8 w-full h-auto">
+    <QuickActionsWrapper className="w-full p-8 ">
       <div className="grid grid-cols-2 gap-y-12 gap-x-12 w-full place-items-center">
         {actions.map((action, index) => (
           <button

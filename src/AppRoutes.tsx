@@ -24,7 +24,6 @@ const AppRoutes = () => {
         <Route path="forgot-password" element={<ForgotPassword />} />
         <Route path="verify-code" element={<VerifyCode />} />
         <Route path="reset-password" element={<ResetPassword />} />
-        <Route path="success" element={<Success />} />
       </Route>
 
       <Route path="/home" element={<ResidentialHome />} />

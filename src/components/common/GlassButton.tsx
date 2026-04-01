@@ -33,12 +33,21 @@ const GlassButton: React.FC<GlassButtonProps> = ({
           text-white duration-300
           disabled:opacity-50
           disabled:cursor-not-allowed
-          bg-transparent
+         
           w-full h-full cursor-pointer
-          btn-text-regular backdrop:blur-1
+          btn-text-regular
+           backdrop-blur-[40px]
           ${sizeStyles[size]}
         ${buttonClassName}
         `}
+        style={{
+          background: 'linear-gradient(185deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 100%)',
+
+
+
+        }}
+
+
       >
         {children}
       </Button>

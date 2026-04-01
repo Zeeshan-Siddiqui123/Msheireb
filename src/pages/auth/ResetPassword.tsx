@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import CornerInput from '../../components/common/CornerInput';
-import AuthButton from '../../components/common/AuthButton';
+import GlassButton from '../../components/common/GlassButton';
+import AuthHeader from '../../components/common/AuthHeader';
 
 const ResetPassword = () => {
   const navigate = useNavigate();
@@ -10,18 +11,7 @@ const ResetPassword = () => {
 
   return (
     <div className="w-full h-full flex flex-col items-center pt-4 sm:pt-10 max-w-sm mx-auto">
-      {/* Header with Back Arrow */}
-      <div className="relative w-full flex items-center justify-center mb-16">
-        <button
-          onClick={() => navigate('/verify-code')}
-          className="absolute left-0 p-1 text-white hover:text-white transition-colors"
-        >
-          <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 19l-7-7 7-7" />
-          </svg>
-        </button>
-        <p className="text-base-regular text-white tracking-wide font-regular">Forgot Password</p>
-      </div>
+      <AuthHeader title="Forgot Password" onBack={() => navigate('/verify-code')} />
 
       {/* Main Content */}
       <div className="w-full flex flex-col gap-8">
@@ -82,13 +72,14 @@ const ResetPassword = () => {
 
         {/* Action Button */}
         <div className="mt-2">
-          <AuthButton
-            onClick={() => navigate('/success')}
+          <GlassButton
+            onClick={() => navigate('/login')}
             size="large"
             className="w-full"
+            buttonClassName="w-full shadow-figma-drop"
           >
             Change Password
-          </AuthButton>
+          </GlassButton>
         </div>
       </div>
     </div>

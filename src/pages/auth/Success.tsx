@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import AuthButton from '../../components/common/AuthButton';
+import GlassButton from '../../components/common/GlassButton';
 
 const Success = () => {
   const navigate = useNavigate();
@@ -58,12 +58,14 @@ const Success = () => {
         ))}
       </div>
 
-      <AuthButton
+      <GlassButton
         onClick={() => navigate('/login')}
         size="large"
+        className="w-full"
+        buttonClassName="w-full shadow-figma-drop"
       >
         Login Now
-      </AuthButton>
+      </GlassButton>
     </div>
   );
 };

@@ -13,13 +13,13 @@ interface MaintenanceProps {
     setSelectedCategory: (value: string) => void;
 }
 
-const Maintenance = ({ 
-    showServices, 
-    setShowServices, 
-    showForm, 
-    setShowForm, 
-    selectedCategory, 
-    setSelectedCategory 
+const Maintenance = ({
+    showServices,
+    setShowServices,
+    showForm,
+    setShowForm,
+    selectedCategory,
+    setSelectedCategory
 }: MaintenanceProps) => {
 
     const handleCategorySelect = (category: string) => {
@@ -28,31 +28,33 @@ const Maintenance = ({
     };
 
     return (
-        <QuickActionsWrapper 
+        <QuickActionsWrapper
             hideBorder={showServices}
-            className="flex items-center justify-center flex-col gap-6 p-6"
+            className="flex items-center justify-center flex-col gap-6 p-4"
         >
 
-            
+
             {!showServices && (
-                <div className="flex items-center justify-center flex-col gap-4">
+                <div className="flex items-center justify-center w-full flex-col gap-4">
                     {/* The heading and para are now in the parent HomeServices.tsx */}
                     <GlassButton
-                        className="py-2 px-6 rounded-full"
+                        className="w-1/2"
                         onClick={() => setShowServices(true)}
+                        buttonClassName="shadow-figma-drop"
+                        size="large"
                     >
                         + Create New Request
                     </GlassButton>
                 </div>
             )}
 
-            
+
             {showServices && !showForm && (
                 <MaintenanceServices onCategorySelect={handleCategorySelect} />
             )}
 
             {showForm && (
-                <MaintenanceRequestForm category={selectedCategory}  />
+                <MaintenanceRequestForm category={selectedCategory} />
             )}
 
         </QuickActionsWrapper>

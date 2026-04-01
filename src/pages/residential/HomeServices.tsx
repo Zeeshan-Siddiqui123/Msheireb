@@ -27,12 +27,12 @@ export default function HomeServices() {
       desc: "Choose a category to help us understand the problem",
     },
     maintenance: {
-      title: showForm 
-        ? "Fill in your request" 
+      title: showForm
+        ? "Fill in your request"
         : showServices ? "Create New Request" : "My Services",
-      desc: showForm 
-        ? "Please provide the details below" 
-        : showServices 
+      desc: showForm
+        ? "Please provide the details below"
+        : showServices
           ? "Book services and manage maintenance requests"
           : "Choose a category to help us understand the problem",
     },
@@ -43,38 +43,38 @@ export default function HomeServices() {
   };
 
   const currentContent = tabContent[selectedTab as keyof typeof tabContent];
-   const [activeTab, setActiveTab] = useState("services");
+  const [activeTab, setActiveTab] = useState("services");
 
-   const homeServiceTabs = [
-    { 
-      key: "services", 
-      title: "Services", 
-      content: <Services /> 
+  const homeServiceTabs = [
+    {
+      key: "services",
+      title: "Services",
+      content: <Services />
     },
-    { 
-      key: "maintenance", 
-      title: "Maintenance", 
+    {
+      key: "maintenance",
+      title: "Maintenance",
       content: (
-        <Maintenance 
-          showServices={showServices} 
-          setShowServices={setShowServices} 
+        <Maintenance
+          showServices={showServices}
+          setShowServices={setShowServices}
           showForm={showForm}
           setShowForm={setShowForm}
           selectedCategory={selectedCategory}
           setSelectedCategory={setSelectedCategory}
         />
-      ) 
+      )
     },
-    { 
-      key: "mybooking", 
-      title: "My Booking", 
-      content: <Bookings /> 
+    {
+      key: "mybooking",
+      title: "My Booking",
+      content: <Bookings />
     }
   ];
 
 
   return (
-    <DashboardLayout leftSidebar={<LeftSidebarContent/>} rightSidebar={<RightSidebarContent/>}>
+    <DashboardLayout leftSidebar={<LeftSidebarContent />} rightSidebar={<RightSidebarContent />}>
       <section className="flex flex-col h-full w-full max-w-3xl mx-auto px-4 py-2">
         {/* Header Area */}
         <div className="relative flex items-center justify-center mb-1">
@@ -107,21 +107,21 @@ export default function HomeServices() {
         {/* Tabs Area */}
         <div className="w-full flex-grow flex flex-col">
           {showForm ? (
-            <Maintenance 
-              showServices={showServices} 
-              setShowServices={setShowServices} 
+            <Maintenance
+              showServices={showServices}
+              setShowServices={setShowServices}
               showForm={showForm}
               setShowForm={setShowForm}
               selectedCategory={selectedCategory}
               setSelectedCategory={setSelectedCategory}
             />
           ) : (
-             <GlassTabs
-          items={homeServiceTabs}
-          ariaLabel="Home Services Options"
-          selectedKey={selectedTab}
-          onSelectionChange={(key) => setSelectedTab(key as string)}
-        />
+            <GlassTabs
+              items={homeServiceTabs}
+              ariaLabel="Home Services Options"
+              selectedKey={selectedTab}
+              onSelectionChange={(key) => setSelectedTab(key as string)}
+            />
           )}
         </div>
       </section>
