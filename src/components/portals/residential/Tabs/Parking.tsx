@@ -1,6 +1,7 @@
 import GlassButton from "../../../common/GlassButton";
 import { CarFront, CircleParking } from "lucide-react";
 import QuickActionsWrapper from "../../../common/QuickActionsWrapper";
+import StatusChip from "../../../common/Chip";
 
 export interface ParkingProps {
   onRegister?: () => void;
@@ -29,8 +30,8 @@ const Parking = ({ onRegister }: ParkingProps) => {
   return (
     <div className="flex flex-col gap-4 mt-4 w-full">
       {vehicles.map((vehicle) => (
-        <QuickActionsWrapper key={vehicle.id} className="w-full p-4 border border-white/20 backdrop-blur-md shadow-lg text-left relative overflow-hidden transition-all duration-300 hover:bg-white/15">
-          <div className="flex justify-between w-full items-start">
+        <QuickActionsWrapper key={vehicle.id} className="w-full  rounded-lg  relative overflow-hidden transition-all duration-300 hover:bg-white/15">
+          <div className="flex justify-between items-start w-full">
             <div className="flex gap-4 items-center">
               <div className="bg-[#e0eefa] text-black p-3 rounded-[12px] shadow-sm flex items-center justify-center">
                 <CarFront size={28} strokeWidth={2} />
@@ -40,9 +41,10 @@ const Parking = ({ onRegister }: ParkingProps) => {
                 <p className="text-small-regular">{vehicle.details}</p>
               </div>
             </div>
-            <span className="text-inter-xs bg-white text-gray-800 px-3 py-1 mt-1 rounded-full  tracking-wider backdrop-blur-md shadow-sm">
+            {/* <span className="text-inter-xs bg-white text-gray-800 px-3 py-1 mt-1 rounded-full  tracking-wider backdrop-blur-md shadow-sm">
               {vehicle.status}
-            </span>
+            </span> */}
+            <StatusChip status={vehicle.status} />
           </div>
 
           <div className="flex justify-between items-center mt-6 pr-4">
@@ -63,9 +65,9 @@ const Parking = ({ onRegister }: ParkingProps) => {
         <div className="mt-4 flex justify-center w-full">
           <GlassButton
             onClick={onRegister}
-            buttonClassName="shadow-figma-drop"
             className="w-1/2"
             size="large"
+            buttonClassName="shadow-figma-drop w-full"
           >
             + Register New Vehicle
           </GlassButton>

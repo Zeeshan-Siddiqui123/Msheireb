@@ -1,60 +1,118 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import CornerInput from '../../components/common/CornerInput';
+import BaseInput from '../../components/common/BaseInput';
 import GlassButton from '../../components/common/GlassButton';
 import AuthHeader from '../../components/common/AuthHeader';
 
+
+const EyeIcon = ({ isOpen }: { isOpen: boolean }) => (
+  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    {isOpen ? (
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.875 18.825A10.05 10.05 0 0112 19c-5 0-9-4-9-7s4-7 9-7a10.05 10.05 0 011.875.175M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+    ) : (
+      <>
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.477 0 8.268 2.943 9.542 7-1.274 4.057-5.065 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+      </>
+    )}
+  </svg>
+);
+
+
+
 const ResetPassword = () => {
   const navigate = useNavigate();
+  const [formData, setFormData] = useState({ password: '', retypePassword: '' });
   const [showPassword, setShowPassword] = useState(false);
   const [showRetypePassword, setShowRetypePassword] = useState(false);
 
+  // 2. Validation & Shake States
+  const [errors, setErrors] = useState({ password: '', retypePassword: '' });
+  const [shake, setShake] = useState({ password: false, retypePassword: false });
+
+  // 3. Password Criteria Logic
+  const validations = {
+    hasNumber: /\d/.test(formData.password),
+    hasUpperLower: /[a-z]/.test(formData.password) && /[A-Z]/.test(formData.password),
+    hasSpecial: /[!@#$%^&*(),.?":{}|<>]/.test(formData.password),
+    isMatching: formData.password === formData.retypePassword && formData.password !== ''
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+    // Clear error when typing
+    setErrors(prev => ({ ...prev, [name]: '' }));
+  };
+
+  const triggerShake = (field: 'password' | 'retypePassword') => {
+    setShake(prev => ({ ...prev, [field]: true }));
+    setTimeout(() => setShake(prev => ({ ...prev, [field]: false })), 400);
+  };
+
+  const handleSubmit = (e?: any) => {
+    if (e?.preventDefault) e.preventDefault();
+
+    const isCriteriaMet = validations.hasNumber && validations.hasUpperLower && validations.hasSpecial;
+    const isMatch = formData.password === formData.retypePassword;
+
+    if (!isCriteriaMet) {
+      setErrors(prev => ({ ...prev, password: 'Password does not meet requirements' }));
+      triggerShake('password');
+      return;
+    }
+
+    if (!isMatch) {
+      setErrors(prev => ({ ...prev, retypePassword: 'Passwords do not match' }));
+      triggerShake('retypePassword');
+      return;
+    }
+
+    // Success
+    console.log("Password Reset Successful");
+    navigate('/login');
+  };
+
   return (
     <div className="w-full h-full flex flex-col items-center pt-4 sm:pt-10 max-w-sm mx-auto">
-      <AuthHeader title="Forgot Password" onBack={() => navigate('/verify-code')} />
+      <div className="w-full max-w-sm animate-fade-in">
+        <AuthHeader title="Forgot Password" onBack={() => navigate('/verify-code')} />
+      </div>
 
       {/* Main Content */}
       <div className="w-full flex flex-col gap-8">
         {/* Form */}
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-6 animate-fade-up">
           {/* New Password */}
-          <CornerInput
+          <BaseInput
             label="Password"
+            name="password"
             type={showPassword ? 'text' : 'password'}
             placeholder="New Password"
+            value={formData.password}
+            onChange={handleChange}
+            error={errors.password}
+            isShaking={shake.password}
             icon={
-              <button onClick={() => setShowPassword(!showPassword)}>
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  {showPassword ? (
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.875 18.825A10.05 10.05 0 0112 19c-5 0-9-4-9-7s4-7 9-7a10.05 10.05 0 011.875.175M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                  ) : (
-                    <>
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.477 0 8.268 2.943 9.542 7-1.274 4.057-5.065 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                    </>
-                  )}
-                </svg>
+              <button type="button" onClick={() => setShowPassword(!showPassword)}>
+                <EyeIcon isOpen={showPassword} />
               </button>
             }
           />
 
           {/* Retype Password */}
-          <CornerInput
-            label="Password"
+          <BaseInput
+            label="Retype Password"
+            name="retypePassword"
             type={showRetypePassword ? 'text' : 'password'}
             placeholder="Retype Password"
+            value={formData.retypePassword}
+            onChange={handleChange}
+            error={errors.retypePassword}
+            isShaking={shake.retypePassword}
             icon={
-              <button onClick={() => setShowRetypePassword(!showRetypePassword)}>
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  {showRetypePassword ? (
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.875 18.825A10.05 10.05 0 0112 19c-5 0-9-4-9-7s4-7 9-7a10.05 10.05 0 011.875.175M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                  ) : (
-                    <>
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.477 0 8.268 2.943 9.542 7-1.274 4.057-5.065 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                    </>
-                  )}
-                </svg>
+              <button type="button" onClick={() => setShowRetypePassword(!showRetypePassword)}>
+                <EyeIcon isOpen={showRetypePassword} />
               </button>
             }
           />
@@ -73,7 +131,7 @@ const ResetPassword = () => {
         {/* Action Button */}
         <div className="mt-2">
           <GlassButton
-            onClick={() => navigate('/login')}
+            onClick={handleSubmit}
             size="large"
             className="w-full"
             buttonClassName="w-full shadow-figma-drop"

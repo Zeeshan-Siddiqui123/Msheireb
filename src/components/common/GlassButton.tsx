@@ -17,11 +17,11 @@ const GlassButton: React.FC<GlassButtonProps> = ({
   className = "",
   disabled = false,
   size = "small",
-  buttonClassName
+  buttonClassName,
 }) => {
   const sizeStyles: Record<"small" | "large", string> = {
-    small: "px-10 py-1.5  rounded-3xl",
-    large: "px-22 py-3.5  rounded-3xl",
+    small: "px-10 py-1.5 rounded-3xl",
+    large: "px-22 py-3.5 rounded-3xl",
   };
 
   return (
@@ -30,24 +30,14 @@ const GlassButton: React.FC<GlassButtonProps> = ({
         onClick={onClick}
         disabled={disabled}
         className={`
-          text-white duration-300
-          disabled:opacity-50
-          disabled:cursor-not-allowed
-         
-          w-full h-full cursor-pointer
-          btn-text-regular
-           backdrop-blur-[40px]
+          text-white duration-300 disabled:opacity-50 disabled:cursor-not-allowed w-full h-full cursor-pointer  btn-text-regular backdrop-blur-lg z-50
           ${sizeStyles[size]}
-        ${buttonClassName}
+          ${buttonClassName}
         `}
         style={{
-          background: 'linear-gradient(185deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 100%)',
 
-
-
+          background: 'linear-gradient(-45deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 100%)',
         }}
-
-
       >
         {children}
       </Button>

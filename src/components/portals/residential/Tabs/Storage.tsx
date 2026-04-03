@@ -44,9 +44,9 @@ const Storage = () => {
     ];
 
     return (
-        <QuickActionsWrapper className=" w-full p-4  relative overflow-hidden">
+        <QuickActionsWrapper className="mt-4 w-full rounded-lg text-left relative overflow-hidden">
+            {/* Storage Unit Section */}
             <div className="w-full">
-                {/* Storage Unit Section */}
                 <h2 className="heading-medium-semibold mb-4">Storage Unit</h2>
                 <hr className="border-white/30 mb-5" />
 

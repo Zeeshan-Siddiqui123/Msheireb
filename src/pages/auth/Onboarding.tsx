@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
-import bgAuth from '../../assets/BG-auth.webp';
+import bgAuth from '../../assets/BG-authold.png';
 import logo from '../../assets/svg/msherieb-logo.svg';
-import CornerSelect from '../../components/common/CornerSelect';
+import BaseSelect from '../../components/common/BaseSelect';
 import GlassButton from '../../components/common/GlassButton';
 import { SelectItem } from '@heroui/react';
 
@@ -37,7 +37,7 @@ const Onboarding = () => {
               Choose how will you use the Msheireb App!
             </p>
 
-            <CornerSelect
+            <BaseSelect
               label=""
               defaultSelectedKeys={["Visitor"]}
               // HeroUI returns a Set of keys. We convert it to an array or string.
@@ -49,7 +49,7 @@ const Onboarding = () => {
               <SelectItem key="Visitor" textValue="Visitor">Visitor</SelectItem>
               <SelectItem key="Resident" textValue="Resident">Resident</SelectItem>
               <SelectItem key="Employee" textValue="Employee">Employee</SelectItem>
-            </CornerSelect>
+            </BaseSelect>
           </div>
 
           <GlassButton

@@ -13,6 +13,7 @@ import RegisterVehicle from './RegisterVehicle';
 import { RightSidebarContent } from '../../components/common/RightSidebarContent';
 import { LeftSidebarContent } from '../../components/common/LeftSidebarContent';
 import { GlassTabs } from '../../components/common/GlassTabs';
+import PageHeader from '../../components/common/PageHeader';
 
 export default function AppartmentDetails() {
   const navigate = useNavigate();
@@ -20,57 +21,46 @@ export default function AppartmentDetails() {
   const [activeTab, setActiveTab] = useState<string>("space");
 
   const apartmentTabs = [
-    { 
-      key: "space", 
-      title: "Space", 
-      content: <Space /> 
+    {
+      key: "space",
+      title: "Space",
+      content: <Space />
     },
-    { 
-      key: "lease", 
-      title: "Lease", 
-      content: <Lease /> 
+    {
+      key: "lease",
+      title: "Lease",
+      content: <Lease />
     },
-    { 
-      key: "parking", 
-      title: "Parking", 
-      content: <Parking onRegister={() => setIsRegistering(true)} /> 
+    {
+      key: "parking",
+      title: "Parking",
+      content: <Parking onRegister={() => setIsRegistering(true)} />
     },
-    { 
-      key: "storage", 
-      title: "Storage", 
-      content: <Storage  /> 
+    {
+      key: "storage",
+      title: "Storage",
+      content: <Storage />
     }
   ];
 
-  
+
   return (
-    <DashboardLayout leftSidebar={<LeftSidebarContent/>} rightSidebar={<RightSidebarContent/>}>
+    <DashboardLayout leftSidebar={<LeftSidebarContent />} rightSidebar={<RightSidebarContent />}>
       <section className="flex flex-col h-full w-full max-w-3xl mx-auto px-4 py-2">
         {isRegistering ? (
           <RegisterVehicle onBack={() => setIsRegistering(false)} />
         ) : (
           <>
             {/* Header Area */}
-            <div className="relative flex items-center justify-center mb-1">
-              <button 
-                onClick={() => navigate('/')} 
-                className="absolute left-0 text-white hover:text-white/80 transition-colors cursor-pointer"
-              >
-                <ChevronLeft size={28} strokeWidth={2} />
-              </button>
-              <h1 className="heading-medium-bold mb-6">Apartment Details</h1>
-            </div>
-            <p className="body-regular text-center mb-6">Your apartment information and documents</p>
-
-            {/* Tabs Area */}
-            <div className="w-full flex-grow flex flex-col">
-            <GlassTabs
-        items={apartmentTabs} 
-        ariaLabel="Apartment management"
-        selectedKey={activeTab}
-        onSelectionChange={(key) => setActiveTab(key as string)}
-      />
-            </div>
+            <PageHeader
+              title={"Apartment Details"}
+              description={"Your apartment information and documents"}
+              backPath='/home'
+              showTabs={!isRegistering}
+              tabs={apartmentTabs}
+              selectedTab={activeTab}
+              onTabChange={setActiveTab}
+            />
           </>
         )}
       </section>

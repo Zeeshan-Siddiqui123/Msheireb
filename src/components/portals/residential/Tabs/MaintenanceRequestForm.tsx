@@ -8,12 +8,12 @@ interface MaintenanceRequestFormProps {
 
 const MaintenanceRequestForm = ({ category }: MaintenanceRequestFormProps) => {
     return (
-        <QuickActionsWrapper className="w-full  p-4 mx-auto gap-5 bg-white/5">
+        <QuickActionsWrapper className="w-full gap-5 bg-transparent">
             <div className="w-full space-y-5">
 
                 {/* Category */}
                 <div className="space-y-1.5">
-                    <label className="text-white/90 text-xs font-semibold tracking-wide ml-0.5">
+                    <label className="text-white text-xs font-semibold tracking-wide ml-0.5">
                         Category
                     </label>
                     <Select
@@ -31,7 +31,7 @@ const MaintenanceRequestForm = ({ category }: MaintenanceRequestFormProps) => {
                                 "bg-transparent border border-white rounded-xl min-h-[46px]",
                                 "hover:!bg-white/15 transition-colors duration-200",
                                 "data-[hover=true]:!bg-white/15",
-                                "group-data-[focus=true]:!bg-transparent",
+                                "group-data-[focus=true]:!bg-white/10",
                                 "group-data-[focus=true]:!border-0",
                                 "group-data-[focus=true]:!shadow-none",
                                 "data-[focus-visible=true]:!ring-0",
@@ -48,7 +48,7 @@ const MaintenanceRequestForm = ({ category }: MaintenanceRequestFormProps) => {
 
                 {/* Sub Category */}
                 <div className="space-y-1.5">
-                    <label className="text-white/90 text-xs font-semibold tracking-wide ml-0.5 flex items-center gap-0.5">
+                    <label className="text-white text-xs font-semibold tracking-wide ml-0.5 flex items-center gap-0.5">
                         Sub Category<span className="text-red-400">*</span>
                     </label>
                     <Select
@@ -67,7 +67,7 @@ const MaintenanceRequestForm = ({ category }: MaintenanceRequestFormProps) => {
                                 "bg-transparent border border-white rounded-xl min-h-[46px]",
                                 "hover:!bg-white/15 transition-colors duration-200",
                                 "data-[hover=true]:!bg-white/15",
-                                "group-data-[focus=true]:!bg-transparent",
+                                "group-data-[focus=true]:!bg-white/10",
                                 "group-data-[focus=true]:!border-0",
                                 "group-data-[focus=true]:!shadow-none",
                                 "data-[focus-visible=true]:!ring-0",
@@ -87,7 +87,7 @@ const MaintenanceRequestForm = ({ category }: MaintenanceRequestFormProps) => {
 
                 {/* Description */}
                 <div className="space-y-1.5">
-                    <label className="text-white/90 text-xs font-semibold tracking-wide ml-0.5 flex items-center gap-0.5">
+                    <label className="text-white text-xs font-semibold tracking-wide ml-0.5 flex items-center gap-0.5">
                         Description (Optional)<span className="text-red-400">*</span>
                     </label>
                     <Textarea
@@ -99,21 +99,21 @@ const MaintenanceRequestForm = ({ category }: MaintenanceRequestFormProps) => {
                                 "bg-transparent border border-white rounded-xl",
                                 "hover:!bg-white/15 transition-colors duration-200",
                                 "data-[hover=true]:!bg-white/15",
-                                "group-data-[focus=true]:!bg-transparent",
+                                "group-data-[focus=true]:!bg-white/10",
                                 "group-data-[focus=true]:!border-white",
                                 "group-data-[focus=true]:!shadow-none",
                                 "data-[focus-visible=true]:!ring-0",
                                 "data-[focus-visible=true]:!outline-none",
                                 "!transition-colors",
                             ].join(" "),
-                            input: "text-white placeholder:text-white/40 text-sm resize-none",
+                            input: "text-white placeholder:text-white text-sm resize-none",
                         }}
                     />
                 </div>
 
                 {/* Upload Image */}
                 <div className="space-y-1.5 pb-2">
-                    <label className="text-white/90 text-xs font-semibold tracking-wide ml-0.5">
+                    <label className="text-white text-xs font-semibold tracking-wide ml-0.5">
                         Upload Image
                     </label>
                     <div
@@ -137,7 +137,7 @@ const MaintenanceRequestForm = ({ category }: MaintenanceRequestFormProps) => {
                                 className="text-white"
                             />
                         </div>
-                        <span className="text-white/60 text-sm font-medium group-hover:text-white/80 transition-colors duration-200">
+                        <span className="text-white text-sm font-medium group-hover:text-white/80 transition-colors duration-200">
                             Upload image
                         </span>
                     </div>

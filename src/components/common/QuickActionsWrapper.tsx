@@ -15,13 +15,12 @@ const QuickActionsWrapper = ({
     <div
       style={{
         position: "relative",
-        backdropFilter: "blur(5px)",
-        WebkitBackdropFilter: "blur(5px)",
       }}
       className={`
         flex flex-col items-start justify-start
         rounded-xl
-        
+        p-4
+        backdrop-blur-md
         overflow-visible
         transition-all duration-300
         ${className}
@@ -47,6 +46,8 @@ const QuickActionsWrapper = ({
           }}
         />
       )}
+
+
 
       {/* Corner glow with transparent cutoffs on top-right and bottom-left */}
       {!hideBorder && (
@@ -87,6 +88,7 @@ const QuickActionsWrapper = ({
             WebkitMaskComposite: "xor",
             maskComposite: "exclude" as any,
             pointerEvents: "none",
+            zIndex: 100,
           }}
         />
       )}

@@ -15,8 +15,7 @@ export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <QuickActionsWrapper className="w-full p-0 shadow-figma-drop">
-
+    <QuickActionsWrapper className="w-full !p-0 shadow-figma-drop">
 
 
       {/* Navbar */}

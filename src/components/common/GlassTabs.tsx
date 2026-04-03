@@ -33,7 +33,7 @@ export const GlassTabs: React.FC<GlassTabsProps> = ({
         selectedKey={selectedKey}
         onSelectionChange={onSelectionChange}
         classNames={{
-          tabList: "bg-white/10 backdrop-blur-md rounded-full border border-white/20 mb-2 gap-2 p-1",
+          tabList: "bg-white/10 backdrop-blur-md rounded-full border border-white/20 mb-2 gap-2 p-1 overflow-x-hidden",
           cursor: "bg-white rounded-full shadow-md",
           tab: "h-9",
           tabContent: "group-data-[selected=true]:text-black group-data-[selected=true]:font-bold text-white/90 tabs-heading-semi transition-all"

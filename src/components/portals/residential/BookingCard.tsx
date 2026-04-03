@@ -3,6 +3,7 @@ import { Star } from "lucide-react";
 import GlassButton from "../../common/GlassButton";
 import withCardContainer from "../../common/withCardContainer";
 import QuickActionsWrapper from "../../common/QuickActionsWrapper";
+import StatusChip from "../../common/Chip";
 
 interface BookingCardProps {
   title: string;
@@ -34,24 +35,25 @@ const BookingCardContent: React.FC<BookingCardProps> = ({
         <div className="w-12 h-12 rounded-xl bg-blue-200 flex items-center justify-center">
           {icon}
         </div>
-        <div className="bg-white/90 text-[#2D9B82] px-3 py-1 rounded-full text-[12px] font-bold">
+        {/* <div className="bg-white/90 text-[#2D9B82] px-3 py-1 rounded-full text-[12px] font-bold">
           {status}
-        </div>
+        </div> */}
+        <StatusChip status={status} />
       </div>
 
       {/* Content: Title and Provider */}
-      <h3 className="text-lg font-bold">{title}</h3>
-      <p className="text-white/80 text-sm mb-4">{provider}</p>
+      <h3 className="heading-medium-semibold mb-2">{title}</h3>
+      <p className="body-regular mb-4">{provider}</p>
 
       {/* Dates row */}
       <div className="flex gap-16 mb-6">
         <div>
-          <p className="text-white text-xs mb-1">Start Date</p>
-          <p className="text-sm font-medium">{startDate}</p>
+          <p className="text-small-regular mb-1">Start Date</p>
+          <p className="body-regular">{startDate}</p>
         </div>
         <div>
-          <p className="text-white text-xs mb-1">End Date</p>
-          <p className="text-sm font-medium">{endDate}</p>
+          <p className="text-small-regular mb-1">End Date</p>
+          <p className="body-regular">{endDate}</p>
         </div>
       </div>
 
@@ -63,7 +65,7 @@ const BookingCardContent: React.FC<BookingCardProps> = ({
             alt={providerName}
             className="w-12 h-12 rounded-full border-2 border-white/40"
           />
-          <span className="text-white font-medium text-xs">{providerName}</span>
+          <span className="text-small-regular">{providerName}</span>
         </div>
         <div className="flex gap-1">
           {[1, 2, 3, 4, 5].map((s) => (

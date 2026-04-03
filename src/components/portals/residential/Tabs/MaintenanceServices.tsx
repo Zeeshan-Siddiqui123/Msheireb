@@ -15,7 +15,7 @@ const services = [
 
 const MaintenanceServices = ({ onCategorySelect }: { onCategorySelect: (category: string) => void }) => {
   return (
-    <div className="w-full max-w-5xl grid grid-cols-2 gap-4">
+    <div className="w-full grid grid-cols-2 gap-4">
       
       {services.map((item, index) => (
         <QuickActionsWrapper className="w-full" >
@@ -26,6 +26,7 @@ const MaintenanceServices = ({ onCategorySelect }: { onCategorySelect: (category
             flex items-center gap-4             
             transition-all duration-300
             cursor-pointer
+            flex-col md:flex-row lg:flex-row
             hover:scale-[1.02] active:scale-95
           "
         >
@@ -35,7 +36,7 @@ const MaintenanceServices = ({ onCategorySelect }: { onCategorySelect: (category
             className="w-16 h-16 rounded-lg object-cover"
           />
 
-          <p className="text-white text-sm md:text-base font-medium">
+          <p className="text-white text-center lg:text-start text-sm md:text-base font-medium">
             {item.title}
           </p>
         </div>

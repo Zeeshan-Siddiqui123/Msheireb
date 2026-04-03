@@ -43,10 +43,12 @@ const VerifyCode = () => {
 
   return (
     <div className="w-full h-full flex flex-col items-center pt-4 sm:pt-10 max-w-sm mx-auto">
-      <AuthHeader title="Forgot Password" onBack={() => navigate('/forgot-password')} />
+      <div className="w-full max-w-sm animate-fade-in">
+        <AuthHeader title="Forgot Password" onBack={() => navigate('/forgot-password')} />
+      </div>
 
       {/* Main Content */}
-      <div className="w-full flex flex-col gap-10">
+      <div className="w-full flex flex-col gap-10 animate-fade-up">
         {/* Instructions */}
         <div className="text-center flex flex-col gap-2">
           <p className="text-white text-small-medium">Confirm your information</p>
