@@ -11,11 +11,13 @@ const OutlineWrapper: React.FC<OutlineWrapperProps> = ({
 }) => {
   return (
     <div
-      style={{
-        position: "relative",
+      // style={{
+      //   position: "relative",
+      //   backdropFilter: "blur(50px)",
+      //   WebkitBackdropFilter: "blur(50px)",
 
-      }}
-      className={`inline-flex isolate items-center justify-center rounded-3xl overflow-visible transition-all duration-300 hover:scale-105 active:scale-95 backdrop-blur-glass-heavy ${className}`}
+      // }}
+      className={`relative inline-flex  isolate items-center justify-center rounded-3xl overflow-visible transition-all duration-300 hover:scale-105 active:scale-95  ${className}`}
     >
       {/* Pseudo border layer */}
       <span

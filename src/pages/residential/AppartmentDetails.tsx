@@ -1,10 +1,10 @@
-import { Airplay, Lightbulb, Lock, Settings2, ChevronLeft } from 'lucide-react';
-import { Tabs, Tab } from '@heroui/react';
-import { useNavigate } from 'react-router-dom';
+// import { Airplay, Lightbulb, Lock, Settings2, ChevronLeft } from 'lucide-react';
+// import { Tabs, Tab } from '@heroui/react';
+// import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import DashboardLayout from '../../components/common/DashboardLayout';
-import ProfileCard from '../../components/portals/residential/ProfileCard';
-import QuickActions from '../../components/portals/residential/QuickActions';
+// import ProfileCard from '../../components/portals/residential/ProfileCard';
+// import QuickActions from '../../components/portals/residential/QuickActions';
 import Space from '../../components/portals/residential/Tabs/Space';
 import Lease from '../../components/portals/residential/Tabs/Lease';
 import Parking from '../../components/portals/residential/Tabs/Parking';
@@ -12,11 +12,11 @@ import Storage from '../../components/portals/residential/Tabs/Storage';
 import RegisterVehicle from './RegisterVehicle';
 import { RightSidebarContent } from '../../components/common/RightSidebarContent';
 import { LeftSidebarContent } from '../../components/common/LeftSidebarContent';
-import { GlassTabs } from '../../components/common/GlassTabs';
+// import { GlassTabs } from '../../components/common/GlassTabs';
 import PageHeader from '../../components/common/PageHeader';
 
 export default function AppartmentDetails() {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const [isRegistering, setIsRegistering] = useState(false);
   const [activeTab, setActiveTab] = useState<string>("space");
 

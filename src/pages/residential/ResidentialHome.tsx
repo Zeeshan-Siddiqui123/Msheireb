@@ -1,7 +1,7 @@
-import ProfileCard from '../../components/portals/residential/ProfileCard'
+// import ProfileCard from '../../components/portals/residential/ProfileCard'
 import StatCard from '../../components/portals/residential/StatCard'
 import DiscoverCard from '../../components/portals/residential/DiscoverCard'
-import QuickActions from '../../components/portals/residential/QuickActions'
+// import QuickActions from '../../components/portals/residential/QuickActions'
 import DashboardLayout from '../../components/common/DashboardLayout'
 
 // Custom SVG Icons
@@ -10,7 +10,7 @@ import energyIcon from '../../assets/svg/energy-icon.svg'
 import stepsIcon from '../../assets/svg/steps-icon.svg'
 import awardIcon from '../../assets/svg/award-icon.svg'
 
-import { Airplay, Lock, Lightbulb, Settings2 } from 'lucide-react'
+// import { Airplay, Lock, Lightbulb, Settings2 } from 'lucide-react'
 import { LeftSidebarContent } from '../../components/common/LeftSidebarContent'
 import { RightSidebarContent } from '../../components/common/RightSidebarContent'
 
@@ -22,10 +22,10 @@ export default function ResidentialHome() {
   const bgImg5 = '/src/assets/discover_5.jpg';
   const bgImg6 = '/src/assets/discover_6.jpg';
 
- 
+
 
   return (
-    <DashboardLayout leftSidebar={<LeftSidebarContent/>} rightSidebar={<RightSidebarContent/>}>
+    <DashboardLayout leftSidebar={<LeftSidebarContent />} rightSidebar={<RightSidebarContent />}>
       <section>
         <h2 className="heading-medium-bold mb-4 ">My Home</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -57,8 +57,8 @@ export default function ResidentialHome() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           <DiscoverCard title="Apartment Details" bgUrl={bgImg1} href="/appartment-details" />
           <DiscoverCard title="Payments and Invoices" bgUrl={bgImg2} href="/payments" />
-          <DiscoverCard title="Facility Booking" bgUrl={bgImg3} href='/facility-booking'/>
-          <DiscoverCard title="Visitor Management" bgUrl={bgImg4} href='/visitor'/>
+          <DiscoverCard title="Facility Booking" bgUrl={bgImg3} href='/facility-booking' />
+          <DiscoverCard title="Visitor Management" bgUrl={bgImg4} href='/visitor' />
           <DiscoverCard title="Home Services" bgUrl={bgImg5} href='/home-services' />
           <DiscoverCard title="Offers and Promotions" bgUrl={bgImg6} />
         </div>

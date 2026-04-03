@@ -30,7 +30,7 @@ const GlassButton: React.FC<GlassButtonProps> = ({
         onClick={onClick}
         disabled={disabled}
         className={`
-          text-white duration-300 disabled:opacity-50 disabled:cursor-not-allowed w-full h-full cursor-pointer  btn-text-regular backdrop-blur-lg z-50
+          text-white duration-300 disabled:opacity-50 disabled:cursor-not-allowed w-full h-full cursor-pointer  btn-text-regular  z-50
           ${sizeStyles[size]}
           ${buttonClassName}
         `}

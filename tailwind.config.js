@@ -117,10 +117,19 @@ export default {
       /* =========================
          🌫️ GLASS BLUR LEVELS
       ========================== */
+      blur: {
+        sm: '4px',
+        md: '8px',
+        lg: '16px', // adjust to your liking
+        xl: '32px',
+        '2xl': '48px',
+      },
       backdropBlur: {
-        glass: '24px',
-        'glass-heavy': '40px',
-        'glass-ultra': '50px',
+        sm: '4px',
+        md: '8px',
+        lg: '20px', // This generates backdrop-blur-lg
+        xl: '32px',
+        '2xl': '48px',
       },
 
       /* =========================
@@ -187,6 +196,10 @@ export default {
       },
     },
   },
+  safelist: [
+    "backdrop-blur-[141px]",
+    "bg-[linear-gradient(-45deg,rgba(255,255,255,0.12)_0%,rgba(255,255,255,0)_100%)]",
+  ]
 
   // plugins: [heroui()],
 };

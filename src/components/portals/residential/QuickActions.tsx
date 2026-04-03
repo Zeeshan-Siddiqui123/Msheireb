@@ -1,7 +1,7 @@
 // import { ReactNode } from "react";
 import type { ReactNode } from "react";
 import QuickActionsWrapper from "../../common/QuickActionsWrapper";
-import GlassFrame from "../../common/GlassFrame";
+// import GlassFrame from "../../common/GlassFrame";
 
 interface QuickActionItem {
   icon: ReactNode;

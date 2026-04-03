@@ -27,7 +27,7 @@ const Onboarding = () => {
           <p className="display-large-uppercase text-white mb-[16px] text-center">
             WELCOME TO
           </p>
-          <img src={logo} alt="Msheireb Logo" className="w-[280px] h-auto object-contain mx-auto" />
+          <img src={logo} alt="Msheireb Logo" className="w-fit h-auto object-contain mx-auto" />
         </div>
 
         {/* Action Section */}

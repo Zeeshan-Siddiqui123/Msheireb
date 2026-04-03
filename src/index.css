@@ -1,3 +1,8 @@
+@import "tailwindcss";
+@config "../tailwind.config.js";
+@source "../node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}";
+@plugin "../tailwind.plugin.ts";
+
 @font-face {
   font-family: 'SF Pro Display';
   src: url('./assets/fonts/SF-Pro-Display-Regular.otf') format('opentype');
@@ -40,22 +45,6 @@
   font-style: normal;
 }
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-@layer base {
-
-  button,
-  input,
-  select,
-  textarea {
-    @apply appearance-none bg-transparent border-0 outline-none;
-  }
-}
-
-
-
 :root {
   --bg: rgba(236, 247, 255, 1);
   --blue-100: rgba(205, 235, 255, 1);
@@ -75,150 +64,11 @@
   --grey-800: rgba(44, 44, 44, 1);
   --grey-900: rgba(30, 30, 30, 1);
   --red: rgba(178, 22, 52, 1);
-  --SF-pro-bold-12-font-family: "SF Pro", Helvetica;
-  --SF-pro-bold-12-font-size: 12px;
-  --SF-pro-bold-12-font-style: normal;
-  --SF-pro-bold-12-font-weight: 700;
-  --SF-pro-bold-12-letter-spacing: -0.24px;
-  --SF-pro-bold-12-line-height: 16px;
-  --SF-pro-bold-14-font-family: "SF Pro", Helvetica;
-  --SF-pro-bold-14-font-size: 14px;
-  --SF-pro-bold-14-font-style: normal;
-  --SF-pro-bold-14-font-weight: 700;
-  --SF-pro-bold-14-letter-spacing: -0.28px;
-  --SF-pro-bold-14-line-height: 18px;
-  --SF-pro-bold-16-font-family: "SF Pro", Helvetica;
-  --SF-pro-bold-16-font-size: 16px;
-  --SF-pro-bold-16-font-style: normal;
-  --SF-pro-bold-16-font-weight: 700;
-  --SF-pro-bold-16-letter-spacing: -0.32px;
-  --SF-pro-bold-16-line-height: 20px;
-  --SF-pro-bold-18-font-family: "SF Pro", Helvetica;
-  --SF-pro-bold-18-font-size: 18px;
-  --SF-pro-bold-18-font-style: normal;
-  --SF-pro-bold-18-font-weight: 700;
-  --SF-pro-bold-18-letter-spacing: 0px;
-  --SF-pro-bold-18-line-height: 22px;
-  --SF-pro-medium-10-font-family: "SF Pro", Helvetica;
-  --SF-pro-medium-10-font-size: 10px;
-  --SF-pro-medium-10-font-style: normal;
-  --SF-pro-medium-10-font-weight: 500;
-  --SF-pro-medium-10-letter-spacing: -0.2px;
-  --SF-pro-medium-10-line-height: 14px;
-  --SF-pro-medium-12-font-family: "SF Pro", Helvetica;
-  --SF-pro-medium-12-font-size: 12px;
-  --SF-pro-medium-12-font-style: normal;
-  --SF-pro-medium-12-font-weight: 500;
-  --SF-pro-medium-12-letter-spacing: -0.24px;
-  --SF-pro-medium-12-line-height: 16px;
-  --SF-pro-medium-14-font-family: "SF Pro", Helvetica;
-  --SF-pro-medium-14-font-size: 14px;
-  --SF-pro-medium-14-font-style: normal;
-  --SF-pro-medium-14-font-weight: 500;
-  --SF-pro-medium-14-letter-spacing: -0.28px;
-  --SF-pro-medium-14-line-height: 18px;
-  --SF-pro-medium-16-1-font-family: "SF Pro", Helvetica;
-  --SF-pro-medium-16-1-font-size: 16px;
-  --SF-pro-medium-16-1-font-style: normal;
-  --SF-pro-medium-16-1-font-weight: 500;
-  --SF-pro-medium-16-1-letter-spacing: -0.32px;
-  --SF-pro-medium-16-1-line-height: 22px;
-  --SF-pro-medium-16-font-family: "SF Pro", Helvetica;
-  --SF-pro-medium-16-font-size: 16px;
-  --SF-pro-medium-16-font-style: normal;
-  --SF-pro-medium-16-font-weight: 500;
-  --SF-pro-medium-16-letter-spacing: -0.32px;
-  --SF-pro-medium-16-line-height: 20px;
-  --SF-pro-medium-18-font-family: "SF Pro", Helvetica;
-  --SF-pro-medium-18-font-size: 18px;
-  --SF-pro-medium-18-font-style: normal;
-  --SF-pro-medium-18-font-weight: 500;
-  --SF-pro-medium-18-letter-spacing: -0.36px;
-  --SF-pro-medium-18-line-height: 22px;
-  --SF-pro-medium-8-font-family: "SF Pro", Helvetica;
-  --SF-pro-medium-8-font-size: 8px;
-  --SF-pro-medium-8-font-style: normal;
-  --SF-pro-medium-8-font-weight: 500;
-  --SF-pro-medium-8-letter-spacing: 0px;
-  --SF-pro-medium-8-line-height: 10px;
-  --SF-pro-regular-10-font-family: "SF Pro", Helvetica;
-  --SF-pro-regular-10-font-size: 10px;
-  --SF-pro-regular-10-font-style: normal;
-  --SF-pro-regular-10-font-weight: 400;
-  --SF-pro-regular-10-letter-spacing: -0.2px;
-  --SF-pro-regular-10-line-height: 14px;
-  --SF-pro-regular-12-font-family: "SF Pro", Helvetica;
-  --SF-pro-regular-12-font-size: 12px;
-  --SF-pro-regular-12-font-style: normal;
-  --SF-pro-regular-12-font-weight: 400;
-  --SF-pro-regular-12-letter-spacing: -0.24px;
-  --SF-pro-regular-12-line-height: 16px;
-  --SF-pro-regular-14-font-family: "SF Pro", Helvetica;
-  --SF-pro-regular-14-font-size: 14px;
-  --SF-pro-regular-14-font-style: normal;
-  --SF-pro-regular-14-font-weight: 400;
-  --SF-pro-regular-14-letter-spacing: -0.28px;
-  --SF-pro-regular-14-line-height: 18.000001907348633px;
-  --SF-pro-regular-16-font-family: "SF Pro", Helvetica;
-  --SF-pro-regular-16-font-size: 16px;
-  --SF-pro-regular-16-font-style: normal;
-  --SF-pro-regular-16-font-weight: 400;
-  --SF-pro-regular-16-letter-spacing: -0.32px;
-  --SF-pro-regular-16-line-height: 20px;
-  --SF-pro-regular-18-font-family: "SF Pro", Helvetica;
-  --SF-pro-regular-18-font-size: 18px;
-  --SF-pro-regular-18-font-style: normal;
-  --SF-pro-regular-18-font-weight: 400;
-  --SF-pro-regular-18-letter-spacing: -0.36px;
-  --SF-pro-regular-18-line-height: 22px;
-  --SF-pro-semibold-10-font-family: "SF Pro", Helvetica;
-  --SF-pro-semibold-10-font-size: 10px;
-  --SF-pro-semibold-10-font-style: normal;
-  --SF-pro-semibold-10-font-weight: 400;
-  --SF-pro-semibold-10-letter-spacing: 0px;
-  --SF-pro-semibold-10-line-height: 14px;
-  --SF-pro-semibold-14-font-family: "SF Pro", Helvetica;
-  --SF-pro-semibold-14-font-size: 14px;
-  --SF-pro-semibold-14-font-style: normal;
-  --SF-pro-semibold-14-font-weight: 400;
-  --SF-pro-semibold-14-letter-spacing: -0.28px;
-  --SF-pro-semibold-14-line-height: 18px;
-  --SF-pro-semibold-16-font-family: "SF Pro", Helvetica;
-  --SF-pro-semibold-16-font-size: 16px;
-  --SF-pro-semibold-16-font-style: normal;
-  --SF-pro-semibold-16-font-weight: 400;
-  --SF-pro-semibold-16-letter-spacing: -0.32px;
-  --SF-pro-semibold-16-line-height: 20px;
-  --SF-pro-semibold-18-font-family: "SF Pro", Helvetica;
-  --SF-pro-semibold-18-font-size: 18px;
-  --SF-pro-semibold-18-font-style: normal;
-  --SF-pro-semibold-18-font-weight: 400;
-  --SF-pro-semibold-18-letter-spacing: -0.36px;
-  --SF-pro-semibold-18-line-height: 22px;
-  --SF-pro-semibold-all-caps-font-family: "SF Pro", Helvetica;
-  --SF-pro-semibold-all-caps-font-size: 12px;
-  --SF-pro-semibold-all-caps-font-style: normal;
-  --SF-pro-semibold-all-caps-font-weight: 400;
-  --SF-pro-semibold-all-caps-letter-spacing: 0px;
-  --SF-pro-semibold-all-caps-line-height: 16px;
-  --style-stroke-regular: 2px;
   --white: rgba(255, 255, 255, 1);
 }
 
 :root {
   --animate-spin: spin 1s linear infinite;
-}
-
-.glass-blur-button {
-  backdrop-filter: blur(40px);
-  -webkit-backdrop-filter: blur(40px);
-  background-color: rgba(255, 255, 255, 0.02);
-}
-
-.glass-blur-input {
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  background-color: rgba(255, 255, 255, 0.01);
 }
 
 .animate-fade-in {
@@ -239,10 +89,6 @@
 
 .animate-shimmer {
   animation: shimmer 8s infinite;
-}
-
-.animate-spin {
-  animation: var(--animate-spin);
 }
 
 @keyframes spin {
@@ -325,15 +171,50 @@
   }
 }
 
+
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill,
+input:-webkit-autofill:hover,
+textarea:-webkit-autofill:hover,
+select:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill:focus,
+input:-webkit-autofill:active,
+textarea:-webkit-autofill:active,
+select:-webkit-autofill:active {
+  -webkit-text-fill-color: #fff !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/* Firefox autofill */
+input:-moz-autofill,
+textarea:-moz-autofill,
+select:-moz-autofill {
+  -moz-text-fill-color: #fff !important;
+}
+
+.glass {
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px) !important;
+  /* background: rgba(255, 255, 255, 0.1); */
+  /* semi-transparent for glass */
+  border-radius: 1rem;
+  /* rounded-3xl */
+  /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); */
+}
+
 @layer base {
   body {
     @apply antialiased subpixel-antialiased font-sf-pro bg-no-repeat bg-cover bg-top min-h-full;
-    font-feature-settings: "cv11", "ss01";
-    background-image: url('./assets/BG.png');
   }
 
-  input::placeholder {
-    @apply font-sf-pro !important;
+  button,
+  input,
+  select,
+  textarea {
+    @apply appearance-none bg-transparent border-0 outline-none focus:outline-none focus:ring-0;
   }
 }
 
@@ -401,7 +282,6 @@
   .btn-text-regular {
     @apply font-sf-pro font-regular text-12 leading-16 tracking-tightest;
     vertical-align: middle;
-    /* for inline or inline-block elements */
   }
 
   .tabs-heading-semi {
@@ -415,11 +295,5 @@
   .glass-card {
     @apply backdrop-blur-[12px] border border-brand-blue-border-shade rounded-[12px] shadow-sm;
   }
-
-  /* 
-  .glass-drawer {
-    @apply bg-[rgba(10, 20, 50, 0.75)] backdrop-blur-glass border-b border-white/10 shadow-lg;
-  } */
-
 
 }

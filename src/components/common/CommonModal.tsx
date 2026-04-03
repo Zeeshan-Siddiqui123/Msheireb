@@ -34,9 +34,9 @@ const CommonModal: React.FC<CommonModalProps> = ({
     classNames
 }) => {
     return (
-        <Modal 
-            isOpen={isOpen} 
-            onOpenChange={onClose} 
+        <Modal
+            isOpen={isOpen}
+            onOpenChange={onClose}
             size={size}
             hideCloseButton={!showCloseButton}
             scrollBehavior={scrollBehavior}
@@ -85,7 +85,7 @@ const CommonModal: React.FC<CommonModalProps> = ({
             className={className}
         >
             <ModalContent>
-                {(onClose) => (
+                {() => (
                     <>
                         {title && (
                             <ModalHeader className="flex flex-col gap-1 items-center">

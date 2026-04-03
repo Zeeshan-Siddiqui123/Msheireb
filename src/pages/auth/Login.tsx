@@ -5,8 +5,9 @@ import facebookIcon from '../../assets/svg/socials/facebook-logo.svg';
 import googleIcon from '../../assets/svg/socials/google-logo.svg';
 import appleIcon from '../../assets/svg/socials/apple-logo.svg';
 import BaseInput from '../../components/common/BaseInput';
-import AuthButton from '../../components/common/AuthButton';
+// import AuthButton from '../../components/common/AuthButton';
 import GlassButton from '../../components/common/GlassButton';
+import { Button } from '@heroui/react';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -168,13 +169,13 @@ const Login = () => {
         {/* Social Options */}
         <div className="flex gap-4 justify-between">
 
-          <GlassButton className="flex-1" size='large' buttonClassName='shadow-figma-drop bg-white !backdrop-blur-[40px]' onClick={() => { }} >
+          <GlassButton className="flex-1" size='small' buttonClassName='shadow-figma-drop bg-white py-3' onClick={() => { }} >
             <img src={facebookIcon} alt="Facebook" className=" object-contain" />
           </GlassButton>
-          <GlassButton className="flex-1" size='large' buttonClassName='shadow-figma-drop bg-white !backdrop-blur-[40px]' onClick={() => { }}>
+          <GlassButton className="flex-1" size='small' buttonClassName='shadow-figma-drop bg-white py-3' onClick={() => { }}>
             <img src={googleIcon} alt="Google" className=" object-contain" />
           </GlassButton>
-          <GlassButton className="flex-1" size='large' buttonClassName='shadow-figma-drop bg-white !backdrop-blur-[40px]' onClick={() => { }}>
+          <GlassButton className="flex-1" size='small' buttonClassName='shadow-figma-drop bg-white py-3' onClick={() => { }}>
             <img src={appleIcon} alt="Apple" className=" object-contain" />
           </GlassButton>
         </div>
