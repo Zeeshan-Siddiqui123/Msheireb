@@ -106,7 +106,7 @@ const MaintenanceRequestForm = ({ category }: MaintenanceRequestFormProps) => {
                                 "data-[focus-visible=true]:!outline-none",
                                 "!transition-colors",
                             ].join(" "),
-                            input: "text-white placeholder:text-white text-sm resize-none",
+                            input: "!text-white placeholder:text-white text-sm resize-none",
                         }}
                     />
                 </div>

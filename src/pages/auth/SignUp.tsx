@@ -16,6 +16,7 @@ const SignUp = () => {
     lastName: '',
     nationality: '',
     mobileCode: '',
+    mobileNumber: '',
     email: '',
     password: ''
   });
@@ -50,6 +51,7 @@ const SignUp = () => {
     if (!formData.lastName) newErrors.lastName = "Last name is required";
     if (!formData.nationality) newErrors.nationality = "Please select nationality";
     if (!formData.mobileCode) newErrors.mobileCode = "Required";
+    if (!formData.mobileNumber) newErrors.mobileNumber = "Required";
     if (!formData.email.includes('@')) newErrors.email = "Invalid email";
     if (formData.password.length < 8) newErrors.password = "Min. 8 characters";
 
@@ -109,18 +111,37 @@ const SignUp = () => {
               <SelectItem key="saudi" textValue="Saudi">Saudi</SelectItem>
               <SelectItem key="others" textValue="Others">Others</SelectItem>
             </BaseSelect>
+            <div className="flex gap-2">
+              {/* Mobile Code Select - smaller */}
+              <div className="flex-shrink-0 w-32">
+                <BaseSelect
+                  label="Code*"
+                  placeholder="Country code"
+                  error={errors.mobileCode}
+                  isShaking={isShaking.mobileCode}
+                  onSelectionChange={(keys) =>
+                    handleSelectChange('mobileCode', Array.from(keys)[0] as string)
+                  }
+                >
+                  <SelectItem key="+974" textValue="+974">+974</SelectItem>
+                  <SelectItem key="+966" textValue="+966">+966</SelectItem>
+                  <SelectItem key="+971" textValue="+971">+971</SelectItem>
+                </BaseSelect>
+              </div>
 
-            <BaseSelect
-              label="Mobile Code*"
-              placeholder="Country code"
-              error={errors.mobileCode}
-              isShaking={isShaking.mobileCode}
-              onSelectionChange={(keys) => handleSelectChange('mobileCode', Array.from(keys)[0] as string)}
-            >
-              <SelectItem key="+974" textValue="+974">+974 (Qatar)</SelectItem>
-              <SelectItem key="+966" textValue="+966">+966 (KSA)</SelectItem>
-              <SelectItem key="+971" textValue="+971">+971 (UAE)</SelectItem>
-            </BaseSelect>
+              {/* Mobile Number Input - takes remaining space */}
+              <div className="flex-1">
+                <BaseInput
+                  label="Mobile Number*"
+                  name="mobileNumber"
+                  placeholder="12345678"
+                  value={formData.mobileNumber}
+                  onChange={handleChange}
+                  error={errors.mobileNumber}
+                  isShaking={isShaking.mobileNumber}
+                />
+              </div>
+            </div>
 
             <BaseInput
               label="Email Id"
