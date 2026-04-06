@@ -1,14 +1,14 @@
-import PageHeader from '../../components/portals/residential/PageHeader';
+import PageHeader from '../../components/portals/commercial/PageHeader';
 import DashboardLayout from '../../components/common/DashboardLayout';
 import { LeftSidebarContent } from '../../components/common/LeftSidebarContent';
 import { RightSidebarContent } from '../../components/common/RightSidebarContent';
 import { useState } from 'react';
-import Pending from '../../components/portals/residential/Tabs/Visitor/Pending';
-import Active from '../../components/portals/residential/Tabs/Visitor/Active';
-import VisitorHistory from '../../components/portals/residential/Tabs/Visitor/VisitorHistory';
+import Pending from '../../components/portals/commercial/Tabs/Visitor/Pending';
+import Active from '../../components/portals/commercial/Tabs/Visitor/Active';
+import VisitorHistory from '../../components/portals/commercial/Tabs/Visitor/VisitorHistory';
 import GlassButton from '../../components/common/GlassButton';
 
-const Visitor = () => {
+const CommercialVisitor = () => {
     const [selectedTab, setSelectedTab] = useState("pending");
 
     // Tab content mapping
@@ -53,7 +53,7 @@ const Visitor = () => {
                 <PageHeader
                     title={currentContent.title}
                     description={currentContent.desc}
-                    backPath="/residential"
+                    backPath="/home"
                     showTabs={true}
                     tabs={homeServiceTabs.map(tab => ({
                         key: tab.key,
@@ -80,4 +80,4 @@ const Visitor = () => {
     );
 }
 
-export default Visitor;
+export default CommercialVisitor;

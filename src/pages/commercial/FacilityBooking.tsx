@@ -1,12 +1,12 @@
-import PageHeader from '../../components/portals/residential/PageHeader';
+import PageHeader from '../../components/portals/commercial/PageHeader';
 import DashboardLayout from '../../components/common/DashboardLayout';
 import { LeftSidebarContent } from '../../components/common/LeftSidebarContent';
 import { RightSidebarContent } from '../../components/common/RightSidebarContent';
 import { useState } from 'react';
 import BookingStepper from '../../components/common/BookingStepper';
-import Step1ServiceSelection from '../../components/portals/residential/FacilityBooking/Step1ServiceSelection';
-import Step2PersonalInfo from '../../components/portals/residential/FacilityBooking/Step2PersonalInfo';
-import Step3Confirmation from '../../components/portals/residential/FacilityBooking/Step3Confirmation';
+import Step1ServiceSelection from '../../components/portals/commercial/FacilityBooking/Step1ServiceSelection';
+import Step2PersonalInfo from '../../components/portals/commercial/FacilityBooking/Step2PersonalInfo';
+import Step3Confirmation from '../../components/portals/commercial/FacilityBooking/Step3Confirmation';
 
 const bookingSteps = [
   { key: "step-1" },
@@ -15,7 +15,7 @@ const bookingSteps = [
   { key: "step-4" },
 ];
 
-const FacilityBooking = () => {
+const CommercialFacilityBooking = () => {
   const [currentStep, setCurrentStep] = useState(0);
 
   const goNext = () => setCurrentStep((s) => Math.min(s + 1, bookingSteps.length - 1));
@@ -26,7 +26,7 @@ const FacilityBooking = () => {
       <section className="flex flex-col h-full w-full py-2">
         <PageHeader
           title="Multipurpose Room for Daily Rental"
-          backPath="/residential"
+          backPath="/home"
           showTabs={false}
         />
 
@@ -52,4 +52,4 @@ const FacilityBooking = () => {
   );
 };
 
-export default FacilityBooking;
+export default CommercialFacilityBooking;

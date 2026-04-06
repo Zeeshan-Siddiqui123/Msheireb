@@ -3,11 +3,11 @@ import DashboardLayout from '../../components/common/DashboardLayout';
 import { LeftSidebarContent } from '../../components/common/LeftSidebarContent';
 import { RightSidebarContent } from '../../components/common/RightSidebarContent';
 import { useState } from 'react';
-import Reciepts from '../../components/portals/residential/Tabs/Payments/Reciepts';
-import Upcoming from '../../components/portals/residential/Tabs/Payments/Upcoming';
-import History from '../../components/portals/residential/Tabs/Payments/History';
+import Reciepts from '../../components/portals/commercial/Tabs/Payments/Reciepts';
+import Upcoming from '../../components/portals/commercial/Tabs/Payments/Upcoming';
+import History from '../../components/portals/commercial/Tabs/Payments/History';
 
-const Payments = () => {
+const CommercialPayments = () => {
     const [selectedTab, setSelectedTab] = useState("reciepts");
 
     // Tab content mapping
@@ -52,7 +52,7 @@ const Payments = () => {
                 <PageHeader
                     title={currentContent.title}
                     description={currentContent.desc}
-                    backPath="/residential"
+                    backPath="/home"
                     showTabs={true}
                     tabs={homeServiceTabs.map(tab => ({
                         key: tab.key,
@@ -78,4 +78,4 @@ const Payments = () => {
     );
 }
 
-export default Payments;
+export default CommercialPayments;

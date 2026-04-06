@@ -1,5 +1,5 @@
-import StatCard from '../../components/portals/residential/StatCard'
-import DiscoverCard from '../../components/portals/residential/DiscoverCard'
+import StatCard from '../../components/portals/commercial/StatCard'
+import DiscoverCard from '../../components/portals/commercial/DiscoverCard'
 import DashboardLayout from '../../components/common/DashboardLayout'
 import tempIcon from '../../assets/svg/temp-icon.svg'
 import energyIcon from '../../assets/svg/energy-icon.svg'
@@ -9,7 +9,7 @@ import { LeftSidebarContent } from '../../components/common/LeftSidebarContent'
 import { RightSidebarContent } from '../../components/common/RightSidebarContent'
 import { routes } from '../../routes'
 
-export default function ResidentialHome() {
+export default function CommercialHome() {
 
   return (
     <DashboardLayout leftSidebar={<LeftSidebarContent />} rightSidebar={<RightSidebarContent />}>
@@ -42,10 +42,11 @@ export default function ResidentialHome() {
       <section>
         <h2 className="heading-medium-bold mb-4 ">Discover</h2>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-          {routes.residential.map((route, index) => route.bgimg && (
+          {routes.commercial.map((route, index) => route.bgimg && (
             <DiscoverCard key={index} bgUrl={route.bgimg} title={route.title} href={route.path} />
           ))}
-        </div>      </section>
+        </div>
+      </section>
     </DashboardLayout>
   )
 }

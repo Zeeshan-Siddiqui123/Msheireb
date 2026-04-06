@@ -53,7 +53,7 @@ const Login = () => {
 
     if (!isEmailInvalid && !isPasswordInvalid) {
       console.log("Success Submit:", formData);
-      navigate('/home');
+      navigate('/residential');
     }
   };
 
