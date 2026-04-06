@@ -26,29 +26,33 @@ const BaseSelect: React.FC<BaseSelectProps> = ({ label, children, className, err
             aria-label={label}
             variant="bordered"
             classNames={{
-              base: "w-full",
-              trigger: [
-                "h-[48px]",
-                "bg-transparent",
-                "backdrop-blur-lg",
-                "border-none",
-                "shadow-none",
-                "hover:!bg-transparent",
-                "data-[hover=true]:border-white/40",
-                "data-[focus=true]:border-white/40",
-                "transition-all",
-                "group",
-                className
-              ].join(" "),
-              // Forces the selected text AND placeholder to be white
-              value: "text-white !text-white font-sf-pro font-medium text-[12px] leading-[16px] tracking-[1px]",
-              // This targets the placeholder specifically
-              innerWrapper: "text-white text-[12px]",
-              // This targets the dropdown list container
-              popoverContent: "bg-[#1a1a1a]  text-white ",
-              // This targets the list items globally
-              listbox: "text-white font-sf-pro font-medium text-12 leading-16 tracking-tightest",
-            }}
+  base: "w-full",
+  trigger: [
+    "h-[48px]",
+    "bg-transparent",
+    "backdrop-blur-lg",
+    "border-none",
+    "shadow-none",
+    "hover:!bg-transparent",
+    "data-[hover=true]:border-white/40",
+    "data-[focus=true]:border-white/40",
+    "transition-all",
+    "group",
+    className
+  ].join(" "),
+
+  value: "text-white !text-white font-sf-pro font-medium text-[12px] leading-[16px] tracking-[1px]",
+  innerWrapper: "text-white text-[12px]",
+
+  // ✅ Transparent dropdown
+  popoverContent: "bg-transparent text-white rounded-xl backdrop-blur-xl border border-white/20 shadow-none",
+
+  // ✅ Optional: list items spacing
+  listbox: "text-white font-sf-pro font-medium text-12 leading-16 tracking-tightest bg-transparent",
+
+  // ✅ EXTRA (important for some cases)
+  listboxWrapper: "bg-transparent",
+}}
             // Ensures the text remains white when an item is selected
             renderValue={(items) => {
               return items.map((item) => (
@@ -84,7 +88,7 @@ const BaseSelect: React.FC<BaseSelectProps> = ({ label, children, className, err
 
       {error && (
         <div className="mt-[-6px] animate-fade-in">
-          <span className="text-red-500 text-small-regular  slide-in-from-top-1">
+          <span className="text-red-700 text-small-regular  slide-in-from-top-1">
             {error}
           </span>
         </div>

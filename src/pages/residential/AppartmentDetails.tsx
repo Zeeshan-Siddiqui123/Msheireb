@@ -46,7 +46,7 @@ export default function AppartmentDetails() {
 
   return (
     <DashboardLayout leftSidebar={<LeftSidebarContent />} rightSidebar={<RightSidebarContent />}>
-      <section className="flex flex-col h-full w-full max-w-3xl mx-auto px-4 py-2">
+      <section className="flex flex-col h-full w-full  py-2">
         {isRegistering ? (
           <RegisterVehicle onBack={() => setIsRegistering(false)} />
         ) : (

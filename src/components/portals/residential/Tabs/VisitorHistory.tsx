@@ -69,7 +69,7 @@ const VisitorHistory = () => {
 
           {/* Check Out Button */}
           <CardFooter className="mt-4">
-            <GlassButton className="w-full" buttonClassName="py-2">
+            <GlassButton className="w-full" buttonClassName="shadow-figma-drop" size="large">
               Check Out
             </GlassButton>
           </CardFooter>

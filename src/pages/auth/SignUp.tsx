@@ -174,7 +174,7 @@ const SignUp = () => {
               </GlassButton>
             </div>
 
-            <p className="text-center text-white/70 text-small-regular">
+            <p className="text-center text-white/70 mb-3 text-small-regular">
               Already have an account?{' '}
               <Link to="/login" className="text-white text-small-bold hover:underline">
                 Login

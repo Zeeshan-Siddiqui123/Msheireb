@@ -1,5 +1,5 @@
 import { Outlet } from 'react-router-dom';
-import bgAuth from '../../assets/BG-auth.webp';
+import bgAuth from '../../assets/Background.png';
 
 const AuthLayout = () => {
   return (
@@ -13,7 +13,7 @@ const AuthLayout = () => {
       }}
     >
       {/* Blurred dark overlay for design consistency */}
-      <div className="absolute inset-0 top-0  backdrop-blur-[8px]" />
+      {/* <div className="absolute inset-0 top-0  backdrop-blur-[8px]" /> */}
 
       {/* Decorative Signature Border (Framing Effect) */}
       <div className="absolute inset-0 rounded-sm pointer-events-none z-0" />
