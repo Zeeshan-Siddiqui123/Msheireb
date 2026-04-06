@@ -91,6 +91,6 @@ const BookingCardContent: React.FC<BookingCardProps> = ({
   );
 };
 
-const BookingCard = withCardContainer(BookingCardContent);
+const BookingCard = BookingCardContent;
 
 export default BookingCard;

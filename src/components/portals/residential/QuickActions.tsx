@@ -21,7 +21,7 @@ export default function QuickActions({ actions }: QuickActionsProps) {
           <button
             key={index}
             onClick={action.onClick}
-            className="flex flex-col items-center justify-center gap-4 text-white hover:text-white group transition-all duration-300"
+            className="flex flex-col items-center cursor-pointer justify-center gap-4 text-white hover:text-white group transition-all duration-300"
           >
             <div className="text-white drop-shadow-md">
               {action.icon}

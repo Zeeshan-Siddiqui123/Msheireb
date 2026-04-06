@@ -24,11 +24,25 @@ interface HistoryAccordianProps {
 const HistoryAccordian = ({ histories, defaultOpenId = null, openItemId, onOpenItemIdChange }: HistoryAccordianProps) => {
     const accordianItems: AccordianItem[] = histories.map((history) => ({
         id: history.id,
-        title: history.title,
-        subtitle: `Receipts #${history.historyCode}`,
+        title: (
+            <span className="body-regular font-bold text-white">
+                {history.title}
+            </span>
+        ),
+
+        subtitle: (
+            <span className="text-small-regular font-semibold text-white">
+                Receipt #{history.historyCode}
+            </span>
+        ),
+
+        icon: (
+            <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-white/10">
+                <img src={History} alt="history" className="w-6 h-6" />
+            </div>
+        ),
         date: history.paidDate || history.dueDate,
         status: "Completed",
-        icon: <img src={History} alt="history" className="w-12 h-12" />,
         body: (
             <div>
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-4">

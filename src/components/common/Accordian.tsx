@@ -4,12 +4,12 @@ import QuickActionsWrapper from "./QuickActionsWrapper";
 
 export interface AccordianItem {
     id: string;
-    title: string;
-    subtitle?: string;
+    title?: React.ReactNode | string;
+    subtitle?: React.ReactNode | string;
     date?: string;
     status?: string;
     value?: string;
-    icon?: React.ReactNode;
+    icon?: React.ReactNode | string;
     body: React.ReactNode;
 }
 
@@ -61,7 +61,7 @@ const Accordian: React.FC<AccordianProps> = ({ items, defaultOpenId = null, open
                     >
                         <AccordionItem
                             key={item.id}
-                            textValue={item.title}
+                            textValue={typeof item.title === "string" ? item.title : ""}
                             classNames={{
                                 base: "p-0 m-0",
                                 content: "p-0 m-0",
@@ -80,7 +80,7 @@ const Accordian: React.FC<AccordianProps> = ({ items, defaultOpenId = null, open
                                     {item.value && (
                                         <span className="text-regular-bold text-white">{item.value}</span>
                                     )}
-                                    
+
                                 </div>
                             }
                             indicator={({ isOpen }) =>

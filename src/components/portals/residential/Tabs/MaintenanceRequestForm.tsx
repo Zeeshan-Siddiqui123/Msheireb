@@ -8,12 +8,12 @@ interface MaintenanceRequestFormProps {
 
 const MaintenanceRequestForm = ({ category }: MaintenanceRequestFormProps) => {
     return (
-        <QuickActionsWrapper className="w-full gap-5 bg-transparent">
+        <QuickActionsWrapper className="w-full gap-5 bg-transparent shadow-figma-drop">
             <div className="w-full space-y-5">
 
                 {/* Category */}
                 <div className="space-y-1.5">
-                    <label className="text-white text-xs font-semibold tracking-wide ml-0.5">
+                    <label className="text-small-regular ml-0.5">
                         Category
                     </label>
                     <Select
@@ -48,7 +48,7 @@ const MaintenanceRequestForm = ({ category }: MaintenanceRequestFormProps) => {
 
                 {/* Sub Category */}
                 <div className="space-y-1.5">
-                    <label className="text-white text-xs font-semibold tracking-wide ml-0.5 flex items-center gap-0.5">
+                    <label className="text-small-regular ml-0.5 flex items-center gap-0.5">
                         Sub Category<span className="text-red-400">*</span>
                     </label>
                     <Select
@@ -87,7 +87,7 @@ const MaintenanceRequestForm = ({ category }: MaintenanceRequestFormProps) => {
 
                 {/* Description */}
                 <div className="space-y-1.5">
-                    <label className="text-white text-xs font-semibold tracking-wide ml-0.5 flex items-center gap-0.5">
+                    <label className="text-small-regular ml-0.5 flex items-center gap-0.5">
                         Description (Optional)<span className="text-red-400">*</span>
                     </label>
                     <Textarea
@@ -113,7 +113,7 @@ const MaintenanceRequestForm = ({ category }: MaintenanceRequestFormProps) => {
 
                 {/* Upload Image */}
                 <div className="space-y-1.5 pb-2">
-                    <label className="text-white text-xs font-semibold tracking-wide ml-0.5">
+                    <label className="text-small-regular ml-0.5">
                         Upload Image
                     </label>
                     <div

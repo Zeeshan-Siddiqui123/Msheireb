@@ -91,6 +91,35 @@
   animation: shimmer 8s infinite;
 }
 
+.animate-image-glow {
+  animation: image-glow 2s infinite;
+}
+
+@keyframes pulse-hover {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+}
+
+.pulse-on-hover {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.group:hover .pulse-on-hover {
+  animation: pulse-hover 0.8s infinite;
+}
+
 @keyframes spin {
   to {
     transform: rotate(1turn);
@@ -208,6 +237,7 @@ select:-moz-autofill {
 @layer base {
   body {
     @apply antialiased subpixel-antialiased font-sf-pro bg-no-repeat bg-cover bg-top min-h-full;
+    /* background-image: url('./assets/BG.png'); */
   }
 
   button,
@@ -221,6 +251,10 @@ select:-moz-autofill {
 @layer components {
   .text-inter-xs {
     @apply font-inter font-regular text-10 leading-14;
+  }
+
+  .text-inter-sm {
+    @apply font-inter font-medium text-12 leading-16;
   }
 
   .text-arial-small {
@@ -241,6 +275,10 @@ select:-moz-autofill {
 
   .heading-medium-semibold {
     @apply font-sf-pro font-semibold text-16 leading-20 tracking-tightest;
+  }
+
+  .heading-medium-regular {
+    @apply font-sf-pro font-regular text-16 leading-20 tracking-tightest;
   }
 
   .label-bold-center {

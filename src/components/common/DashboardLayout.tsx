@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
 import Navigation from './Navigation';
+import BG from '../../assets/BG.png';
 
 export interface DashboardLayoutProps {
   leftSidebar: ReactNode;
@@ -9,7 +10,14 @@ export interface DashboardLayoutProps {
 
 export default function DashboardLayout({ leftSidebar, children, rightSidebar }: DashboardLayoutProps) {
   return (
-    <div className="min-h-screen text-white pb-12 overflow-x-hidden">
+    <div className="min-h-screen text-white pb-12 overflow-x-hidden"
+      style={{
+        backgroundImage: `url(${BG})`,
+        backgroundSize: "cover",
+        backgroundPosition: "top",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
       <Navigation />
 
       <main className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 pt-8">

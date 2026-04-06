@@ -40,7 +40,7 @@ const Step1ServiceSelection = ({ onNext, onCancel }: Step1Props) => {
     <BaseCard hideBorder={false} className="w-full">
       {/* ── HEADER ── */}
       <CardHeader className="pb-4">
-        <h2 className="text-heading-primary text-white text-center w-full">
+        <h2 className=" text-white heading-medium-regular text-center w-full">
           Book Multipurpose Room
         </h2>
       </CardHeader>
@@ -56,7 +56,7 @@ const Step1ServiceSelection = ({ onNext, onCancel }: Step1Props) => {
             classNames={selectClassNames}
             renderValue={(items) =>
               items.map((item) => (
-                <div key={item.key} className="text-white text-sm">{item.textValue}</div>
+                <div key={item.key} className="text-white text-small-regular">{item.textValue}</div>
               ))
             }
           >
@@ -118,9 +118,8 @@ const Step1ServiceSelection = ({ onNext, onCancel }: Step1Props) => {
               onClick={() => setSelectedOption(index)}
               className="flex items-center gap-3 w-full text-left"
             >
-              <div className={`w-4 h-4 rounded-full border-2 shrink-0 flex items-center justify-center transition-all ${
-                selectedOption === index ? "border-white" : "border-white/40"
-              }`}>
+              <div className={`w-4 h-4 rounded-full border-2 shrink-0 flex items-center justify-center transition-all ${selectedOption === index ? "border-white" : "border-white/40"
+                }`}>
                 {selectedOption === index && (
                   <div className="w-2 h-2 rounded-full bg-white" />
                 )}
@@ -136,7 +135,7 @@ const Step1ServiceSelection = ({ onNext, onCancel }: Step1Props) => {
         {/* Service Delivery */}
         <div className="space-y-3">
           <p className="text-small-regular text-white">Service Delivery</p>
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3 w-1/2">
             <label className="text-small-regular text-white w-20 shrink-0">Date*</label>
             <DatePicker
               defaultValue={parseDate("2026-02-15")}
@@ -144,16 +143,27 @@ const Step1ServiceSelection = ({ onNext, onCancel }: Step1Props) => {
                 inputWrapper: [
                   "bg-white/10 border border-white/40 rounded-lg h-8",
                   "hover:!bg-white/15",
-                  "data-[focus-within=true]:!bg-white/10",
+                  "data-[focus-within=true]:!bg-transparent",
                   "data-[focus-within=true]:!border-white/60",
                   "shadow-none",
                 ].join(" "),
-                input: "text-white text-xs",
-                selectorButton: "text-white/60 !w-6 !h-6",
+
+                /* 🔥 MAIN TEXT */
+                input: "!text-white text-xs placeholder:text-white/60",
+
+                /* 🔥 LABELS / SEGMENTS */
+                segment: "!text-white",
+
+                /* 🔥 ICON */
+                selectorButton: "!text-white !w-6 !h-6",
+
+                /* 🔥 POPUP CALENDAR */
+                popoverContent: "bg-black backdrop-blur-md !text-white",
+                calendar: "!text-white",
               }}
             />
           </div>
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3 w-1/2 h-full">
             <label className="text-small-regular text-white w-20 shrink-0">Daily Period*</label>
             <Select
               defaultSelectedKeys={["morning"]}
@@ -165,9 +175,10 @@ const Step1ServiceSelection = ({ onNext, onCancel }: Step1Props) => {
                   "!min-h-8 !h-8 py-0",
                 ].join(" "),
               }}
+              size="lg"
               renderValue={(items) =>
                 items.map((item) => (
-                  <div key={item.key} className="text-white text-xs">{item.textValue}</div>
+                  <div key={item.key} className="text-white text-small-regular">{item.textValue}</div>
                 ))
               }
             >
@@ -186,19 +197,26 @@ const Step1ServiceSelection = ({ onNext, onCancel }: Step1Props) => {
           isSelected={accepted}
           onValueChange={setAccepted}
           classNames={{
-            label: "text-small-regular text-white",
-            wrapper: "border-white/50 before:border-white/50 after:bg-white/80",
+            label: "text-[14px] leading-wider leading-[16px] font-sans-pro text-white", // ✅ your class applied
+
+            wrapper: `
+      border-white/50
+      data-[selected=true]:bg-blue-500
+      data-[selected=true]:border-blue-500
+    `,
+
+            icon: "text-white", // check icon color
           }}
         >
           Accept Terms and Conditions
         </Checkbox>
 
         {/* Buttons */}
-        <div className="flex items-center gap-3 justify-center w-full pt-1">
-          <GlassButton className="w-32" buttonClassName="py-2.5" onClick={onCancel}>
+        <div className="flex items-center gap-12 justify-center w-full pt-12">
+          <GlassButton className="w-32" buttonClassName="py-2.5 shadow-figma-drop" onClick={onCancel}>
             Cancel
           </GlassButton>
-          <GlassButton className="w-32" buttonClassName="py-2.5" onClick={onNext}>
+          <GlassButton className="w-32" buttonClassName="py-2.5 shadow-figma-drop" onClick={onNext}>
             Next
           </GlassButton>
         </div>

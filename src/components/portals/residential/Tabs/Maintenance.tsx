@@ -13,13 +13,13 @@ interface MaintenanceProps {
     setSelectedCategory: (value: string) => void;
 }
 
-const Maintenance = ({ 
-    showServices, 
-    setShowServices, 
-    showForm, 
-    setShowForm, 
-    selectedCategory, 
-    setSelectedCategory 
+const Maintenance = ({
+    showServices,
+    setShowServices,
+    showForm,
+    setShowForm,
+    selectedCategory,
+    setSelectedCategory
 }: MaintenanceProps) => {
 
     const handleCategorySelect = (category: string) => {
@@ -28,17 +28,21 @@ const Maintenance = ({
     };
 
     return (
-        <QuickActionsWrapper 
+        <QuickActionsWrapper
             hideBorder={showServices}
             className="flex items-center justify-center flex-col gap-6 p-6"
         >
 
-            
+
             {!showServices && (
-                <div className="flex items-center justify-center flex-col gap-4">
+                <div className="flex items-center justify-center flex-col gap-4 w-full">
                     {/* The heading and para are now in the parent HomeServices.tsx */}
+                    <h1 className="heading-medium-semibold font-bold">Need Maintenance?</h1>
+                    <p className="body-regular font-base">Submit a maintenance request and track it through completion.</p>
                     <GlassButton
-                        className="py-2 px-6 rounded-full"
+                        className=" rounded-full"
+                        buttonClassName="w-full shadow-figma-drop"
+                        size="large"
                         onClick={() => setShowServices(true)}
                     >
                         + Create New Request
@@ -46,13 +50,13 @@ const Maintenance = ({
                 </div>
             )}
 
-            
+
             {showServices && !showForm && (
                 <MaintenanceServices onCategorySelect={handleCategorySelect} />
             )}
 
             {showForm && (
-                <MaintenanceRequestForm category={selectedCategory}  />
+                <MaintenanceRequestForm category={selectedCategory} />
             )}
 
         </QuickActionsWrapper>

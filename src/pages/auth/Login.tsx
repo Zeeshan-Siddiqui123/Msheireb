@@ -137,6 +137,7 @@ const Login = () => {
             onClick={handleSubmit}
             buttonClassName="w-full shadow-figma-drop"
             size="large"
+
           >
             Login
           </GlassButton>

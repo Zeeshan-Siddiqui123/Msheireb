@@ -16,30 +16,30 @@ const services = [
 const MaintenanceServices = ({ onCategorySelect }: { onCategorySelect: (category: string) => void }) => {
   return (
     <div className="w-full grid grid-cols-2 gap-4">
-      
+
       {services.map((item, index) => (
-        <QuickActionsWrapper className="w-full" >
-        <div
-          key={index}
-          onClick={() => onCategorySelect(item.title)}
-          className="
+        <QuickActionsWrapper className="w-full !p-2" >
+          <div
+            key={index}
+            onClick={() => onCategorySelect(item.title)}
+            className="
             flex items-center gap-4             
             transition-all duration-300
             cursor-pointer
             flex-col md:flex-row lg:flex-row
             hover:scale-[1.02] active:scale-95
           "
-        >
-          <img
-            src={item.img}
-            alt={item.title}
-            className="w-16 h-16 rounded-lg object-cover"
-          />
+          >
+            <img
+              src={item.img}
+              alt={item.title}
+              className="w-16 h-16 rounded-lg object-cover"
+            />
 
-          <p className="text-white text-center lg:text-start text-sm md:text-base font-medium">
-            {item.title}
-          </p>
-        </div>
+            <p className="body-regular ">
+              {item.title}
+            </p>
+          </div>
         </QuickActionsWrapper>
       ))}
     </div>
