@@ -41,10 +41,10 @@ const Success = () => {
           {t('registrationSuccessful')}
         </div>
         {/* Broken Border Segments with blurry/shadow effect */}
-        <div className="absolute top-0 left-5 right-8 h-[1px] bg-green/20 shadow-[0_0_8px_rgba(40,128,111,0.5)]" />
-        <div className="absolute top-8 bottom-5 right-0 w-[1px] bg-green/20 shadow-[0_0_8px_rgba(40,128,111,0.5)]" />
-        <div className="absolute bottom-0 left-8 right-5 h-[1px] bg-green/20 shadow-[0_0_8px_rgba(40,128,111,0.5)]" />
-        <div className="absolute top-5 bottom-8 left-0 w-[1px] bg-green/20 shadow-[0_0_8px_rgba(40,128,111,0.5)]" />
+        <div className="absolute top-0 left-5 right-8 h-px bg-green/20 shadow-[0_0_8px_rgba(40,128,111,0.5)]" />
+        <div className="absolute top-8 bottom-5 right-0 w-px bg-green/20 shadow-[0_0_8px_rgba(40,128,111,0.5)]" />
+        <div className="absolute bottom-0 left-8 right-5 h-px bg-green/20 shadow-[0_0_8px_rgba(40,128,111,0.5)]" />
+        <div className="absolute top-5 bottom-8 left-0 w-px bg-green/20 shadow-[0_0_8px_rgba(40,128,111,0.5)]" />
 
         <div className="absolute top-0 left-0 w-5 h-5 border-t border-l border-green/40 rounded-tl-2xl pointer-events-none" />
         <div className="absolute bottom-0 right-0 w-5 h-5 border-b border-r border-green/40 rounded-br-2xl pointer-events-none" />

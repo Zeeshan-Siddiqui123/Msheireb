@@ -115,7 +115,7 @@ const SignUp = () => {
             </BaseSelect>
             <div className="flex gap-2">
               {/* Mobile Code Select - smaller */}
-              <div className="flex-shrink-0 w-32">
+              <div className="shrink-0 w-32">
                 <BaseSelect
                   label={t('codeLabel')}
                   placeholder={t('countryCode')}
