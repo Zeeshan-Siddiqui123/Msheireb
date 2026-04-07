@@ -60,10 +60,10 @@ export default function CommercialHomeServices() {
       } else if (showServices) {
         setShowServices(false);
       } else {
-        navigate('/home');
+        navigate('/commercial');
       }
     } else {
-      navigate('/home');
+      navigate('/commercial');
     }
   };
 

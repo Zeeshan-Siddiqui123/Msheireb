@@ -19,7 +19,7 @@ interface PageHeaderProps {
 const PageHeader: React.FC<PageHeaderProps> = ({
     title,
     description,
-    backPath = '/residential',
+    backPath = '/commercial',
     onBack,
     className = "",
     showTabs = false,

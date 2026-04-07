@@ -52,7 +52,7 @@ const CommercialPayments = () => {
                 <PageHeader
                     title={currentContent.title}
                     description={currentContent.desc}
-                    backPath="/home"
+                    backPath="/commercial"
                     showTabs={true}
                     tabs={homeServiceTabs.map(tab => ({
                         key: tab.key,

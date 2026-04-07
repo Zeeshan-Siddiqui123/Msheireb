@@ -1,18 +1,18 @@
-import AppartmentDetails from "./pages/residential/AppartmentDetails";
-import FacilityBooking from "./pages/residential/FacilityBooking";
-import HomeServices from "./pages/residential/HomeServices";
-import Payments from "./pages/residential/Payments";
-import ResidentialHome from "./pages/residential/ResidentialHome";
-import Visitor from "./pages/residential/Visitor";
-import CarWashDetail from "./pages/residential/CarWashDetail";
-import CommercialHome from "./pages/commercial/CommercialHome";
-import CommercialAppartmentDetails from "./pages/commercial/AppartmentDetails";
-import CommercialFacilityBooking from "./pages/commercial/FacilityBooking";
-import CommercialHomeServices from "./pages/commercial/HomeServices";
-import CommercialPayments from "./pages/commercial/Payments";
-import CommercialVisitor from "./pages/commercial/Visitor";
-import Offers from "./pages/residential/Offers";
-import CommercialOffers from "./pages/commercial/Offers";
+ import AppartmentDetails from "./pages/residential/AppartmentDetails";
+ import FacilityBooking from "./pages/residential/FacilityBooking";
+ import HomeServices from "./pages/residential/HomeServices";
+ import Payments from "./pages/residential/Payments";
+ import ResidentialHome from "./pages/residential/ResidentialHome";
+ import Visitor from "./pages/residential/Visitor";
+ import CarWashDetail from "./pages/residential/CarWashDetail";
+ import CommercialHome from "./pages/commercial/CommercialHome";
+ import CommercialAppartmentDetails from "./pages/commercial/AppartmentDetails";
+ import CommercialFacilityBooking from "./pages/commercial/FacilityBooking";
+ import CommercialHomeServices from "./pages/commercial/HomeServices";
+ import CommercialPayments from "./pages/commercial/Payments";
+ import CommercialVisitor from "./pages/commercial/Visitor";
+ import Offers from "./pages/residential/Offers";
+ import CommercialOffers from "./pages/commercial/Offers";
 
 export const routes = {
     residential: [

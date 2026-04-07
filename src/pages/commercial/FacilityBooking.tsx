@@ -26,7 +26,7 @@ const CommercialFacilityBooking = () => {
       <section className="flex flex-col h-full w-full py-2">
         <PageHeader
           title="Multipurpose Room for Daily Rental"
-          backPath="/home"
+          backPath="/commercial"
           showTabs={false}
         />
 
