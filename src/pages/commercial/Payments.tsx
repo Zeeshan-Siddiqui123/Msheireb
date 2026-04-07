@@ -3,11 +3,11 @@ import DashboardLayout from '../../components/common/DashboardLayout';
 import { LeftSidebarContent } from '../../components/common/LeftSidebarContent';
 import { RightSidebarContent } from '../../components/common/RightSidebarContent';
 import { useState } from 'react';
-import Reciepts from '../../components/portals/residential/Tabs/Payments/Reciepts';
-import Upcoming from '../../components/portals/residential/Tabs/Payments/Upcoming';
-import History from '../../components/portals/residential/Tabs/Payments/History';
+import Reciepts from '../../components/portals/commercial/Tabs/Payments/Reciepts';
+import Upcoming from '../../components/portals/commercial/Tabs/Payments/Upcoming';
+import History from '../../components/portals/commercial/Tabs/Payments/History';
 
-const Payments = () => {
+const CommercialPayments = () => {
     const [selectedTab, setSelectedTab] = useState("reciepts");
 
     // Tab content mapping
@@ -52,7 +52,7 @@ const Payments = () => {
                 <PageHeader
                     title={currentContent.title}
                     description={currentContent.desc}
-                    backPath="/residential"
+                    backPath="/commercial"
                     showTabs={true}
                     tabs={homeServiceTabs.map(tab => ({
                         key: tab.key,
@@ -63,8 +63,8 @@ const Payments = () => {
 
                     belowTabsContent={
                         <div className='flex -mt-3 flex-col items-center justify-center border gap-2 border-white w-full py-3 rounded-xl'>
-                            <p className='body-regular'>Outstanding Amount</p>
-                            <p className="heading-medium-semibold text-18">QAR 2,500</p>
+                            <p>Outstanding Amount</p>
+                            <p className="heading-medium-bold">QAR 2,500</p>
                         </div>
                     }
                 />
@@ -78,4 +78,4 @@ const Payments = () => {
     );
 }
 
-export default Payments;
+export default CommercialPayments;

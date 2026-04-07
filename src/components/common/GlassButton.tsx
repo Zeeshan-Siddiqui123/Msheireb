@@ -1,6 +1,6 @@
 import React from "react";
-import OutlineWrapper from "./OutlineWrapper";
 import { Button } from "@heroui/react";
+import OutlineWrapper from "./OutlineWrapper";
 
 interface GlassButtonProps {
   children: React.ReactNode;

@@ -1,5 +1,5 @@
 import { Outlet } from 'react-router-dom';
-import bgAuth from '../../assets/BG-auth.webp';
+import bgAuth from '../../assets/Background.png';
 import { useTranslation } from 'react-i18next';
 
 const AuthLayout = () => {

@@ -1,14 +1,14 @@
-import PageHeader from '../../components/portals/residential/PageHeader';
+import PageHeader from '../../components/portals/commercial/PageHeader';
 import { useNavigate } from 'react-router-dom';
 import DashboardLayout from '../../components/common/DashboardLayout';
-import Services from '../../components/portals/residential/Tabs/HomeServices/Services';
-import Maintenance from '../../components/portals/residential/Tabs/HomeServices/Maintenance';
-import Bookings from '../../components/portals/residential/Tabs/HomeServices/Bookings';
+import Services from '../../components/portals/commercial/Tabs/HomeServices/Services';
+import Maintenance from '../../components/portals/commercial/Tabs/HomeServices/Maintenance';
+import Bookings from '../../components/portals/commercial/Tabs/HomeServices/Bookings';
 import { LeftSidebarContent } from '../../components/common/LeftSidebarContent';
 import { RightSidebarContent } from '../../components/common/RightSidebarContent';
 import { useState } from 'react';
 
-export default function HomeServices() {
+export default function CommercialHomeServices() {
   const navigate = useNavigate();
 
   // Tabs state
@@ -60,10 +60,10 @@ export default function HomeServices() {
       } else if (showServices) {
         setShowServices(false);
       } else {
-        navigate('/residential');
+        navigate('/commercial');
       }
     } else {
-      navigate('/residential');
+      navigate('/commercial');
     }
   };
 

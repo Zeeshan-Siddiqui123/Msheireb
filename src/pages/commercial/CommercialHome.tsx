@@ -1,11 +1,7 @@
-// import ProfileCard from '../../components/portals/residential/ProfileCard'
-import StatCard from '../../components/portals/residential/StatCard'
-import DiscoverCard from '../../components/portals/residential/DiscoverCard'
-// import QuickActions from '../../components/portals/residential/QuickActions'
+import StatCard from '../../components/portals/commercial/StatCard'
+import DiscoverCard from '../../components/portals/commercial/DiscoverCard'
 import DashboardLayout from '../../components/common/DashboardLayout'
-
-// Custom SVG Icons
-import tempIcon from '../../assets/svg/temperature.svg'
+import tempIcon from '../../assets/svg/temp-icon.svg'
 import energyIcon from '../../assets/svg/energy-icon.svg'
 import stepsIcon from '../../assets/svg/steps-icon.svg'
 import awardIcon from '../../assets/svg/award-icon.svg'
@@ -13,15 +9,7 @@ import { LeftSidebarContent } from '../../components/common/LeftSidebarContent'
 import { RightSidebarContent } from '../../components/common/RightSidebarContent'
 import { routes } from '../../routes'
 
-export default function ResidentialHome() {
-  const bgImg1 = '/src/assets/discover_1.jpg';
-  const bgImg2 = '/src/assets/discover_2.jpg';
-  const bgImg3 = '/src/assets/discover_3.jpg';
-  const bgImg4 = '/src/assets/discover_4.jpg';
-  const bgImg5 = '/src/assets/discover_5.jpg';
-  const bgImg6 = '/src/assets/discover_6.jpg';
-
-
+export default function CommercialHome() {
 
   return (
     <DashboardLayout leftSidebar={<LeftSidebarContent />} rightSidebar={<RightSidebarContent />}>
@@ -54,10 +42,11 @@ export default function ResidentialHome() {
       <section>
         <h2 className="heading-medium-bold mb-4 ">Discover</h2>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-          {routes.residential.map((route, index) => route.bgimg && (
+          {routes.commercial.map((route, index) => route.bgimg && (
             <DiscoverCard key={index} bgUrl={route.bgimg} title={route.title} href={route.path} />
           ))}
-        </div>      </section>
+        </div>
+      </section>
     </DashboardLayout>
   )
 }

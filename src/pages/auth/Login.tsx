@@ -56,18 +56,18 @@ const Login = () => {
 
     if (!isEmailInvalid && !isPasswordInvalid) {
       console.log("Success Submit:", formData);
-      navigate('/home');
+      navigate('/residential');
     }
   };
 
   return (
-    <div className="w-full h-full flex flex-col items-center pt-4 sm:pt-10">
+    <div className="w-full h-full flex flex-col items-center pt-6">
       {/* Header Section (PNG Logo) */}
       <div className="animate-fade-in text-center mb-8">
         <p className="display-large-uppercase text-white mb-[16px] text-center">
           {t('welcomeTo')}
         </p>
-        <img src={logo} alt="Msheireb Logo" className="w-fit h-auto object-contain mx-auto" />
+        <img src={logo} alt="Msheireb Logo" className="w-fit h-[50px] max-xl:h-auto object-contain mx-auto" />
       </div>
 
 

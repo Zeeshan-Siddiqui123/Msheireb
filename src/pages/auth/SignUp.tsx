@@ -64,7 +64,7 @@ const SignUp = () => {
 
     if (Object.keys(newErrors).length === 0) {
       console.log("Registering...", formData);
-      navigate('/home');
+      navigate('/residential');
     }
   };
 

@@ -1,23 +1,15 @@
-import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import DashboardLayout from '../../components/common/DashboardLayout';
-// import ProfileCard from '../../components/portals/residential/ProfileCard';
-// import QuickActions from '../../components/portals/residential/QuickActions';
-// import Space from '../../components/portals/residential/Tabs/Space';
-// import Lease from '../../components/portals/residential/Tabs/Lease';
-// import Parking from '../../components/portals/residential/Tabs/Parking';
-// import Storage from '../../components/portals/residential/Tabs/Storage';
 import RegisterVehicle from './RegisterVehicle';
 import { RightSidebarContent } from '../../components/common/RightSidebarContent';
 import { LeftSidebarContent } from '../../components/common/LeftSidebarContent';
-import PageHeader from '../../components/portals/residential/PageHeader';
-import Space from '../../components/portals/residential/Tabs/AppartmetDetails/Space';
-import Lease from '../../components/portals/residential/Tabs/AppartmetDetails/Lease';
-import Parking from '../../components/portals/residential/Tabs/AppartmetDetails/Parking';
-import Storage from '../../components/portals/residential/Tabs/AppartmetDetails/Storage';
+import PageHeader from '../../components/portals/commercial/PageHeader';
+import Space from '../../components/portals/commercial/Tabs/AppartmetDetails/Space';
+import Lease from '../../components/portals/commercial/Tabs/AppartmetDetails/Lease';
+import Parking from '../../components/portals/commercial/Tabs/AppartmetDetails/Parking';
+import CarLogs from '../../components/portals/commercial/Tabs/AppartmetDetails/CarLogs';
 
-export default function AppartmentDetails() {
-  // const navigate = useNavigate();
+export default function CommercialAppartmentDetails() {
   const [isRegistering, setIsRegistering] = useState(false);
   const [activeTab, setActiveTab] = useState<string>("space");
 
@@ -38,9 +30,9 @@ export default function AppartmentDetails() {
       content: <Parking onRegister={() => setIsRegistering(true)} />
     },
     {
-      key: "storage",
-      title: "Storage",
-      content: <Storage />
+      key: "logs",
+      title: "Car Logs",
+      content: <CarLogs />
     }
   ];
 
@@ -56,7 +48,7 @@ export default function AppartmentDetails() {
             <PageHeader
               title={"Apartment Details"}
               description={"Your apartment information and documents"}
-              backPath='/residential'
+              backPath='/commercial'
               showTabs={!isRegistering}
               tabs={apartmentTabs}
               selectedTab={activeTab}
