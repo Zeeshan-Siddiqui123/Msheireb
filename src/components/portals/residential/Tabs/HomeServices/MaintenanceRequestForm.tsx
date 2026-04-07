@@ -131,11 +131,7 @@ const MaintenanceRequestForm = ({ category }: MaintenanceRequestFormProps) => {
                                 "group-hover:bg-white/15 transition-colors duration-200",
                             ].join(" ")}
                         >
-                            <CameraIcon
-                                size={26}
-                                strokeWidth={1.25}
-                                className="text-white"
-                            />
+                            <img src="/src/assets/svg/camera.svg" alt="Camera" className='' />
                         </div>
                         <span className="text-white text-sm font-medium group-hover:text-white/80 transition-colors duration-200">
                             Upload image

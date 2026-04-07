@@ -2,7 +2,7 @@ import { Download } from "lucide-react";
 import Accordian from "../../../common/Accordian";
 import type { AccordianItem } from "../../../common/Accordian";
 import GlassButton from "../../../common/GlassButton";
-import History from "/src/assets/reciept.png";
+import History from "/src/assets/svg/reciept.svg";
 
 export interface HistoryItem {
     id: string;

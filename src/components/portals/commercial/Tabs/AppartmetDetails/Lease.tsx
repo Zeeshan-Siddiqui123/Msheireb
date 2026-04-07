@@ -77,7 +77,7 @@ const Lease = () => {
                 <h2 className="text-[17px] font-bold text-white mb-4">Documents & Contracts</h2>
                 <hr className="border-white/30 mb-5" />
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {documents.map((doc, idx) => (
                         <div key={idx} className="flex relative items-start justify-between p-4 border border-white/30 rounded-[12px] bg-white/[0.08] hover:bg-white/[0.12] transition-colors cursor-pointer group shadow-sm">
                             <div className="flex items-center gap-4">
