@@ -3,8 +3,10 @@ import { useNavigate } from 'react-router-dom';
 import BaseInput from '../../components/common/BaseInput';
 import GlassButton from '../../components/common/GlassButton';
 import AuthHeader from '../../components/common/AuthHeader';
+import { useTranslation } from 'react-i18next';
 
 const ForgotPassword = () => {
+  const { t } = useTranslation('auth');
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [error, setError] = useState('');
@@ -25,7 +27,7 @@ const ForgotPassword = () => {
     const isValid = emailRegex.test(email);
 
     if (!isValid) {
-      setError("Please enter a valid email address");
+      setError(t('errorInvalidEmail'));
       triggerShake();
       return;
     }
@@ -44,27 +46,27 @@ const ForgotPassword = () => {
   return (
     <div className="w-full  items-center pt-4 sm:pt-10 max-w-sm mx-auto">
       <div className="w-full max-w-sm animate-fade-in">
-        <AuthHeader title="Forgot Password" onBack={() => navigate('/login')} />
+        <AuthHeader title={t('forgotPasswordTitle')} onBack={() => navigate('/login')} />
       </div>
 
       {/* Main Content */}
       <div className="w-full flex flex-col gap-8 ">
         {/* Instructions */}
         <div className="text-center flex flex-col gap-2">
-          <p className="text-white text-small-medium">Please enter your email ID</p>
+          <p className="text-white text-small-medium">{t('enterEmailInstruction')}</p>
           <p className="text-white text-small-regular px-4 leading-relaxed">
-            We will send a verification code to your registered email ID
+            {t('emailVerificationDesc')}
           </p>
         </div>
 
         {/* Form */}
         <form onSubmit={handleSubmit} className="flex flex-col gap-6 animate-fade-up">
           <BaseInput
-            label="Email Id"
+            label={t('emailId')}
             type="email"
             value={email}
             onChange={handleEmailChange}
-            placeholder="Enter your email id"
+            placeholder={t('enterEmailId')}
             error={error}
             isShaking={isShaking}
             icon={
@@ -81,7 +83,7 @@ const ForgotPassword = () => {
             className="w-full mt-2"
             buttonClassName="w-full shadow-figma-drop"
           >
-            Continue
+            {t('continue')}
           </GlassButton>
         </form>
 

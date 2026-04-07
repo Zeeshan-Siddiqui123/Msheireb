@@ -5,8 +5,10 @@ import BaseSelect from '../../components/common/BaseSelect';
 import GlassButton from '../../components/common/GlassButton';
 import AuthHeader from '../../components/common/AuthHeader';
 import { SelectItem } from '@heroui/react';
+import { useTranslation } from 'react-i18next';
 
 const SignUp = () => {
+  const { t } = useTranslation('auth');
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
 
@@ -47,13 +49,13 @@ const SignUp = () => {
     const newErrors: Record<string, string> = {};
 
     // Validation Logic
-    if (!formData.firstName) newErrors.firstName = "First name is required";
-    if (!formData.lastName) newErrors.lastName = "Last name is required";
-    if (!formData.nationality) newErrors.nationality = "Please select nationality";
-    if (!formData.mobileCode) newErrors.mobileCode = "Required";
-    if (!formData.mobileNumber) newErrors.mobileNumber = "Required";
-    if (!formData.email.includes('@')) newErrors.email = "Invalid email";
-    if (formData.password.length < 8) newErrors.password = "Min. 8 characters";
+    if (!formData.firstName) newErrors.firstName = t('errorFirstName');
+    if (!formData.lastName) newErrors.lastName = t('errorLastName');
+    if (!formData.nationality) newErrors.nationality = t('errorNationality');
+    if (!formData.mobileCode) newErrors.mobileCode = t('errorRequired');
+    if (!formData.mobileNumber) newErrors.mobileNumber = t('errorRequired');
+    if (!formData.email.includes('@')) newErrors.email = t('errorInvalidEmail');
+    if (formData.password.length < 8) newErrors.password = t('errorInvalidPassword');
 
     setErrors(newErrors);
 
@@ -70,7 +72,7 @@ const SignUp = () => {
   return (
     <div className="w-full h-full flex flex-col items-center pt-4 sm:pt-10 relative">
       <div className="w-full max-w-sm animate-fade-in">
-        <AuthHeader title="Create an account" />
+        <AuthHeader title={t('createAccount')} />
       </div>
 
       {/* Single Scrollable Form Container */}
@@ -81,18 +83,18 @@ const SignUp = () => {
 
 
             <BaseInput
-              label="First Name*"
+              label={t('firstName')}
               name="firstName"
-              placeholder="First name"
+              placeholder={t('firstNamePlaceholder')}
               value={formData.firstName}
               onChange={handleChange}
               error={errors.firstName}
               isShaking={isShaking.firstName}
             />
             <BaseInput
-              label="Last Name*"
+              label={t('lastName')}
               name="lastName"
-              placeholder="Last name"
+              placeholder={t('lastNamePlaceholder')}
               value={formData.lastName}
               onChange={handleChange}
               error={errors.lastName}
@@ -100,23 +102,23 @@ const SignUp = () => {
             />
 
             <BaseSelect
-              label="Nationality"
-              placeholder="Select nationality"
+              label={t('nationality')}
+              placeholder={t('selectNationality')}
               error={errors.nationality}
               isShaking={isShaking.nationality}
               onSelectionChange={(keys) => handleSelectChange('nationality', Array.from(keys)[0] as string)}
             >
-              <SelectItem key="qatari" textValue="Qatari">Qatari</SelectItem>
-              <SelectItem key="emirati" textValue="Emirati">Emirati</SelectItem>
-              <SelectItem key="saudi" textValue="Saudi">Saudi</SelectItem>
-              <SelectItem key="others" textValue="Others">Others</SelectItem>
+              <SelectItem key="qatari" textValue="Qatari">{t('qatari')}</SelectItem>
+              <SelectItem key="emirati" textValue="Emirati">{t('emirati')}</SelectItem>
+              <SelectItem key="saudi" textValue="Saudi">{t('saudi')}</SelectItem>
+              <SelectItem key="others" textValue="Others">{t('others')}</SelectItem>
             </BaseSelect>
             <div className="flex gap-2">
               {/* Mobile Code Select - smaller */}
               <div className="flex-shrink-0 w-32">
                 <BaseSelect
-                  label="Code*"
-                  placeholder="Country code"
+                  label={t('codeLabel')}
+                  placeholder={t('countryCode')}
                   error={errors.mobileCode}
                   isShaking={isShaking.mobileCode}
                   onSelectionChange={(keys) =>
@@ -132,9 +134,9 @@ const SignUp = () => {
               {/* Mobile Number Input - takes remaining space */}
               <div className="flex-1">
                 <BaseInput
-                  label="Mobile Number*"
+                  label={t('mobileNumber')}
                   name="mobileNumber"
-                  placeholder="12345678"
+                  placeholder={t('mobilePlaceholder')}
                   value={formData.mobileNumber}
                   onChange={handleChange}
                   error={errors.mobileNumber}
@@ -144,9 +146,9 @@ const SignUp = () => {
             </div>
 
             <BaseInput
-              label="Email Id"
+              label={t('emailId')}
               name="email"
-              placeholder="Enter your email id"
+              placeholder={t('enterEmailId')}
               value={formData.email}
               onChange={handleChange}
               error={errors.email}
@@ -159,10 +161,10 @@ const SignUp = () => {
             />
 
             <BaseInput
-              label="Password"
+              label={t('password')}
               name="password"
               type={showPassword ? 'text' : 'password'}
-              placeholder="Min. 8 characters"
+              placeholder={t('passwordPlaceholderSignUp')}
               value={formData.password}
               onChange={handleChange}
               error={errors.password}
@@ -191,14 +193,14 @@ const SignUp = () => {
                 className="w-full"
                 buttonClassName="w-full shadow-figma-drop"
               >
-                Register
+                {t('register')}
               </GlassButton>
             </div>
 
             <p className="text-center text-white/70 text-small-regular">
-              Already have an account?{' '}
+              {t('alreadyHaveAccount')}{' '}
               <Link to="/login" className="text-white text-small-bold hover:underline">
-                Login
+                {t('loginLink')}
               </Link>
             </p>
           </div>

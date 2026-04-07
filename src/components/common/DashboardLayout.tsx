@@ -3,9 +3,9 @@ import Navigation from './Navigation';
 import BG from '../../assets/BG.png';
 
 export interface DashboardLayoutProps {
-  leftSidebar: ReactNode;
+  leftSidebar?: ReactNode;
   children: ReactNode;
-  rightSidebar: ReactNode;
+  rightSidebar?: ReactNode;
 }
 
 export default function DashboardLayout({ leftSidebar, children, rightSidebar }: DashboardLayoutProps) {

@@ -34,9 +34,9 @@ const LeaseRenewalModal: React.FC<LeaseRenewalModalProps> = ({
             {/* Icon Container */}
             <div className="relative mb-6">
                 <div className="w-24 h-24 flex items-center justify-center relative">
-                  {/* Subtle decorative elements for the bell icon similar to image */}
-                  <Bell size={56} className="text-slate-900 stroke-[1.5]" />
-                  <div className="absolute top-6 right-6 w-3.5 h-3.5 rounded-full border-2 border-white bg-slate-900" />
+                    {/* Subtle decorative elements for the bell icon similar to image */}
+                    <Bell size={56} className="text-slate-900 stroke-[1.5]" />
+                    <div className="absolute top-6 right-6 w-3.5 h-3.5 rounded-full border-2 border-white bg-slate-900" />
                 </div>
             </div>
 
@@ -57,7 +57,7 @@ const LeaseRenewalModal: React.FC<LeaseRenewalModalProps> = ({
                     onClick={onRequestRenewal}
                     className="w-full py-1 bg-gradient-to-r from-blue-100 via-white to-blue-100 hover:from-blue-100 hover:to-blue-100  font-semibold rounded-full shadow-lg"
                 >
-                   <span className='text-blue-600'>Request Renewal</span> 
+                    <span className='text-blue-600'>Request Renewal</span>
                 </GlassButton>
                 <Button
                     onPress={onClose}

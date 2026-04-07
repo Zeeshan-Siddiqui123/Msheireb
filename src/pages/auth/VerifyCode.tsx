@@ -2,8 +2,10 @@ import { useState, useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import GlassButton from '../../components/common/GlassButton';
 import AuthHeader from '../../components/common/AuthHeader';
+import { useTranslation } from 'react-i18next';
 
 const VerifyCode = () => {
+  const { t } = useTranslation('auth');
   const navigate = useNavigate();
   const [code, setCode] = useState(['', '', '', '']);
   const [timeLeft, setTimeLeft] = useState(56);
@@ -44,16 +46,16 @@ const VerifyCode = () => {
   return (
     <div className="w-full h-full flex flex-col items-center pt-4 sm:pt-10 max-w-sm mx-auto">
       <div className="w-full max-w-sm animate-fade-in">
-        <AuthHeader title="Forgot Password" onBack={() => navigate('/forgot-password')} />
+        <AuthHeader title={t('forgotPasswordTitle')} onBack={() => navigate('/forgot-password')} />
       </div>
 
       {/* Main Content */}
       <div className="w-full flex flex-col gap-10 animate-fade-up">
         {/* Instructions */}
         <div className="text-center flex flex-col gap-2">
-          <p className="text-white text-small-medium">Confirm your information</p>
+          <p className="text-white text-small-medium">{t('confirmInfo')}</p>
           <p className="text-white text-small-regular px-4 leading-relaxed">
-            Please make sure all your information is correct before proceeding to payment session.
+            {t('confirmInfoDesc')}
           </p>
         </div>
 
@@ -81,17 +83,17 @@ const VerifyCode = () => {
             className="w-full"
             buttonClassName="w-full shadow-figma-drop"
           >
-            Verify
+            {t('verify')}
           </GlassButton>
         </div>
 
         {/* Timer and Resend */}
         <div className="text-center flex flex-col gap-2 mt-2">
           <p className="text-white text-small-regular">
-            Code expires in : <span className="text-white font-medium">{formatTime(timeLeft)}</span>
+            {t('codeExpiresIn')} <span className="text-white font-medium">{formatTime(timeLeft)}</span>
           </p>
           <button className="text-white/70 text-small-regular hover:text-white transition-colors">
-            Didn't receive code? <span className="font-medium underline">Resend Code</span>
+            {t('didntReceiveCode')} <span className="font-medium underline">{t('resendCode')}</span>
           </button>
         </div>
       </div>

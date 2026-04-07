@@ -8,8 +8,10 @@ import BaseInput from '../../components/common/BaseInput';
 // import AuthButton from '../../components/common/AuthButton';
 import GlassButton from '../../components/common/GlassButton';
 import { Button } from '@heroui/react';
+import { useTranslation } from 'react-i18next';
 
 const Login = () => {
+  const { t } = useTranslation('auth');
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
   const [errors, setErrors] = useState({ email: '', password: '' });
@@ -44,8 +46,8 @@ const Login = () => {
 
     // Set error messages
     setErrors({
-      email: isEmailInvalid ? "Please enter a valid email" : "",
-      password: isPasswordInvalid ? "Password must be at least 8 characters" : ""
+      email: isEmailInvalid ? t('errorInvalidEmail') : "",
+      password: isPasswordInvalid ? t('errorInvalidPassword') : ""
     });
 
     // Trigger Shaking
@@ -63,7 +65,7 @@ const Login = () => {
       {/* Header Section (PNG Logo) */}
       <div className="animate-fade-in text-center mb-8">
         <p className="display-large-uppercase text-white mb-[16px] text-center">
-          WELCOME TO
+          {t('welcomeTo')}
         </p>
         <img src={logo} alt="Msheireb Logo" className="w-fit h-auto object-contain mx-auto" />
       </div>
@@ -75,12 +77,12 @@ const Login = () => {
         {/* Email Field */}
 
         <BaseInput
-          label="Email Id"
+          label={t('emailId')}
           type="email"
           name="email"
           value={formData.email}
           onChange={handleChange}
-          placeholder="Enter your email id"
+          placeholder={t('enterEmailId')}
           // Pass these props specifically
           error={errors.email}
           isShaking={isShaking.email}
@@ -93,12 +95,12 @@ const Login = () => {
 
         <div className="flex flex-col gap-1">
           <BaseInput
-            label="Password"
+            label={t('password')}
             type={showPassword ? 'text' : 'password'}
             name="password"
             value={formData.password}
             onChange={handleChange}
-            placeholder="Password (at least 8 characters)"
+            placeholder={t('enterPassword')}
             // Pass these props specifically
             error={errors.password}
             isShaking={isShaking.password}
@@ -126,7 +128,7 @@ const Login = () => {
           {/* Forgot Password */}
           <div className="flex justify-start mt-2 pt-0">
             <Link to="/forgot-password" virtual-link="/forgot-password" className="text-white text-small-regular hover:text-white hover:underline transition-all">
-              Forgot Password?
+              {t('forgotPassword')}
             </Link>
           </div>
         </div>
@@ -139,7 +141,7 @@ const Login = () => {
             size="large"
 
           >
-            Login
+            {t('login')}
           </GlassButton>
 
 
@@ -156,14 +158,14 @@ const Login = () => {
             <svg className="w-5 h-5 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
             </svg>
-            <span className="text-white/90 text-small-medium">Login Face ID</span>
+            <span className="text-white/90 text-small-medium">{t('loginFaceId')}</span>
           </div>
         </GlassButton>
 
         {/* Divider */}
         <div className="flex items-center gap-3 py-0">
           <div className="flex-1 border-t border-dashed border-white/50" />
-          <span className="text-white text-small-regular whitespace-nowrap">Or Sign Up with</span>
+          <span className="text-white text-small-regular whitespace-nowrap">{t('orSignUpWith')}</span>
           <div className="flex-1 border-t border-dashed border-white/50" />
         </div>
 
@@ -182,9 +184,9 @@ const Login = () => {
         </div>
         {/* Footer Link */}
         <p className="text-small-medium text-14 text-center mt-2 text-white">
-          Don't have an account?{' '}
+          {t('dontHaveAccount')}{' '}
           <Link to="/signup" className="text-white text-small-bold hover:underline underline">
-            Sign Up
+            {t('signUp')}
           </Link>
         </p>
       </form>

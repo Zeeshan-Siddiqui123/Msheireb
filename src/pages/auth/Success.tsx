@@ -1,7 +1,9 @@
 import { useNavigate } from 'react-router-dom';
 import GlassButton from '../../components/common/GlassButton';
+import { useTranslation } from 'react-i18next';
 
 const Success = () => {
+  const { t } = useTranslation('auth');
   const navigate = useNavigate();
 
   return (
@@ -23,10 +25,10 @@ const Success = () => {
 
       <div className="text-center">
         <h2 className="text-white heading-medium-bold font-bold text-base">
-          Account Created!
+          {t('accountCreated')}
         </h2>
         <p className="text-white/50 body-regular mt-2 leading-relaxed">
-          Welcome to Msheireb Downtown Doha. Your account has been successfully created.
+          {t('welcomeCreated')}
         </p>
       </div>
 
@@ -36,7 +38,7 @@ const Success = () => {
           className="w-full py-3 px-4 bg-green-900/20 border border-green/50 rounded-xl text-center text-small-medium"
           style={{ color: 'var(--green)' }}
         >
-          Registration Successful ✓
+          {t('registrationSuccessful')}
         </div>
         {/* Broken Border Segments with blurry/shadow effect */}
         <div className="absolute top-0 left-5 right-8 h-[1px] bg-green/20 shadow-[0_0_8px_rgba(40,128,111,0.5)]" />
@@ -64,7 +66,7 @@ const Success = () => {
         className="w-full"
         buttonClassName="w-full shadow-figma-drop"
       >
-        Login Now
+        {t('loginNow')}
       </GlassButton>
     </div>
   );

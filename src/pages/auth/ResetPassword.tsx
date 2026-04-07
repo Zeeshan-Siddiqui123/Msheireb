@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import BaseInput from '../../components/common/BaseInput';
 import GlassButton from '../../components/common/GlassButton';
 import AuthHeader from '../../components/common/AuthHeader';
-
+import { useTranslation } from 'react-i18next';
 
 const EyeIcon = ({ isOpen }: { isOpen: boolean }) => (
   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -21,6 +21,7 @@ const EyeIcon = ({ isOpen }: { isOpen: boolean }) => (
 
 
 const ResetPassword = () => {
+  const { t } = useTranslation('auth');
   const navigate = useNavigate();
   const [formData, setFormData] = useState({ password: '', retypePassword: '' });
   const [showPassword, setShowPassword] = useState(false);
@@ -57,13 +58,13 @@ const ResetPassword = () => {
     const isMatch = formData.password === formData.retypePassword;
 
     if (!isCriteriaMet) {
-      setErrors(prev => ({ ...prev, password: 'Password does not meet requirements' }));
+      setErrors(prev => ({ ...prev, password: t('errPasswordReq') }));
       triggerShake('password');
       return;
     }
 
     if (!isMatch) {
-      setErrors(prev => ({ ...prev, retypePassword: 'Passwords do not match' }));
+      setErrors(prev => ({ ...prev, retypePassword: t('errPasswordMatch') }));
       triggerShake('retypePassword');
       return;
     }
@@ -76,7 +77,7 @@ const ResetPassword = () => {
   return (
     <div className="w-full h-full flex flex-col items-center pt-4 sm:pt-10 max-w-sm mx-auto">
       <div className="w-full max-w-sm animate-fade-in">
-        <AuthHeader title="Forgot Password" onBack={() => navigate('/verify-code')} />
+        <AuthHeader title={t('forgotPasswordTitle')} onBack={() => navigate('/verify-code')} />
       </div>
 
       {/* Main Content */}
@@ -85,10 +86,10 @@ const ResetPassword = () => {
         <div className="flex flex-col gap-6 animate-fade-up">
           {/* New Password */}
           <BaseInput
-            label="Password"
+            label={t('password')}
             name="password"
             type={showPassword ? 'text' : 'password'}
-            placeholder="New Password"
+            placeholder={t('newPassword')}
             value={formData.password}
             onChange={handleChange}
             error={errors.password}
@@ -102,10 +103,10 @@ const ResetPassword = () => {
 
           {/* Retype Password */}
           <BaseInput
-            label="Retype Password"
+            label={t('retypePassword')}
             name="retypePassword"
             type={showRetypePassword ? 'text' : 'password'}
-            placeholder="Retype Password"
+            placeholder={t('retypePassword')}
             value={formData.retypePassword}
             onChange={handleChange}
             error={errors.retypePassword}
@@ -120,11 +121,11 @@ const ResetPassword = () => {
 
         {/* Instructions */}
         <div className="flex flex-col gap-3">
-          <p className="text-white text-small-medium text-[14px]">Instructions</p>
+          <p className="text-white text-small-medium text-[14px]">{t('instructions')}</p>
           <div className="flex flex-col gap-2">
-            <InstructionItem text="Contain at least 1 number." checked />
-            <InstructionItem text="Contain both upper and lower case characters." checked />
-            <InstructionItem text="Contain at least one special characters." checked />
+            <InstructionItem text={t('instructNumber')} checked />
+            <InstructionItem text={t('instructUpperLower')} checked />
+            <InstructionItem text={t('instructSpecial')} checked />
           </div>
         </div>
 
@@ -136,7 +137,7 @@ const ResetPassword = () => {
             className="w-full"
             buttonClassName="w-full shadow-figma-drop"
           >
-            Change Password
+            {t('changePassword')}
           </GlassButton>
         </div>
       </div>

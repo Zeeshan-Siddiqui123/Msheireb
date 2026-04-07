@@ -4,8 +4,10 @@ import logo from '../../assets/svg/msherieb-logo.svg';
 import BaseSelect from '../../components/common/BaseSelect';
 import GlassButton from '../../components/common/GlassButton';
 import { SelectItem } from '@heroui/react';
+import { useTranslation } from 'react-i18next';
 
 const Onboarding = () => {
+  const { t } = useTranslation('auth');
   const navigate = useNavigate();
 
   return (
@@ -25,7 +27,7 @@ const Onboarding = () => {
         {/* Header Section (Matching Login) */}
         <div className="text-center mb-12">
           <p className="display-large-uppercase text-white mb-[16px] text-center">
-            WELCOME TO
+            {t('welcomeTo')}
           </p>
           <img src={logo} alt="Msheireb Logo" className="w-fit h-auto object-contain mx-auto" />
         </div>
@@ -34,7 +36,7 @@ const Onboarding = () => {
         <div className="w-full flex flex-col gap-8">
           <div className="flex flex-col gap-4">
             <p className="text-white text-small-regular text-[20px]">
-              Choose how will you use the Msheireb App!
+              {t('chooseHowUse')}
             </p>
 
             <BaseSelect
@@ -46,9 +48,9 @@ const Onboarding = () => {
                 if (selectedValue) navigate('/login');
               }}
             >
-              <SelectItem key="Visitor" textValue="Visitor">Visitor</SelectItem>
-              <SelectItem key="Resident" textValue="Resident">Resident</SelectItem>
-              <SelectItem key="Employee" textValue="Employee">Employee</SelectItem>
+              <SelectItem key="Visitor" textValue="Visitor">{t('visitor')}</SelectItem>
+              <SelectItem key="Resident" textValue="Resident">{t('resident')}</SelectItem>
+              <SelectItem key="Employee" textValue="Employee">{t('employee')}</SelectItem>
             </BaseSelect>
           </div>
 
@@ -58,7 +60,7 @@ const Onboarding = () => {
             className="w-full"
             buttonClassName="w-full shadow-figma-drop"
           >
-            Get Started
+            {t('getStarted')}
           </GlassButton>
         </div>
       </div>

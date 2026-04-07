@@ -5,7 +5,7 @@ import DiscoverCard from '../../components/portals/residential/DiscoverCard'
 import DashboardLayout from '../../components/common/DashboardLayout'
 
 // Custom SVG Icons
-import tempIcon from '../../assets/svg/temp-icon.svg'
+import tempIcon from '../../assets/svg/temperature.svg'
 import energyIcon from '../../assets/svg/energy-icon.svg'
 import stepsIcon from '../../assets/svg/steps-icon.svg'
 import awardIcon from '../../assets/svg/award-icon.svg'
