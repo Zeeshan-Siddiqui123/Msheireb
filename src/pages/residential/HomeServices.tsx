@@ -86,7 +86,7 @@ export default function HomeServices() {
         />
 
         {/* 🔹 Content Area */}
-        <div className="w-full flex-grow flex flex-col mt-4">
+        <div className="w-full flex-grow flex flex-col ">
 
           {selectedTab === "services" && (
             <Services />

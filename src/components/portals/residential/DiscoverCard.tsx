@@ -16,7 +16,7 @@ export default function DiscoverCard({ title, bgUrl, href }: DiscoverCardProps) 
       style={{ backgroundImage: `url(${bgUrl})` }}
     >
       {/* Dark gradient overlay at bottom */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent transition-opacity group-hover:opacity-90"></div>
+      {/* <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent transition-opacity group-hover:opacity-90"></div> */}
 
       <div className="relative z-10 flex flex-col items-center w-full">
         <h3 className="label-small-semibold mb-3">{title}</h3>

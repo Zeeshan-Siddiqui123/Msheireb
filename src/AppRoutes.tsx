@@ -11,7 +11,7 @@ import { routes } from './routes';
 const AppRoutes = () => {
   return (
     <Routes>
-     <Route path="/" element={<Onboarding />} />
+      <Route path="/" element={<Onboarding />} />
 
       <Route element={<AuthLayout />}>
         <Route path="login" element={<Login />} />
@@ -24,6 +24,9 @@ const AppRoutes = () => {
         <Route key={index} path={route.path} element={route.element} />
       ))}
       {routes.commercial.map((route, index) => (
+        <Route key={index} path={route.path} element={route.element} />
+      ))}
+      {routes.employee.map((route, index) => (
         <Route key={index} path={route.path} element={route.element} />
       ))}
     </Routes>
