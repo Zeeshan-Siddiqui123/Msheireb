@@ -33,8 +33,8 @@ const Parking = ({ onRegister }: ParkingProps) => {
         <QuickActionsWrapper key={vehicle.id} className="w-full  rounded-lg  relative overflow-hidden transition-all duration-300 hover:bg-white/15">
           <div className="flex justify-between items-start w-full">
             <div className="flex gap-4 items-center">
-              <div className="bg-[#e0eefa] text-black p-3 rounded-[12px] shadow-sm flex items-center justify-center">
-                <CarFront size={28} strokeWidth={2} />
+              <div className=" text-black  shadow-sm flex items-center justify-center">
+                <img src="/src/assets/svg/car-svg.svg" alt="Car" className='' />
               </div>
               <div className="flex flex-col">
                 <h3 className="text-small-semibold mb-0.5">{vehicle.model}</h3>

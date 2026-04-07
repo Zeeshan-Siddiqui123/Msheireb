@@ -35,8 +35,8 @@ const LeaseRenewalModal: React.FC<LeaseRenewalModalProps> = ({
             <div className="relative mb-6">
                 <div className="w-24 h-24 flex items-center justify-center relative">
                     {/* Subtle decorative elements for the bell icon similar to image */}
-                    <Bell size={56} className="text-slate-900 stroke-[1.5]" />
-                    <div className="absolute top-6 right-6 w-3.5 h-3.5 rounded-full border-2 border-white bg-slate-900" />
+                    <img src="/src/assets/svg/bell-icon.svg" alt="Bell" className='w-16 h-16 invert' />
+                    {/* <div className="absolute top-6 right-6 w-3.5 h-3.5 rounded-full border-2 border-white bg-slate-900" /> */}
                 </div>
             </div>
 

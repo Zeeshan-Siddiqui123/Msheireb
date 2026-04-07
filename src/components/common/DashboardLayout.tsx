@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 import Navigation from './Navigation';
-import BG from '../../assets/BG.png';
+import BG from '../../assets/Bg.png';
 
 export interface DashboardLayoutProps {
   leftSidebar?: ReactNode;

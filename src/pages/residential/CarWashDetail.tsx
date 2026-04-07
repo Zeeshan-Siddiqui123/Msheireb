@@ -53,7 +53,7 @@ export default function CarWashDetail() {
         {/* Hero Image */}
         <div className="w-full h-56 rounded-[16px] overflow-hidden mb-8 shadow-2xl">
           <img
-            src="/src/assets/services_car.png"
+            src="/src/assets/services_car.webp"
             alt="Car Wash"
             className="w-full h-full object-cover"
           />
@@ -108,7 +108,7 @@ export default function CarWashDetail() {
           <div className="w-56">
             <DiscoverCard
               title="Access Cards - Car Park"
-              bgUrl="/src/assets/services_5.png"
+              bgUrl="/src/assets/services_5.webp"
             />
           </div>
         </div>
@@ -118,8 +118,8 @@ export default function CarWashDetail() {
           <div className='w-full backdrop-blur-[35px]'>
             <div className="flex items-center justify-between p-3 rounded-lg  hover:bg-white/10 ">
               <div className="flex items-center gap-3">
-                <div className="bg-white p-2 rounded-md">
-                  <img src="src/assets/apple.png" alt="Apple pay" />
+                <div className=" rounded-md">
+                  <img src="/src/assets/svg/socials/apple.svg" alt="Apple pay" />
                 </div>
                 <div className="flex flex-col">
                   <p className="body-regular">Apple Pay</p>
@@ -140,8 +140,8 @@ export default function CarWashDetail() {
 
             <div className="flex items-center justify-between p-3 rounded-[12px] bg-white/5 hover:bg-white/10 ">
               <div className="flex items-center gap-3">
-                <div className="bg-white p-2 rounded-md">
-                  <img src="src/assets/mastercard.png" alt="Apple pay" />
+                <div className="rounded-md">
+                  <img src="/src/assets/svg/socials/mastercard.svg" alt="Apple pay" />
                 </div>
                 <div className="flex flex-col">
                   <p className="body-regular">Credit or Debit Card</p>
@@ -154,8 +154,8 @@ export default function CarWashDetail() {
 
             <div className="flex items-center justify-between p-3 rounded-[12px] bg-white/5 hover:bg-white/10 ">
               <div className="flex items-center gap-3">
-                <div className="bg-white p-2 rounded-md">
-                  <img src="src/assets/gpay.png" alt="Apple pay" />
+                <div className="rounded-md">
+                  <img src="/src/assets/svg/socials/gpay.svg" alt="Apple pay" />
                 </div>
                 <div className="flex flex-col">
                   <p className="body-regular">Google Pay</p>

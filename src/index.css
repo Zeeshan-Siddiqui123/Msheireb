@@ -237,7 +237,7 @@ select:-moz-autofill {
 @layer base {
   body {
     @apply antialiased subpixel-antialiased font-sf-pro bg-no-repeat bg-cover bg-top min-h-full;
-    /* background-image: url('./assets/BG.png'); */
+    /* background-image: url('./assets/Bg.png'); */
   }
 
   button,
@@ -332,6 +332,10 @@ select:-moz-autofill {
 
   .glass-card {
     @apply backdrop-blur-[12px] border border-brand-blue-border-shade rounded-[12px] shadow-sm;
+  }
+
+  .page-header-heading {
+    @apply text-xl font-semibold text-center tracking-wide mb-6;
   }
 
 }

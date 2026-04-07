@@ -43,14 +43,14 @@ export default function ProfileCard({
   return (
     <>
       {/* <MoreExamples/> */}
-      <GlassCard className="text-white h-fit">
+      <GlassCard className="text-white">
         {/* Banner Image */}
-        <div className="h-24 w-full bg-[url('/src/assets/profile_bg.png')] bg-no-repeat  bg-center opacity-80 "></div>
+        <div className="h-24 w-full bg-[url('/src/assets/profile_bg.webp')] bg-no-repeat bg-contain rounded-xl opacity-80 "></div>
 
         {/* Profile Info */}
-        <div className="px-6 pb-6 relative flex flex-col items-center">
+        <div className="px-6 pb-4 relative flex flex-col items-center">
           {/* Avatar */}
-          <div className="flex items-center gap-4 w-full mt-4 mb-4">
+          <div className="flex items-center gap-4 w-full mb-4">
             <div className="w-16 h-16 rounded-full border-2 border-white/30 overflow-hidden bg-gray-800 shrink-0">
               <img src={avatarUrl} alt={name} className="w-full h-full object-cover" />
             </div>
