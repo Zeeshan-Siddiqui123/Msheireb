@@ -22,8 +22,8 @@ const StatusChip: React.FC<StatusChipProps> = ({ status, className }) => {
 
         // Expired: Using your pill-200 (Red)
         expired: "bg-pill-200/10 text-pill-200 border-pill-200/30",
-        exit: "text-red-600 bg-red-100",
-        entry: "text-green-600 bg-green-100",
+        exit: "text-red-600 bg-red-100 border border-red-100",
+        entry: "text-green-600 bg-green-100 border border-green-100",
 
         // Occupied: Using your pill-main (Green)
         occupied: "bg-pill-main/10 text-pill-main border-pill-main/30",

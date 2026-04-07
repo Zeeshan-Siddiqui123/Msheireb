@@ -135,15 +135,22 @@ const Step3Confirmation = ({ onConfirm, onCancel }: Step3Props) => {
       <CardFooter className="pt-4 space-y-4">
         {/* Terms */}
         <Checkbox
-          isSelected={accepted}
-          onValueChange={setAccepted}
-          classNames={{
-            label: "text-small-regular text-white",
-            wrapper: "border-white before:border-white after:bg-white",
-          }}
-        >
-          Accept Terms and Conditions
-        </Checkbox>
+            isSelected={accepted}
+            onValueChange={setAccepted}
+            classNames={{
+              label: "text-[14px] leading-wider leading-[16px] font-sans-pro text-white", // ✅ your class applied
+
+              wrapper: `
+      border-white/50
+      data-[selected=true]:bg-blue-500
+      data-[selected=true]:border-blue-500
+    `,
+
+              icon: "text-white", // check icon color
+            }}
+          >
+            Accept Terms and Conditions
+          </Checkbox>
 
         {/* Buttons */}
         <div className="flex items-center gap-12 justify-center w-full pt-1">

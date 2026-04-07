@@ -117,9 +117,8 @@ const Step3Confirmation = ({ onConfirm, onCancel }: Step3Props) => {
                   Add
                 </span>
               ) : (
-                <div className={`w-4 h-4 rounded-full border-2 shrink-0 flex items-center justify-center transition-all ${
-                  selectedPayment === option.key ? "border-white" : "border-white"
-                }`}>
+                <div className={`w-4 h-4 rounded-full border-2 shrink-0 flex items-center justify-center transition-all ${selectedPayment === option.key ? "border-white" : "border-white"
+                  }`}>
                   {selectedPayment === option.key && (
                     <div className="w-2 h-2 rounded-full bg-white" />
                   )}
@@ -138,8 +137,15 @@ const Step3Confirmation = ({ onConfirm, onCancel }: Step3Props) => {
           isSelected={accepted}
           onValueChange={setAccepted}
           classNames={{
-            label: "text-small-regular text-white",
-            wrapper: "border-white before:border-white after:bg-white",
+            label: "text-[14px] leading-wider leading-[16px] font-sans-pro text-white", // ✅ your class applied
+
+            wrapper: `
+      border-white/50
+      data-[selected=true]:bg-blue-500
+      data-[selected=true]:border-blue-500
+    `,
+
+            icon: "text-white", // check icon color
           }}
         >
           Accept Terms and Conditions
