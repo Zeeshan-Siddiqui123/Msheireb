@@ -18,7 +18,7 @@ const MaintenanceServices = ({ onCategorySelect }: { onCategorySelect: (category
     <div className="w-full grid grid-cols-2 gap-3">
 
       {services.map((item, index) => (
-        <QuickActionsWrapper key={index} className="w-full !p-2" >
+        <QuickActionsWrapper key={index} className="w-full p-2!" >
           <div
             key={index}
             onClick={() => onCategorySelect(item.title)}
@@ -35,7 +35,6 @@ const MaintenanceServices = ({ onCategorySelect }: { onCategorySelect: (category
               alt={item.title}
               className="w-20 h-20 object-cover rounded-lg"
             />
-
             <p className="text-white text-center lg:text-start text-sm md:text-base font-medium">
               {item.title}
             </p>

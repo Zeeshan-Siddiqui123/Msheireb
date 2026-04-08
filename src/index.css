@@ -358,6 +358,11 @@ textarea:-ms-input-placeholder {
     vertical-align: middle;
   }
 
+  .btn-text-small {
+    @apply font-sf-pro font-regular text-8 leading-14 tracking-tightest;
+    vertical-align: middle;
+  }
+
   .tabs-heading-semi {
     @apply font-sf-pro font-semibold text-14 leading-18 tracking-tightest text-center;
   }

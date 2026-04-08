@@ -47,7 +47,7 @@ const PageHeader: React.FC<PageHeaderProps> = ({
                     onClick={handleBack}
                     className="text-white absolute left-0 hover:text-white/80 mb-3 transition-colors cursor-pointer"
                 >
-                    <ChevronLeft size={28} strokeWidth={2} />
+                    <ChevronLeft size={26} strokeWidth={2} className='mb-6'/>
                 </button>
 
                 <p className="page-header-heading">

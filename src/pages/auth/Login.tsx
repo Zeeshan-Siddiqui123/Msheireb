@@ -9,7 +9,6 @@ import BaseInput from '../../components/common/BaseInput';
 import GlassButton from '../../components/common/GlassButton';
 // import { Button } from '@heroui/react';
 import { useTranslation } from 'react-i18next';
-// import errorSound from '../../audio/fahhhhh.mp3';
 
 const Login = () => {
   const { t } = useTranslation('auth');
@@ -39,11 +38,6 @@ const Login = () => {
     }
   };
 
-  // const playErrorSound = () => {
-  //   const audio = new Audio(errorSound);
-  //   audio.play();
-  // };
-
   const handleSubmit = (e?: React.FormEvent) => {
     if (e) e.preventDefault();
 
@@ -59,11 +53,9 @@ const Login = () => {
     // Trigger Shaking
     if (isEmailInvalid) {
       triggerShake('email');
-      // playErrorSound()
     }
     if (isPasswordInvalid) {
       triggerShake('password');
-      // playErrorSound()
     };
 
     if (!isEmailInvalid && !isPasswordInvalid) {

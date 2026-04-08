@@ -6,19 +6,19 @@ import ResidentialHome from "./pages/residential/ResidentialHome";
 import Visitor from "./pages/residential/Visitor";
 import CarWashDetail from "./pages/residential/CarWashDetail";
 import CommercialHome from "./pages/commercial/CommercialHome";
-import CommercialAppartmentDetails from "./pages/commercial/AppartmentDetails";
-import CommercialFacilityBooking from "./pages/commercial/FacilityBooking";
 import CommercialHomeServices from "./pages/commercial/HomeServices";
 import CommercialPayments from "./pages/commercial/Payments";
 import CommercialVisitor from "./pages/commercial/Visitor";
 import Offers from "./pages/residential/Offers";
-import CommercialOffers from "./pages/commercial/Offers";
 import { EmployeeHome } from "./pages/employee/Home";
 import SmartParking from "./pages/employee/SmartParking";
 import LPNRegistration from "./pages/employee/LPNRegistration";
 import TrainingAndResources from "./pages/employee/Traning&Resources";
 import AccessControl from "./pages/employee/AccessControl";
 import IDCard from "./pages/employee/IDCard";
+import CommercialFileManagement from "./pages/commercial/FileManagement";
+import CommercialBuildingInfo from "./pages/commercial/BuildingInfo";
+import CommercialLeaseManagement from "./pages/commercial/LeaseManagement";
 
 export const routes = {
     residential: [
@@ -82,11 +82,11 @@ export const routes = {
             type: "commercial",
         },
         {
-            path: "/commercial/appartment-details",
-            element: <CommercialAppartmentDetails />,
+            path: "/commercial/building-info",
+            element: <CommercialBuildingInfo />,
             type: "commercial",
-            bgimg: '/src/assets/discover_1.webp',
-            title: 'Appartment Details'
+            bgimg: '/src/assets/discover_7.webp',
+            title: 'Building Info'
         },
         {
             path: "/commercial/payments",
@@ -96,32 +96,32 @@ export const routes = {
             title: 'Payments and Invoices'
         },
         {
-            path: "/commercial/facility-booking",
-            element: <CommercialFacilityBooking />,
-            type: "commercial",
-            bgimg: '/src/assets/discover_3.webp',
-            title: 'Facility Booking'
-        },
-        {
-            path: '/commercial/visitor',
+            path: "/commercial/visitor",
             element: <CommercialVisitor />,
             type: "commercial",
-            bgimg: '/src/assets/discover_4.webp',
-            title: 'Visitor'
+            bgimg: '/src/assets/discover_8.webp',
+            title: 'Visitor Management'
         },
         {
-            path: "/commercial/home-services",
+            path: '/commercial/my-services',
             element: <CommercialHomeServices />,
             type: "commercial",
-            bgimg: '/src/assets/discover_5.webp',
-            title: 'Home Services'
+            bgimg: '/src/assets/discover_9.webp',
+            title: 'My Services'
         },
         {
-            path: "/commercial/offers",
-            element: <CommercialOffers />,
+            path: "/commercial/lease-management",
+            element: <CommercialLeaseManagement />,
             type: "commercial",
-            bgimg: '/src/assets/discover_6.webp',
-            title: 'Offers and Promotions'
+            bgimg: '/src/assets/discover_10.webp',
+            title: 'Lease Management'
+        },
+        {
+            path: "/commercial/file-management",
+            element: <CommercialFileManagement />,
+            type: "commercial",
+            bgimg: '/src/assets/discover_11.webp',
+            title: 'File Management'
         }
     ],
     employee: [

@@ -48,11 +48,11 @@ export default function ProfileCard({
   return (
     <GlassCard className="text-white h-fit">
       {/* Banner */}
-      <div className="h-24 w-full bg-[url('/src/assets/profile_bg.png')] bg-no-repeat bg-center opacity-80" />
+      <div className="h-24 w-full bg-[url('/src/assets/profile_bg.webp')] bg-no-repeat bg-contain opacity-80" />
 
       <div className="px-3 pb-6">
         {/* Top Section */}
-        <div className="flex items-center justify-between mt-4 mb-4">
+        <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-4">
             <div className="w-16 h-16 rounded-full border-2 border-white/30 overflow-hidden">
               <img src={avatarUrl} className="w-full h-full object-cover" />

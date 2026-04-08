@@ -7,37 +7,13 @@ import QuickActions from '../../components/portals/residential/QuickActions';
 import DiscoverCard from '../../components/portals/residential/DiscoverCard';
 import { Button } from '@heroui/react';
 import QuickActionsWrapper from '../../components/common/QuickActionsWrapper';
+import { LeftSidebarContent } from '../../components/common/LeftSidebarContent';
+import { RightSidebarContent } from '../../components/common/RightSidebarContent';
 
 export default function CommercialCarWashDetail() {
   const navigate = useNavigate();
-
-  const quickActionsData = [
-    { icon: <Airplay size={24} strokeWidth={1.5} />, label: "HVAC" },
-    { icon: <Lock size={24} strokeWidth={1.5} />, label: "Security" },
-    { icon: <Lightbulb size={24} strokeWidth={1.5} />, label: "Lighting" },
-    { icon: <Settings2 size={24} strokeWidth={1.5} />, label: "Automation" },
-  ];
-
-  const leftSidebar = (
-    <ProfileCard
-      name="Rakan"
-      leasingType="Residential"
-      validUntil="10/26"
-      nationality="Expat"
-      familyMembers={4}
-      buildingRef="UNASSIGNED"
-    />
-  );
-
-  const rightSidebar = (
-    <>
-      <h2 className="text-lg font-bold mb-4 ">Quick Actions</h2>
-      <QuickActions actions={quickActionsData} />
-    </>
-  );
-
   return (
-    <DashboardLayout leftSidebar={leftSidebar} rightSidebar={rightSidebar}>
+    <DashboardLayout leftSidebar={<LeftSidebarContent/>} rightSidebar={<RightSidebarContent/>}>
       <section className="flex flex-col h-full w-full max-w-3xl mx-auto px-4 py-2 text-white">
         {/* Header Area */}
         <div className="relative flex items-center justify-center mb-6">
