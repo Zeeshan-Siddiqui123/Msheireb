@@ -70,7 +70,7 @@ const CommercialVisitor = () => {
                         </div>
                     }
                 />
-                <div className="w-full flex-grow flex flex-col mt-6">
+                <div className="w-full grow flex flex-col mt-6">
                     {selectedTab === "pending" && <Pending />}
                     {selectedTab === "active" && <Active />}
                     {selectedTab === "history" && <VisitorHistory />}
