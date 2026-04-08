@@ -224,6 +224,42 @@ select:-moz-autofill {
   -moz-text-fill-color: #fff !important;
 }
 
+/* Apply SF Pro Display font to placeholders */
+::placeholder,
+input::placeholder,
+textarea::placeholder,
+select::placeholder {
+  font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 400;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+/* For specific input types */
+input[type="text"]::placeholder,
+input[type="email"]::placeholder,
+input[type="password"]::placeholder,
+input[type="search"]::placeholder,
+input[type="tel"]::placeholder,
+input[type="url"]::placeholder,
+input[type="number"]::placeholder,
+textarea::placeholder {
+  font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+  letter-spacing: 0.05em;
+}
+
+/* For Firefox */
+input:-moz-placeholder,
+textarea:-moz-placeholder {
+  font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* For Internet Explorer */
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+  font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
 .glass {
   backdrop-filter: blur(40px);
   -webkit-backdrop-filter: blur(40px) !important;

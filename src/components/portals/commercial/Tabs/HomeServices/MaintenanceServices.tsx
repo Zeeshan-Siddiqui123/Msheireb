@@ -18,10 +18,11 @@ const MaintenanceServices = ({ onCategorySelect }: { onCategorySelect: (category
     <div className="w-full grid grid-cols-2 gap-3">
       
       {services.map((item, index) => (
-        <QuickActionsWrapper key={index} className="w-full" >
-        <div
-          onClick={() => onCategorySelect(item.title)}
-          className="
+        <QuickActionsWrapper className="w-full !p-2" >
+          <div
+            key={index}
+            onClick={() => onCategorySelect(item.title)}
+            className="
             flex items-center gap-4             
             transition-all duration-300
             cursor-pointer

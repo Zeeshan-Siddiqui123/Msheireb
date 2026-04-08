@@ -31,7 +31,7 @@ const StatusChip: React.FC<StatusChipProps> = ({ status, className }) => {
         confirmed: "bg-pill-main/10 text-pill-main border-pill-main/30 bg-white",
     };
 
-    const colorStyle = statusMap[s] || statusMap.active;
+    const colorStyle = statusMap[s] || statusMap.confirmed;
     console.log("STATUS:", status, "LOWER:", s);
     return (
         <Chip
@@ -40,7 +40,7 @@ const StatusChip: React.FC<StatusChipProps> = ({ status, className }) => {
             classNames={{
                 // Using your '10' font size and 'inter' font from config
                 base: `h-6 px-2 border-[1.5px] ${colorStyle} ${className}`,
-                content: `font-inter font-bold text-10 uppercase tracking-wider`,
+                content: `font-inter font-bold text-10 tracking-wider`,
             }}
         >
             {status}
