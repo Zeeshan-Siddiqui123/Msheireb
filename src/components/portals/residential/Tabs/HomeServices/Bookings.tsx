@@ -1,4 +1,3 @@
-import { DoorOpen } from "lucide-react";
 import BookingCard from "../../BookingCard";
 
 const Bookings = () => {
@@ -13,7 +12,6 @@ const Bookings = () => {
       providerImage: "https://i.pravatar.cc/150?u=a04258a2462d826712d",
       rating: 4,
       status: "Confirmed",
-      icon: <DoorOpen size={28} className="text-black" strokeWidth={1.5} />,
     },
     {
       id: 2,
@@ -25,7 +23,6 @@ const Bookings = () => {
       providerImage: "https://i.pravatar.cc/150?u=a04258a2462d826712d",
       rating: 4,
       status: "Confirmed",
-      icon: <DoorOpen size={28} className="text-black" strokeWidth={1.5} />, 
     },
   ];
 

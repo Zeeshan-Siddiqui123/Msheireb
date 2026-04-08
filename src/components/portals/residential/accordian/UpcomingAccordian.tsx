@@ -2,7 +2,7 @@ import { Download } from "lucide-react";
 import Accordian from "../../../common/Accordian";
 import type { AccordianItem } from "../../../common/Accordian";
 import GlassButton from "../../../common/GlassButton";
-import Upcoming from "/src/assets/reciept.png";
+import Upcoming from "/src/assets/svg/reciept.svg";
 
 export interface UpcomingItem {
     id: string;
@@ -21,7 +21,7 @@ interface UpcomingAccordianProps {
     onOpenItemIdChange?: (id: string | null) => void;
 }
 
-const UpcomingAccordian = ({ upcomings, defaultOpenId = null, openItemId, onOpenItemIdChange }: UpcomingAccordianProps) => {
+const UpcomingAccordian = ({ upcomings }: UpcomingAccordianProps) => {
     const accordianItems: AccordianItem[] = upcomings.map((upcoming) => ({
         id: upcoming.id,
         title: (
@@ -87,9 +87,9 @@ const UpcomingAccordian = ({ upcomings, defaultOpenId = null, openItemId, onOpen
     return (
         <Accordian
             items={accordianItems}
-            defaultOpenId={defaultOpenId}
-            openItemId={openItemId}
-            onOpenItemIdChange={onOpenItemIdChange}
+            // defaultOpenId={defaultOpenId}
+            // openItemId={openItemId}
+            // onOpenItemIdChange={onOpenItemIdChange}
         />
     );
 };

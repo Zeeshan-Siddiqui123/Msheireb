@@ -85,42 +85,42 @@ export const routes = {
             path: "/commercial/appartment-details",
             element: <CommercialAppartmentDetails />,
             type: "commercial",
-            bgimg: '/src/assets/discover_1.jpg',
+            bgimg: '/src/assets/discover_1.webp',
             title: 'Appartment Details'
         },
         {
             path: "/commercial/payments",
             element: <CommercialPayments />,
             type: "commercial",
-            bgimg: '/src/assets/discover_2.jpg',
+            bgimg: '/src/assets/discover_2.webp',
             title: 'Payments and Invoices'
         },
         {
             path: "/commercial/facility-booking",
             element: <CommercialFacilityBooking />,
             type: "commercial",
-            bgimg: '/src/assets/discover_3.jpg',
+            bgimg: '/src/assets/discover_3.webp',
             title: 'Facility Booking'
         },
         {
             path: '/commercial/visitor',
             element: <CommercialVisitor />,
             type: "commercial",
-            bgimg: '/src/assets/discover_4.jpg',
+            bgimg: '/src/assets/discover_4.webp',
             title: 'Visitor'
         },
         {
             path: "/commercial/home-services",
             element: <CommercialHomeServices />,
             type: "commercial",
-            bgimg: '/src/assets/discover_5.jpg',
+            bgimg: '/src/assets/discover_5.webp',
             title: 'Home Services'
         },
         {
             path: "/commercial/offers",
             element: <CommercialOffers />,
             type: "commercial",
-            bgimg: '/src/assets/discover_6.jpg',
+            bgimg: '/src/assets/discover_6.webp',
             title: 'Offers and Promotions'
         }
     ],

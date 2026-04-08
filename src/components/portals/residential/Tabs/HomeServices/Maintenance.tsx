@@ -29,7 +29,7 @@ const Maintenance = ({
     return (
         <QuickActionsWrapper
             hideBorder={showServices}
-            className="flex items-center justify-center flex-col gap-6 p-6"
+            className="flex items-center justify-center flex-col gap-6 p-4"
         >
 
 

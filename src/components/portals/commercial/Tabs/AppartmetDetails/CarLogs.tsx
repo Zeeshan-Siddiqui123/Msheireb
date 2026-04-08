@@ -35,7 +35,7 @@ const CarLogs  = () => {
         <BaseCard key={vehicle.id} className="w-full  rounded-lg  relative overflow-hidden transition-all duration-300 hover:bg-white/15">
           <CardBody className="flex justify-between items-start w-full">
             <div className="flex gap-4 items-center">
-              <div className="text-black rounded-lg shadow-sm flex items-center justify-center">
+              <div className="text-black rounded-lg flex items-center justify-center">
                 <img src="/src/assets/svg/car-svg.svg" alt="" className="w-12 h-12 rounded-lg"/>
               </div>
               <div className="flex flex-col">

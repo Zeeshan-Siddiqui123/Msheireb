@@ -1,6 +1,8 @@
 import { Accordion, AccordionItem } from "@heroui/react";
 import { ChevronDown, ChevronLeft } from "lucide-react";
 import QuickActionsWrapper from "./QuickActionsWrapper";
+import Receipt from "/src/assets/svg/reciept.svg";
+
 
 export interface AccordianItem {
     id: string;
@@ -36,7 +38,6 @@ const Accordian: React.FC<AccordianProps> = ({ items, defaultOpenId = null, open
                             content: "p-0 m-0",
                             trigger: "p-0 m-0",
                             heading: "p-0 m-0",
-                            // divider: "hidden",
                         }}
                         selectedKeys={
                             isControlled
@@ -63,24 +64,26 @@ const Accordian: React.FC<AccordianProps> = ({ items, defaultOpenId = null, open
                             key={item.id}
                             textValue={typeof item.title === "string" ? item.title : ""}
                             classNames={{
-                                base: "p-0 m-0",
+                                base: "p-0 m-0 group",
                                 content: "p-0 m-0",
                                 trigger: "p-0 m-0",
                                 heading: "p-0 m-0",
-                                // divider: "hidden",
                             }}
                             title={
                                 <div className="flex items-center justify-between w-full">
-                                    <div className="flex flex-col gap-0.5">
-                                        <p className="heading-small-bold text-white">{item.title}</p>
-                                        {item.subtitle && (
-                                            <p className="text-small-medium text-white/80">{item.subtitle}</p>
-                                        )}
+                                    <div className="flex items-start flex-col gap-3">
+                                         <img
+                                        src={Receipt}
+                                        alt="Receipt"
+                                        className="hidden group-data-[open=true]:block"
+                                    />
+                                        <div className="flex flex-col">
+                                            <p className="heading-small-bold text-white">{item.title}</p>
+                                            {item.subtitle && (
+                                                <p className="text-small-medium text-white/80">{item.subtitle}</p>
+                                            )}
+                                        </div>
                                     </div>
-                                    {item.value && (
-                                        <span className="text-regular-bold text-white">{item.value}</span>
-                                    )}
-
                                 </div>
                             }
                             indicator={({ isOpen }) =>

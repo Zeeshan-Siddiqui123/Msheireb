@@ -42,58 +42,58 @@ export default function ProfileCard({
 }: ProfileCardProps) {
   return (
     <>
-    {/* <MoreExamples/> */}
-    <GlassCard className="text-white h-fit">
-      {/* Banner Image */}
-      <div className="h-24 w-full bg-[url('/src/assets/profile_bg.png')] bg-no-repeat  bg-center opacity-80 "></div>
+      {/* <MoreExamples/> */}
+      <GlassCard className="text-white">
+        {/* Banner Image */}
+        <div className="h-24 w-full bg-[url('/src/assets/profile_bg.webp')] bg-no-repeat bg-contain rounded-xl opacity-80 "></div>
 
-      {/* Profile Info */}
-      <div className="px-6 pb-6 relative flex flex-col items-center">
-        {/* Avatar */}
-        <div className="flex items-center gap-4 w-full mt-4 mb-4">
-          <div className="w-16 h-16 rounded-full border-2 border-white/30 overflow-hidden bg-gray-800 shrink-0">
-            <img src={avatarUrl} alt={name} className="w-full h-full object-cover" />
+        {/* Profile Info */}
+        <div className="px-6 pb-4 relative flex flex-col items-center">
+          {/* Avatar */}
+          <div className="flex items-center gap-4 w-full mb-4">
+            <div className="w-16 h-16 rounded-full border-2 border-white/30 overflow-hidden bg-gray-800 shrink-0">
+              <img src={avatarUrl} alt={name} className="w-full h-full object-cover" />
+            </div>
+            <div className="">
+              <h2 className="text-heading-primary">{name}</h2>
+            </div>
           </div>
-          <div className="">
-            <h2 className="text-heading-primary">{name}</h2>
+
+          {/* Stats Grid */}
+          <div className="grid grid-cols-3 gap-4 w-full mb-6">
+            <div>
+              <p className="text-small-regular text-10">Leasing Type</p>
+              <p className="label-bold-center">{leasingType}</p>
+            </div>
+            <div>
+              <p className="text-small-regular text-10">Valid Until</p>
+              <p className="label-bold-center">{validUntil}</p>
+            </div>
+            <div>
+              <p className="text-small-regular text-10">Family Members</p>
+              <p className="label-bold-center">{familyMembers}</p>
+            </div>
+            <div>
+              <p className="text-small-regular text-10">Nationality</p>
+              <p className="label-bold-center">{nationality}</p>
+            </div>
+
+            <div className="col-span-2">
+              <p className="text-small-regular text-10">Building Ref.</p>
+              <p className="label-bold-center">{buildingRef}</p>
+            </div>
           </div>
+
+          {/* Action Button */}
+          <GlassButton
+            buttonClassName="shadow-figma-drop rounded-full btn-text-regular"
+            onClick={onEditProfile}
+          >
+            Edit Profile
+          </GlassButton>
         </div>
-
-        {/* Stats Grid */}
-        <div className="grid grid-cols-3 gap-4 w-full mb-6">
-          <div>
-            <p className="label-small-regular">Leasing Type</p>
-            <p className="label-bold-center">{leasingType}</p>
-          </div>
-          <div>
-            <p className="label-small-regular">Valid Until</p>
-            <p className="label-bold-center">{validUntil}</p>
-          </div>
-          <div>
-            <p className="label-small-regular">Family Members</p>
-            <p className="label-bold-center">{familyMembers}</p>
-          </div>
-          <div>
-            <p className="label-small-regular">Nationality</p>
-            <p className="label-bold-center">{nationality}</p>
-          </div>
-
-          <div className="col-span-2">
-            <p className="label-small-regular">Building Ref.</p>
-            <p className="label-bold-center">{buildingRef}</p>
-          </div>
-        </div>
-
-        {/* Action Button */}
-        <GlassButton
-          buttonClassName="shadow-figma-drop rounded-full btn-text-regular"
-          onClick={onEditProfile}
-        >
-          Edit Profile
-        </GlassButton>
-      </div>
-    </GlassCard>
+      </GlassCard>
     </>
-    
+
   );
 }

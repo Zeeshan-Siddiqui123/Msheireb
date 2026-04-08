@@ -138,20 +138,20 @@ const Storage = () => {
                 <h2 className="heading-medium-semibold mb-4">Documents and Contracts</h2>
                 <hr className="border-white mb-5" />
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {documents.map((doc, idx) => (
-                        <div key={idx} className="flex relative items-center justify-between p-4 border border-white/30 rounded-[12px] hover:bg-white/[0.12] transition-colors cursor-pointer group shadow-sm">
+                        <div key={idx} className="flex relative items-start justify-between p-4 border border-white/30 rounded-[12px] bg-white/[0.08] hover:bg-white/[0.12] transition-colors cursor-pointer group shadow-sm">
                             <div className="flex items-center gap-4">
-                                <div className="bg-[#e0eefa] text-black p-2.5 rounded-[10px] shadow-sm">
-                                    <ClipboardList size={20} strokeWidth={2.5} />
+                                <div className=" text-black  shadow-sm">
+                                    <img src="/src/assets/svg/clipboard.svg" alt="Clipboard" className='' />
                                 </div>
                                 <div className="flex flex-col w-36">
                                     <p className="text-regular-bold mb-1">{doc.name}</p>
-                                    <span className="text-small-medium">{doc.meta}</span>
+                                    <span className="text-inter-xs">{doc.meta}</span>
                                 </div>
                             </div>
                             <button className="text-white hover:text-white/70 transition-colors p-2">
-                                <Download size={20} strokeWidth={2} />
+                                <img src="/src/assets/svg/download.svg" alt="Download" className='' />
                             </button>
                         </div>
                     ))}

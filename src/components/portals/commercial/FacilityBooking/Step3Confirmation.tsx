@@ -7,7 +7,7 @@ interface PaymentOption {
   key: string;
   name: string;
   description: string;
-  logo: React.ReactNode;
+  logo: string;
   hasAdd?: boolean;
 }
 
@@ -16,39 +16,20 @@ const paymentOptions: PaymentOption[] = [
     key: "apple-pay",
     name: "Apple Pay",
     description: "Tap and pay quickly with Apple Pay",
-    logo: (
-      <div className="flex items-center gap-1">
-        <svg width="14" height="17" viewBox="0 0 14 17" fill="white" xmlns="http://www.w3.org/2000/svg">
-          <path d="M11.47 8.77c-.02-2.07 1.69-3.07 1.77-3.12-0.97-1.41-2.47-1.6-3-1.63-1.28-.13-2.5.75-3.15.75-.65 0-1.65-.73-2.71-.71-1.39.02-2.68.81-3.4 2.06C-.42 8.7.67 13.04 2.37 15.42c.83 1.19 1.82 2.52 3.11 2.47 1.25-.05 1.73-.8 3.24-.8 1.51 0 1.95.8 3.27.77 1.35-.02 2.2-1.21 3.02-2.4.96-1.37 1.35-2.7 1.37-2.77-.03-.01-2.63-1-2.65-3.92zM9.33 2.5C10 1.7 10.46.6 10.32-.5 9.38-.44 8.24.13 7.54.95 6.91 1.68 6.36 2.82 6.52 3.9c1.04.08 2.1-.5 2.81-1.4z" />
-        </svg>
-        <span className="text-white font-semibold text-sm">Pay</span>
-      </div>
-    ),
+    logo: "/src/assets/svg/socials/apple.svg"
   },
   {
     key: "card",
     name: "Credit or Debit Card",
     description: "Connect your card for fast & secure",
     hasAdd: true,
-    logo: (
-      <div className="w-8 h-5 rounded bg-[#EB001B] relative overflow-hidden flex items-center justify-center">
-        <div className="absolute right-0 w-5 h-5 rounded-full bg-[#F79E1B] opacity-90" />
-        <div className="absolute left-0 w-5 h-5 rounded-full bg-[#EB001B]" />
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="w-3 h-5 bg-[#FF5F00] opacity-80" />
-        </div>
-      </div>
-    ),
+    logo: "/src/assets/svg/socials/mastercard.svg",
   },
   {
     key: "amex",
     name: "American Express",
     description: "Pay by card for fast and secure payment method",
-    logo: (
-      <div className="bg-[#2E77BC] rounded px-1.5 py-0.5">
-        <span className="text-white font-bold text-xs tracking-wider">AMEX</span>
-      </div>
-    ),
+    logo: "/src/assets/svg/socials/amex.svg",
   },
 ];
 
@@ -120,8 +101,8 @@ const Step3Confirmation = ({ onConfirm, onCancel }: Step3Props) => {
               className="flex items-center gap-3 w-full px-3 py-3 text-left"
             >
               {/* Logo */}
-              <div className="w-10 flex items-center justify-center shrink-0">
-                {option.logo}
+              <div className="w-16 flex items-center justify-center shrink-0">
+                <img src={option.logo} alt={option.name} />
               </div>
 
               {/* Text */}
@@ -154,15 +135,22 @@ const Step3Confirmation = ({ onConfirm, onCancel }: Step3Props) => {
       <CardFooter className="pt-4 space-y-4">
         {/* Terms */}
         <Checkbox
-          isSelected={accepted}
-          onValueChange={setAccepted}
-          classNames={{
-            label: "text-small-regular text-white",
-            wrapper: "border-white before:border-white after:bg-white",
-          }}
-        >
-          Accept Terms and Conditions
-        </Checkbox>
+            isSelected={accepted}
+            onValueChange={setAccepted}
+            classNames={{
+              label: "text-[14px] leading-wider leading-[16px] font-sans-pro text-white", // ✅ your class applied
+
+              wrapper: `
+      border-white/50
+      data-[selected=true]:bg-blue-500
+      data-[selected=true]:border-blue-500
+    `,
+
+              icon: "text-white", // check icon color
+            }}
+          >
+            Accept Terms and Conditions
+          </Checkbox>
 
         {/* Buttons */}
         <div className="flex items-center gap-12 justify-center w-full pt-1">

@@ -50,9 +50,9 @@ const PageHeader: React.FC<PageHeaderProps> = ({
                     <ChevronLeft size={28} strokeWidth={2} />
                 </button>
 
-                <h1 className="heading-medium-bold text-center tracking-wide mb-6">
+                <p className="page-header-heading">
                     {title}
-                </h1>
+                </p>
             </div>
 
             {description && (

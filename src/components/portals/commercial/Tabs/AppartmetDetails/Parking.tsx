@@ -38,8 +38,8 @@ const Parking = ({ onRegister }: ParkingProps) => {
           {/* Header */}
           <CardHeader className="flex justify-between items-start w-full">
             <div className="flex gap-4 items-center">
-              <div className="bg-[#e0eefa] text-black p-3 rounded-[12px] shadow-sm flex items-center justify-center">
-                <CarFront size={28} strokeWidth={2} />
+              <div className=" text-black  shadow-sm flex items-center justify-center">
+                <img src="/src/assets/svg/car-svg.svg" alt="Car" className='' />
               </div>
 
               <div className="flex flex-col">

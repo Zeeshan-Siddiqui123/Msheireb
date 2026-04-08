@@ -21,7 +21,7 @@ const MaintenanceRequestForm = ({ category }: MaintenanceRequestFormProps) => {
             <div className="w-full space-y-4">
 
                 {/* Category */}
-                <FormField 
+                <FormField
                     label="Category"
                     type="select"
                     value={category}
@@ -29,7 +29,7 @@ const MaintenanceRequestForm = ({ category }: MaintenanceRequestFormProps) => {
                 />
 
                 {/* Sub Category */}
-                <FormField 
+                <FormField
                     label="Sub Category"
                     type="select"
                     placeholder="Ceiling issues"
@@ -45,7 +45,7 @@ const MaintenanceRequestForm = ({ category }: MaintenanceRequestFormProps) => {
                 />
 
                 {/* Description */}
-                <FormField 
+                <FormField
                     label="Description (Optional)"
                     type="textarea"
                     placeholder="Add your text"
@@ -55,7 +55,7 @@ const MaintenanceRequestForm = ({ category }: MaintenanceRequestFormProps) => {
                 />
 
                 {/* Upload Image */}
-                <FormField 
+                <FormField
                     label="Upload Image"
                     type="file"
                 />

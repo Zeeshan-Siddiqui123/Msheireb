@@ -1,7 +1,6 @@
 import React from "react";
 import { Star } from "lucide-react";
 import GlassButton from "../../common/GlassButton";
-import withCardContainer from "../../common/withCardContainer";
 import QuickActionsWrapper from "../../common/QuickActionsWrapper";
 import StatusChip from "../../common/Chip";
 
@@ -14,7 +13,6 @@ interface BookingCardProps {
   providerImage: string;
   rating: number;
   status: string;
-  icon: React.ReactNode;
 }
 
 const BookingCardContent: React.FC<BookingCardProps> = ({
@@ -26,14 +24,13 @@ const BookingCardContent: React.FC<BookingCardProps> = ({
   providerImage,
   rating,
   status,
-  icon,
 }) => {
   return (
     <QuickActionsWrapper className="text-white p-4  h-full w-full">
       {/* Header: Icon and Status */}
       <div className="flex justify-between items-center mb-6 w-full">
-        <div className="w-12 h-12 rounded-xl bg-blue-200 flex items-center justify-center">
-          {icon}
+        <div className="flex items-center justify-center">
+          <img src="/src/assets/svg/door.svg" alt="Door" className='' />
         </div>
         {/* <div className="bg-white/90 text-[#2D9B82] px-3 py-1 rounded-full text-[12px] font-bold">
           {status}
