@@ -48,7 +48,7 @@ export default function ProfileCard({
   return (
     <GlassCard className="text-white h-fit">
       {/* Banner */}
-      <div className="h-24 w-full bg-[url('/src/assets/profile_bg.webp')] bg-no-repeat bg-contain opacity-80" />
+      <div className="h-24 w-full bg-[url('/src/assets/profile_bg.webp')] bg-no-repeat bg-contain rounded-xl opacity-80" />
 
       <div className="px-3 pb-6">
         {/* Top Section */}

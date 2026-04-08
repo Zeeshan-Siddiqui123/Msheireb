@@ -24,7 +24,7 @@ const CommercialFileManagement = () => {
     <DashboardLayout leftSidebar={<LeftSidebarContent />} >
       <section className="flex flex-col h-full w-full py-2">
         <PageHeader title="Document Management" backPath="/commercial" showTabs={false} />
-        <div className='flex items-center md:justify-center gap-12 mb-3 overflow-x-auto scrollbar-hide'>
+        <div className='flex items-center md:justify-center lg:gap-3 xl:gap-12 gap-12 mb-3 overflow-x-auto scrollbar-hide'>
           {btnText.map((btn, idx) => (
             <GlassButton key={idx} className='bg-white/40 btn-text-regular' buttonClassName='!px-4 !h-8 !min-w-0 '>{btn.name}</GlassButton>
           ))}
