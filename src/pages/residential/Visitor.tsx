@@ -1,4 +1,4 @@
-import PageHeader from '../../components/portals/residential/PageHeader';
+import PageHeader from '../../components/common/PageHeader';
 import DashboardLayout from '../../components/common/DashboardLayout';
 import { LeftSidebarContent } from '../../components/common/LeftSidebarContent';
 import { RightSidebarContent } from '../../components/common/RightSidebarContent';
@@ -6,7 +6,7 @@ import { useState } from 'react';
 import Pending from '../../components/portals/residential/Tabs/Visitor/Pending';
 import Active from '../../components/portals/residential/Tabs/Visitor/Active';
 import VisitorHistory from '../../components/portals/residential/Tabs/Visitor/VisitorHistory';
-import GlassButton from '../../components/common/GlassButton';
+import GlassButton from '../../components/common/ui/GlassButton';
 
 const Visitor = () => {
     const [selectedTab, setSelectedTab] = useState("pending");
@@ -70,7 +70,7 @@ const Visitor = () => {
                         </div>
                     }
                 />
-                <div className="w-full flex-grow flex flex-col mt-6">
+                <div className="w-full grow flex flex-col mt-6">
                     {selectedTab === "pending" && <Pending />}
                     {selectedTab === "active" && <Active />}
                     {selectedTab === "history" && <VisitorHistory />}

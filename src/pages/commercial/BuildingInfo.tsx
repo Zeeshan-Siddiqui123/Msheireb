@@ -1,8 +1,8 @@
 import DashboardLayout from '../../components/common/DashboardLayout';
 import { LeftSidebarContent } from '../../components/common/LeftSidebarContent';
 import { RightSidebarContent } from '../../components/common/RightSidebarContent';
-import PageHeader from '../../components/portals/commercial/PageHeader';
-import BaseCard, { CardBody, CardHeader } from '../../components/common/BaseCard';
+import PageHeader from '../../components/common/PageHeader';
+import BaseCard, { CardBody, CardHeader } from '../../components/common/ui/BaseCard';
 
 const CommercialBuildingInfo = () => {
 
@@ -74,18 +74,18 @@ const CommercialBuildingInfo = () => {
           {documents.map((doc, idx) => (
             <BaseCard key={idx} className="">
               <CardBody className="flex relative items-start justify-between">
-              <div className="flex items-center gap-4">
-                <div className=" text-black  shadow-sm">
-                  <img src="/src/assets/svg/clipboard.svg" alt="Clipboard" className='' />
+                <div className="flex items-center gap-4">
+                  <div className=" text-black  shadow-sm">
+                    <img src="/src/assets/svg/clipboard.svg" alt="Clipboard" className='' />
+                  </div>
+                  <div className="flex flex-col w-36">
+                    <p className="text-regular-bold mb-1">{doc.name}</p>
+                    <span className="text-inter-xs">{doc.meta}</span>
+                  </div>
                 </div>
-                <div className="flex flex-col w-36">
-                  <p className="text-regular-bold mb-1">{doc.name}</p>
-                  <span className="text-inter-xs">{doc.meta}</span>
-                </div>
-              </div>
-              <button className="text-white hover:text-white/70 transition-colors p-2">
-                <img src="/src/assets/svg/download.svg" alt="Download" className='' />
-              </button>
+                <button className="text-white hover:text-white/70 transition-colors p-2">
+                  <img src="/src/assets/svg/download.svg" alt="Download" className='' />
+                </button>
               </CardBody>
             </BaseCard>
           ))}

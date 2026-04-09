@@ -1,8 +1,8 @@
 import { Select, SelectItem, Checkbox, DatePicker } from "@heroui/react";
 import { parseDate } from "@internationalized/date";
 import { useState } from "react";
-import BaseCard, { CardBody, CardFooter, CardHeader } from "../../../common/BaseCard";
-import GlassButton from "../../../common/GlassButton";
+import BaseCard, { CardBody, CardFooter, CardHeader } from "../../../common/ui/BaseCard";
+import GlassButton from "../../../common/ui/GlassButton";
 
 const selectClassNames = {
   trigger: [

@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import GlassButton from '../../components/common/GlassButton';
+import GlassButton from '../../components/common/ui/GlassButton';
 import AuthHeader from '../../components/common/AuthHeader';
 import { useTranslation } from 'react-i18next';
 

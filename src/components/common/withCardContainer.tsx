@@ -1,5 +1,5 @@
 import React from "react";
-import BaseCard from "./BaseCard";
+import BaseCard from "./ui/BaseCard";
 
 interface WithCardContainerProps {
   className?: string;

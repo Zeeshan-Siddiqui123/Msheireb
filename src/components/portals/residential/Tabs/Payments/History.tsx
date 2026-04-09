@@ -1,5 +1,5 @@
-import BaseCard, { CardBody, CardHeader } from "../../../../common/BaseCard";
-import StatusChip from "../../../../common/Chip";
+import BaseCard, { CardBody, CardHeader } from "../../../../common/ui/BaseCard";
+import StatusChip from "../../../../common/ui/Chip";
 import HistoryAccordian, { type HistoryItem } from "../../accordian/HistoryAccordian";
 
 

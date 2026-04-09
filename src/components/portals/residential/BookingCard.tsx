@@ -1,8 +1,8 @@
 import React from "react";
 import { Star } from "lucide-react";
-import GlassButton from "../../common/GlassButton";
-import QuickActionsWrapper from "../../common/QuickActionsWrapper";
-import StatusChip from "../../common/Chip";
+import GlassButton from "../../common/ui/GlassButton";
+import QuickActionsWrapper from "../../common/ui/QuickActionsWrapper";
+import StatusChip from "../../common/ui/Chip";
 
 interface BookingCardProps {
   title: string;

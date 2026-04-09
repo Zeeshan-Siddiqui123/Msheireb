@@ -1,4 +1,4 @@
-import QuickActionsWrapper from "../../../../common/QuickActionsWrapper";
+import QuickActionsWrapper from "../../../../common/ui/QuickActionsWrapper";
 // import image from '/civil.png'
 
 const services = [

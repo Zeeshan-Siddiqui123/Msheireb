@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import GlassButton from "../../common/GlassButton";
+import GlassButton from "../../common/ui/GlassButton";
 
 export interface DiscoverCardProps {
   title: string;

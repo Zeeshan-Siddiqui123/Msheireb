@@ -1,9 +1,9 @@
 import React from "react";
 import { Star } from "lucide-react";
-import GlassButton from "../../common/GlassButton";
+import GlassButton from "../../common/ui/GlassButton";
 import withCardContainer from "../../common/withCardContainer";
-import QuickActionsWrapper from "../../common/QuickActionsWrapper";
-import StatusChip from "../../common/Chip";
+import QuickActionsWrapper from "../../common/ui/QuickActionsWrapper";
+import StatusChip from "../../common/ui/Chip";
 
 interface BookingCardProps {
   title: string;
@@ -29,7 +29,7 @@ const BookingCardContent: React.FC<BookingCardProps> = ({
   icon,
 }) => {
   return (
-    <QuickActionsWrapper className="text-white p-4  h-full w-full">
+    <QuickActionsWrapper hideBorder className="text-white p-4  h-full w-full">
       {/* Header: Icon and Status */}
       <div className="flex justify-between items-center mb-6 w-full">
         <div className="w-12 h-12 rounded-xl bg-blue-200 flex items-center justify-center">

@@ -1,5 +1,5 @@
-import GlassButton from "../../../../common/GlassButton";
-import QuickActionsWrapper from "../../../../common/QuickActionsWrapper";
+import GlassButton from "../../../../common/ui/GlassButton";
+import QuickActionsWrapper from "../../../../common/ui/QuickActionsWrapper";
 import MaintenanceServices from "./MaintenanceServices";
 import MaintenanceRequestForm from "./MaintenanceRequestForm";
 

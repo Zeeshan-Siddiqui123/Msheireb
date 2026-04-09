@@ -4,9 +4,9 @@ import logo from '../../assets/svg/msherieb-logo.svg';
 import facebookIcon from '../../assets/svg/socials/facebook-logo.svg';
 import googleIcon from '../../assets/svg/socials/google-logo.svg';
 import appleIcon from '../../assets/svg/socials/apple-logo.svg';
-import BaseInput from '../../components/common/BaseInput';
+import BaseInput from '../../components/common/ui/BaseInput';
 // import AuthButton from '../../components/common/AuthButton';
-import GlassButton from '../../components/common/GlassButton';
+import GlassButton from '../../components/common/ui/GlassButton';
 // import { Button } from '@heroui/react';
 import { useTranslation } from 'react-i18next';
 

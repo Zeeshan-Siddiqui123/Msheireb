@@ -1,6 +1,6 @@
 import { ChevronLeft } from 'lucide-react';
-import GlassButton from '../../components/common/GlassButton';
-import QuickActionsWrapper from '../../components/common/QuickActionsWrapper';
+import GlassButton from '../../components/common/ui/GlassButton';
+import QuickActionsWrapper from '../../components/common/ui/QuickActionsWrapper';
 import FormField from '../../components/common/FormFields';
 import React from 'react';
 

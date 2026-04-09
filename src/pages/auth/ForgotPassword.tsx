@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import BaseInput from '../../components/common/BaseInput';
-import GlassButton from '../../components/common/GlassButton';
+import BaseInput from '../../components/common/ui/BaseInput';
+import GlassButton from '../../components/common/ui/GlassButton';
 import AuthHeader from '../../components/common/AuthHeader';
 import { useTranslation } from 'react-i18next';
 

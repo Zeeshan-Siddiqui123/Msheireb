@@ -4,10 +4,11 @@ import logoImg from '../../assets/svg/msheireb-logo.svg';
 import searchIcon from '../../assets/svg/search-icon.svg';
 import bellIcon from '../../assets/svg/bell-icon.svg';
 import micIcon from '../../assets/svg/mic-icon.svg';
-import OutlineWrapper from "./OutlineWrapper";
-// import GlassFrame from "./GlassFrame";
-import QuickActionsWrapper from "./QuickActionsWrapper";
-import GlassButton from "./GlassButton";
+import QuickActionsWrapper from "./ui/QuickActionsWrapper";
+import OutlineWrapper from "./ui/OutlineWrapper";
+import GlassButton from "./ui/GlassButton";
+
+
 
 const navLinks = ['Home', 'Explore', 'Navigate', 'Commute', 'More'];
 

@@ -1,11 +1,10 @@
 import React from 'react'
 import DashboardLayout from '../../components/common/DashboardLayout'
 import { LeftSidebarContent } from '../../components/common/LeftSidebarContent'
-import QuickActionsWrapper from '../../components/common/QuickActionsWrapper'
+import QuickActionsWrapper from '../../components/common/ui/QuickActionsWrapper'
 import FormField from '../../components/common/FormFields'
-import { Button } from "@heroui/react";
-import GlassButton from '../../components/common/GlassButton'
-import PageHeader from '../../components/portals/residential/PageHeader'
+import GlassButton from '../../components/common/ui/GlassButton'
+import PageHeader from '../../components/common/PageHeader'
 
 const LPNRegistration = () => {
   const [formData, setFormData] = React.useState({

@@ -1,9 +1,9 @@
 import { useDisclosure } from "@heroui/react";
 import LeaseRenewalModal from "../../Modals/LeaseRenewalModal";
-import GlassButton from "../../../../common/GlassButton";
+import GlassButton from "../../../../common/ui/GlassButton";
 import { Download, ClipboardList } from "lucide-react";
-import QuickActionsWrapper from "../../../../common/QuickActionsWrapper";
-import BaseCard, { CardBody, CardFooter } from "../../../../common/BaseCard";
+import QuickActionsWrapper from "../../../../common/ui/QuickActionsWrapper";
+import BaseCard, { CardBody, CardFooter } from "../../../../common/ui/BaseCard";
 
 const Lease = () => {
     const { isOpen, onOpen, onClose } = useDisclosure();

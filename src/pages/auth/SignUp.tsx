@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import BaseInput from '../../components/common/BaseInput';
-import BaseSelect from '../../components/common/BaseSelect';
-import GlassButton from '../../components/common/GlassButton';
+import BaseInput from '../../components/common/ui/BaseInput';
+import BaseSelect from '../../components/common/ui/BaseSelect';
+import GlassButton from '../../components/common/ui/GlassButton';
 import AuthHeader from '../../components/common/AuthHeader';
 import { SelectItem } from '@heroui/react';
 import { useTranslation } from 'react-i18next';

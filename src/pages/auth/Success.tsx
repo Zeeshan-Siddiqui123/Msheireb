@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import GlassButton from '../../components/common/GlassButton';
+import GlassButton from '../../components/common/ui/GlassButton';
 import { useTranslation } from 'react-i18next';
 
 const Success = () => {

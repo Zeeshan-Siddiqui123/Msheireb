@@ -1,6 +1,6 @@
 import { ChevronLeft } from 'lucide-react';
-import GlassButton from '../../components/common/GlassButton';
-import QuickActionsWrapper from '../../components/common/QuickActionsWrapper';
+import GlassButton from '../../components/common/ui/GlassButton';
+import QuickActionsWrapper from '../../components/common/ui/QuickActionsWrapper';
 import FormField from '../../components/common/FormFields';
 import React from 'react';
 
@@ -41,72 +41,72 @@ export default function RegisterVehicle({ onBack }: { onBack: () => void }) {
       {/* Form Container */}
       <QuickActionsWrapper className="w-full p-4">
         <div className='w-full flex flex-col gap-4'>
-          
-          <FormField 
-            label="Community/Building" 
-            type="select" 
-            value={formData.community} 
+
+          <FormField
+            label="Community/Building"
+            type="select"
+            value={formData.community}
             onChange={handleChange('community')}
-            options={[{ key: "A10 Townhouse", text: "A10 Townhouse" }]} 
+            options={[{ key: "A10 Townhouse", text: "A10 Townhouse" }]}
           />
-          <FormField 
-            label="Apartment/Unit No" 
-            type="select" 
-            value={formData.apartment} 
+          <FormField
+            label="Apartment/Unit No"
+            type="select"
+            value={formData.apartment}
             onChange={handleChange('apartment')}
-            options={[{ key: "1405", text: "1405" }]} 
+            options={[{ key: "1405", text: "1405" }]}
           />
-          <FormField 
-            label="Resident Name" 
-            type="text" 
-            value={formData.residentName} 
+          <FormField
+            label="Resident Name"
+            type="text"
+            value={formData.residentName}
             onChange={handleChange('residentName')}
           />
-          <FormField 
-            label="Resident Type" 
-            type="select" 
-            value={formData.residentType} 
+          <FormField
+            label="Resident Type"
+            type="select"
+            value={formData.residentType}
             onChange={handleChange('residentType')}
             options={[
               { key: "Tenant", text: "Tenant" },
               { key: "Owner", text: "Owner" }
-            ]} 
+            ]}
           />
 
-          <FormField 
-            label="Vehicle Plate Number" 
-            type="text" 
-            placeholder="e.g. 372318" 
-            value={formData.plateNumber} 
+          <FormField
+            label="Vehicle Plate Number"
+            type="text"
+            placeholder="e.g. 372318"
+            value={formData.plateNumber}
             onChange={handleChange('plateNumber')}
-            required 
+            required
           />
-          <FormField 
-            label="Vehicle Type" 
-            type="select" 
-            value={formData.vehicleType} 
+          <FormField
+            label="Vehicle Type"
+            type="select"
+            value={formData.vehicleType}
             onChange={handleChange('vehicleType')}
             options={[
-              { key: "Car", text: "Car" }, 
-              { key: "SUV", text: "SUV" }, 
+              { key: "Car", text: "Car" },
+              { key: "SUV", text: "SUV" },
               { key: "Motorcycle", text: "Motorcycle" }
             ]}
-            required 
+            required
           />
-          <FormField 
-            label="Vehicle Brand/Model" 
-            type="text" 
-            placeholder="e.g. Hyundai Creta" 
-            value={formData.brandModel} 
+          <FormField
+            label="Vehicle Brand/Model"
+            type="text"
+            placeholder="e.g. Hyundai Creta"
+            value={formData.brandModel}
             onChange={handleChange('brandModel')}
-            required 
+            required
           />
-          <FormField 
-            label="Owner Name" 
-            type="text" 
-            value={formData.ownerName} 
+          <FormField
+            label="Owner Name"
+            type="text"
+            value={formData.ownerName}
             onChange={handleChange('ownerName')}
-            required 
+            required
           />
 
           {/* Action Buttons */}

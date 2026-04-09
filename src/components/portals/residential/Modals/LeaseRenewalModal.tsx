@@ -1,8 +1,8 @@
 import React from 'react';
 import { Button } from '@heroui/react';
 import { Bell } from 'lucide-react';
-import CommonModal from '../../../common/CommonModal';
-import GlassButton from '../../../common/GlassButton';
+import CommonModal from '../../../common/ui/CommonModal';
+import GlassButton from '../../../common/ui/GlassButton';
 
 interface LeaseRenewalModalProps {
     isOpen: boolean;

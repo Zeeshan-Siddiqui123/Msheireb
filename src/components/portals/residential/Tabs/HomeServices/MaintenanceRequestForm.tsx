@@ -1,4 +1,4 @@
-import QuickActionsWrapper from '../../../../common/QuickActionsWrapper';
+import QuickActionsWrapper from '../../../../common/ui/QuickActionsWrapper';
 import FormField from '../../../../common/FormFields';
 import React from 'react';
 

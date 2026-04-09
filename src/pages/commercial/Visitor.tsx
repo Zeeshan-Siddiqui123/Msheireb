@@ -1,4 +1,4 @@
-import PageHeader from '../../components/portals/commercial/PageHeader';
+import PageHeader from '../../components/common/PageHeader';
 import DashboardLayout from '../../components/common/DashboardLayout';
 import { LeftSidebarContent } from '../../components/common/LeftSidebarContent';
 import { RightSidebarContent } from '../../components/common/RightSidebarContent';
@@ -6,7 +6,7 @@ import { useState } from 'react';
 import Pending from '../../components/portals/commercial/Tabs/Visitor/Pending';
 import Active from '../../components/portals/commercial/Tabs/Visitor/Active';
 import VisitorHistory from '../../components/portals/commercial/Tabs/Visitor/VisitorHistory';
-import GlassButton from '../../components/common/GlassButton';
+import GlassButton from '../../components/common/ui/GlassButton';
 
 const CommercialVisitor = () => {
     const [selectedTab, setSelectedTab] = useState("pending");

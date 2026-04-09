@@ -14,15 +14,6 @@ import { RightSidebarContent } from '../../components/common/RightSidebarContent
 import { routes } from '../../routes'
 
 export default function ResidentialHome() {
-  const bgImg1 = '/src/assets/discover_1.jpg';
-  const bgImg2 = '/src/assets/discover_2.jpg';
-  const bgImg3 = '/src/assets/discover_3.jpg';
-  const bgImg4 = '/src/assets/discover_4.jpg';
-  const bgImg5 = '/src/assets/discover_5.jpg';
-  const bgImg6 = '/src/assets/discover_6.jpg';
-
-
-
   return (
     <DashboardLayout leftSidebar={<LeftSidebarContent />} rightSidebar={<RightSidebarContent />}>
       <section>

@@ -1,8 +1,8 @@
 import { useNavigate } from 'react-router-dom';
 import bgAuth from '../../assets/BG-authold.png';
 import logo from '../../assets/svg/msherieb-logo.svg';
-import BaseSelect from '../../components/common/BaseSelect';
-import GlassButton from '../../components/common/GlassButton';
+import BaseSelect from '../../components/common/ui/BaseSelect';
+import GlassButton from '../../components/common/ui/GlassButton';
 import { SelectItem } from '@heroui/react';
 import { useTranslation } from 'react-i18next';
 

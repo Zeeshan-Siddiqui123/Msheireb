@@ -3,10 +3,10 @@ import { useNavigate } from 'react-router-dom';
 import DashboardLayout from '../../components/common/DashboardLayout';
 import ProfileCard from '../../components/portals/residential/ProfileCard';
 import QuickActions from '../../components/portals/residential/QuickActions';
-// import GlassCard from '../../components/common/GlassCard';
+// import GlassCard from '../../components/common/ui/GlassCard';
 import DiscoverCard from '../../components/portals/residential/DiscoverCard';
 import { Button } from '@heroui/react';
-import QuickActionsWrapper from '../../components/common/QuickActionsWrapper';
+import QuickActionsWrapper from '../../components/common/ui/QuickActionsWrapper';
 
 export default function CarWashDetail() {
   const navigate = useNavigate();

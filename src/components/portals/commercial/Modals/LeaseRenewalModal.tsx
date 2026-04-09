@@ -1,8 +1,8 @@
 import React from 'react';
 import { Button } from '@heroui/react';
 import { Bell } from 'lucide-react';
-import CommonModal from '../../../common/CommonModal';
-import GlassButton from '../../../common/GlassButton';
+import CommonModal from '../../../common/ui/CommonModal';
+import GlassButton from '../../../common/ui/GlassButton';
 
 interface LeaseRenewalModalProps {
     isOpen: boolean;
@@ -34,9 +34,9 @@ const LeaseRenewalModal: React.FC<LeaseRenewalModalProps> = ({
             {/* Icon Container */}
             <div className="relative mb-6">
                 <div className="w-24 h-24 flex items-center justify-center relative">
-                  {/* Subtle decorative elements for the bell icon similar to image */}
-                  <img src="/src/assets/svg/bell-icon.svg" alt="Bell" className='w-16 h-16 invert' />
-                  {/* <div className="absolute top-6 right-6 w-3.5 h-3.5 rounded-full border-2 border-white bg-slate-900" /> */}
+                    {/* Subtle decorative elements for the bell icon similar to image */}
+                    <img src="/src/assets/svg/bell-icon.svg" alt="Bell" className='w-16 h-16 invert' />
+                    {/* <div className="absolute top-6 right-6 w-3.5 h-3.5 rounded-full border-2 border-white bg-slate-900" /> */}
                 </div>
             </div>
 
@@ -57,7 +57,7 @@ const LeaseRenewalModal: React.FC<LeaseRenewalModalProps> = ({
                     onClick={onRequestRenewal}
                     className="w-full py-1 bg-gradient-to-r from-blue-100 via-white to-blue-100 hover:from-blue-100 hover:to-blue-100  font-semibold rounded-full shadow-lg"
                 >
-                   <span className='text-blue-600'>Request Renewal</span> 
+                    <span className='text-blue-600'>Request Renewal</span>
                 </GlassButton>
                 <Button
                     onPress={onClose}

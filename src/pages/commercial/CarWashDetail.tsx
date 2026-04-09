@@ -3,17 +3,17 @@ import { useNavigate } from 'react-router-dom';
 import DashboardLayout from '../../components/common/DashboardLayout';
 import ProfileCard from '../../components/portals/residential/ProfileCard';
 import QuickActions from '../../components/portals/residential/QuickActions';
-// import GlassCard from '../../components/common/GlassCard';
+// import GlassCard from '../../components/common/ui/GlassCard';
 import DiscoverCard from '../../components/portals/residential/DiscoverCard';
 import { Button } from '@heroui/react';
-import QuickActionsWrapper from '../../components/common/QuickActionsWrapper';
+import QuickActionsWrapper from '../../components/common/ui/QuickActionsWrapper';
 import { LeftSidebarContent } from '../../components/common/LeftSidebarContent';
 import { RightSidebarContent } from '../../components/common/RightSidebarContent';
 
 export default function CommercialCarWashDetail() {
   const navigate = useNavigate();
   return (
-    <DashboardLayout leftSidebar={<LeftSidebarContent/>} rightSidebar={<RightSidebarContent/>}>
+    <DashboardLayout leftSidebar={<LeftSidebarContent />} rightSidebar={<RightSidebarContent />}>
       <section className="flex flex-col h-full w-full max-w-3xl mx-auto px-4 py-2 text-white">
         {/* Header Area */}
         <div className="relative flex items-center justify-center mb-6">

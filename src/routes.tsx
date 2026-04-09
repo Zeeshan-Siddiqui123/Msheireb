@@ -19,6 +19,7 @@ import IDCard from "./pages/employee/IDCard";
 import CommercialFileManagement from "./pages/commercial/FileManagement";
 import CommercialBuildingInfo from "./pages/commercial/BuildingInfo";
 import CommercialLeaseManagement from "./pages/commercial/LeaseManagement";
+import CommercialAppartmentDetails from "./pages/commercial/AppartmentDetails";
 
 export const routes = {
     residential: [
@@ -80,6 +81,13 @@ export const routes = {
             path: "/commercial",
             element: <CommercialHome />,
             type: "commercial",
+        },
+        {
+            path: "/commercial/appartment-details",
+            element: <CommercialAppartmentDetails />,
+            type: "commercial",
+            bgimg: '/src/assets/discover_1.webp',
+            title: 'Appartment Details'
         },
         {
             path: "/commercial/building-info",

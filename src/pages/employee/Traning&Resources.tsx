@@ -1,8 +1,7 @@
-import React from 'react'
 import DashboardLayout from '../../components/common/DashboardLayout'
 import { LeftSidebarContent } from '../../components/common/LeftSidebarContent'
-import PageHeader from '../../components/portals/residential/PageHeader'
-import BaseCard, { CardBody } from '../../components/common/BaseCard'
+import PageHeader from '../../components/common/PageHeader'
+import BaseCard, { CardBody } from '../../components/common/ui/BaseCard'
 import { Video, PlayCircle } from 'lucide-react'
 
 const resources = [
@@ -55,7 +54,7 @@ const TrainingAndResources = () => {
           >
             <CardBody className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 py-2">
               <div className="flex items-center gap-4 w-full md:w-auto">
-                <div className="w-12 h-12 rounded-xl bg-white/90 flex items-center justify-center flex-shrink-0 shadow-sm">
+                <div className="w-12 h-12 rounded-xl bg-white/90 flex items-center justify-center shrink-0 shadow-sm">
                   <Video size={24} className="text-[#102C57] stroke-[1.5]" />
                 </div>
                 <div className="flex flex-col">
@@ -68,7 +67,7 @@ const TrainingAndResources = () => {
                 </div>
               </div>
 
-              <div className="flex-shrink-0 self-end md:self-auto pt-2 md:pt-0">
+              <div className="shrink-0 self-end md:self-auto pt-2 md:pt-0">
                 {resource.actionType === "play" ? (
                   <button className="flex items-center justify-center gap-1.5 px-5 py-1.5 rounded-lg border border-white/40 text-white text-sm font-medium hover:bg-white/10 transition-colors">
                     <PlayCircle size={16} className="stroke-[1.5]" />

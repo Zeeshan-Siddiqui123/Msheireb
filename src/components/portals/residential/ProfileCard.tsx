@@ -1,5 +1,5 @@
-import GlassCard from "../../common/GlassCard";
-import GlassButton from "../../common/GlassButton";
+import GlassCard from "../../common/ui/GlassCard";
+import GlassButton from "../../common/ui/GlassButton";
 
 type ProfileVariant = "residential" | "employee";
 

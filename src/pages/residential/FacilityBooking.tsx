@@ -1,4 +1,4 @@
-import PageHeader from '../../components/portals/residential/PageHeader';
+import PageHeader from '../../components/common/PageHeader';
 import DashboardLayout from '../../components/common/DashboardLayout';
 import { LeftSidebarContent } from '../../components/common/LeftSidebarContent';
 import { RightSidebarContent } from '../../components/common/RightSidebarContent';

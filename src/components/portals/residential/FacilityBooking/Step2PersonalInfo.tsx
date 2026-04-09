@@ -1,7 +1,7 @@
 import { Select, SelectItem, Textarea, Checkbox } from "@heroui/react";
 import { useState } from "react";
-import BaseCard, { CardBody, CardFooter } from "../../../common/BaseCard";
-import GlassButton from "../../../common/GlassButton";
+import BaseCard, { CardBody, CardFooter } from "../../../common/ui/BaseCard";
+import GlassButton from "../../../common/ui/GlassButton";
 
 const selectClassNames = {
   trigger: [

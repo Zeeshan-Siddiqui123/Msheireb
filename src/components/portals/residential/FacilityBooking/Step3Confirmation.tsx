@@ -1,7 +1,7 @@
 import { Checkbox } from "@heroui/react";
 import { useState } from "react";
-import BaseCard, { CardBody, CardFooter, CardHeader } from "../../../common/BaseCard";
-import GlassButton from "../../../common/GlassButton";
+import BaseCard, { CardBody, CardFooter, CardHeader } from "../../../common/ui/BaseCard";
+import GlassButton from "../../../common/ui/GlassButton";
 
 interface PaymentOption {
   key: string;

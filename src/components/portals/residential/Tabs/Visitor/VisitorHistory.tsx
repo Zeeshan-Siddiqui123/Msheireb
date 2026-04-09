@@ -1,6 +1,6 @@
 import { Phone, CheckCircle } from "lucide-react"
-import BaseCard, { CardBody, CardFooter, CardHeader } from "../../../../common/BaseCard";
-import GlassButton from "../../../../common/GlassButton";
+import BaseCard, { CardBody, CardFooter, CardHeader } from "../../../../common/ui/BaseCard";
+import GlassButton from "../../../../common/ui/GlassButton";
 
 interface ActiveVisitor {
   id: string;

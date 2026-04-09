@@ -1,10 +1,9 @@
-import React from 'react'
 import DashboardLayout from '../../components/common/DashboardLayout'
 import { LeftSidebarContent } from '../../components/common/LeftSidebarContent'
-import BaseCard, { CardBody, CardHeader } from '../../components/common/BaseCard';
+import BaseCard, { CardBody, CardHeader } from '../../components/common/ui/BaseCard';
 import { CarFront, CircleParking } from 'lucide-react';
-import StatusChip from '../../components/common/Chip';
-import PageHeader from '../../components/portals/residential/PageHeader';
+import StatusChip from '../../components/common/ui/Chip';
+import PageHeader from '../../components/common/PageHeader';
 
 const SmartParking = () => {
   const vehicles = [

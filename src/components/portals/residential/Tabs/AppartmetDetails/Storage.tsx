@@ -5,7 +5,7 @@ import {
     ShieldCheck,
     Box,
 } from "lucide-react";
-import QuickActionsWrapper from "../../../../common/QuickActionsWrapper";
+import QuickActionsWrapper from "../../../../common/ui/QuickActionsWrapper";
 
 const Storage = () => {
     const documents = [

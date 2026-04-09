@@ -1,4 +1,4 @@
-import PageHeader from '../../components/portals/residential/PageHeader';
+import PageHeader from '../../components/common/PageHeader';
 import { useNavigate } from 'react-router-dom';
 import DashboardLayout from '../../components/common/DashboardLayout';
 import Services from '../../components/portals/residential/Tabs/HomeServices/Services';
@@ -86,7 +86,7 @@ export default function HomeServices() {
         />
 
         {/* 🔹 Content Area */}
-        <div className="w-full flex-grow flex flex-col ">
+        <div className="w-full grow flex flex-col ">
 
           {selectedTab === "services" && (
             <Services />

@@ -1,6 +1,6 @@
 import { Accordion, AccordionItem } from "@heroui/react";
-import { ChevronDown, ChevronLeft } from "lucide-react";
-import QuickActionsWrapper from "./QuickActionsWrapper";
+import { ChevronDown, ChevronRight } from "lucide-react";
+import QuickActionsWrapper from "./ui/QuickActionsWrapper";
 import Receipt from "/src/assets/svg/reciept.svg";
 
 
@@ -24,9 +24,6 @@ interface AccordianProps {
 
 const Accordian: React.FC<AccordianProps> = ({ items, defaultOpenId = null, openItemId, onOpenItemIdChange }) => {
     const isControlled = openItemId !== undefined;
-
-
-
     return (
         <div className="space-y-2">
             {items.map((item) => (
@@ -88,7 +85,7 @@ const Accordian: React.FC<AccordianProps> = ({ items, defaultOpenId = null, open
                             }
                             indicator={({ isOpen }) =>
                                 isOpen
-                                    ? <ChevronLeft className="w-5 h-5 text-white" />
+                                    ? <ChevronRight className="w-5 h-5 text-white ml-25 mt-25" />
                                     : <ChevronDown className="w-5 h-5 text-white" />
                             }
                         >

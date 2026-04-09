@@ -1,5 +1,5 @@
 import HistoryAccordian, { type HistoryItem } from "../../accordian/HistoryAccordian";
-import BaseCard, { CardBody, CardHeader } from "../../../../common/BaseCard";
+import BaseCard, { CardBody, CardHeader } from "../../../../common/ui/BaseCard";
 
 const historyData: HistoryItem[] = [
   {

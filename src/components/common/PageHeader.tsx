@@ -1,7 +1,7 @@
 import React from 'react';
 import { ChevronLeft } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import { GlassTabs } from '../../common/GlassTabs';
+import { GlassTabs } from './ui/GlassTabs';
 
 interface PageHeaderProps {
     title: string;
@@ -19,7 +19,7 @@ interface PageHeaderProps {
 const PageHeader: React.FC<PageHeaderProps> = ({
     title,
     description,
-    backPath = '/residential',
+    backPath = '/commercial',
     onBack,
     className = "",
     showTabs = false,

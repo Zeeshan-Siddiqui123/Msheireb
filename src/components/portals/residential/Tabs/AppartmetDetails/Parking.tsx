@@ -1,7 +1,7 @@
-import GlassButton from "../../../../common/GlassButton";
+import GlassButton from "../../../../common/ui/GlassButton";
 import { CarFront, CircleParking } from "lucide-react";
-import QuickActionsWrapper from "../../../../common/QuickActionsWrapper";
-import StatusChip from "../../../../common/Chip";
+import QuickActionsWrapper from "../../../../common/ui/QuickActionsWrapper";
+import StatusChip from "../../../../common/ui/Chip";
 
 export interface ParkingProps {
   onRegister?: () => void;

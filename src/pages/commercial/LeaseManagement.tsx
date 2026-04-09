@@ -1,8 +1,8 @@
 import DashboardLayout from '../../components/common/DashboardLayout';
 import { LeftSidebarContent } from '../../components/common/LeftSidebarContent';
-import PageHeader from '../../components/portals/commercial/PageHeader';
-import BaseCard, { CardBody, CardFooter, CardHeader } from '../../components/common/BaseCard';
-import GlassButton from '../../components/common/GlassButton';
+import PageHeader from '../../components/common/PageHeader';
+import BaseCard, { CardBody, CardFooter, CardHeader } from '../../components/common/ui/BaseCard';
+import GlassButton from '../../components/common/ui/GlassButton';
 
 const CommercialLeaseManagement = () => {
   const leaseDetails = [
@@ -22,7 +22,7 @@ const CommercialLeaseManagement = () => {
           backPath="/commercial"
           showTabs={false}
         />
-        
+
         {/* Lease Agreement Card */}
         <BaseCard className='w-full p-4 flex flex-col mt-2 gap-0'>
           <CardHeader>

@@ -1,4 +1,4 @@
-import PageHeader from '../../components/portals/residential/PageHeader';
+import PageHeader from '../../components/common/PageHeader';
 import DashboardLayout from '../../components/common/DashboardLayout';
 import { LeftSidebarContent } from '../../components/common/LeftSidebarContent';
 import { RightSidebarContent } from '../../components/common/RightSidebarContent';
@@ -68,7 +68,7 @@ const CommercialPayments = () => {
                         </div>
                     }
                 />
-                <div className="w-full flex-grow flex flex-col mt-6">
+                <div className="w-full grow flex flex-col mt-6">
                     {selectedTab === "reciepts" && <Reciepts />}
                     {selectedTab === "upcoming" && <Upcoming />}
                     {selectedTab === "history" && <History />}

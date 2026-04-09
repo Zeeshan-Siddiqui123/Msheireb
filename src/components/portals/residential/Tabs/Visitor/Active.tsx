@@ -1,5 +1,5 @@
-import BaseCard, { CardBody, CardFooter, CardHeader } from "../../../../common/BaseCard";
-import GlassButton from "../../../../common/GlassButton";
+import BaseCard, { CardBody, CardFooter, CardHeader } from "../../../../common/ui/BaseCard";
+import GlassButton from "../../../../common/ui/GlassButton";
 import { Phone, CheckCircle } from "lucide-react";
 
 interface ActiveVisitor {

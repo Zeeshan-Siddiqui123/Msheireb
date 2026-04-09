@@ -1,7 +1,7 @@
-import StatusChip from "../../../../common/Chip";
-import BaseCard, { CardBody } from "../../../../common/BaseCard";
+import StatusChip from "../../../../common/ui/Chip";
+import BaseCard, { CardBody } from "../../../../common/ui/BaseCard";
 
-const CarLogs  = () => {
+const CarLogs = () => {
   const vehicles = [
     {
       id: 1,
@@ -36,7 +36,7 @@ const CarLogs  = () => {
           <CardBody className="flex justify-between items-start w-full">
             <div className="flex gap-4 items-center">
               <div className="text-black rounded-lg flex items-center justify-center">
-                <img src="/src/assets/svg/car-svg.svg" alt="" className="w-12 h-12 rounded-lg"/>
+                <img src="/src/assets/svg/car-svg.svg" alt="" className="w-12 h-12 rounded-lg" />
               </div>
               <div className="flex flex-col">
                 <h3 className="text-small-semibold mb-0.5">{vehicle.model}</h3>

@@ -1,8 +1,8 @@
 import DashboardLayout from '../../components/common/DashboardLayout';
 import { LeftSidebarContent } from '../../components/common/LeftSidebarContent';
-import PageHeader from '../../components/portals/commercial/PageHeader';
-import BaseCard, { CardBody, CardFooter } from '../../components/common/BaseCard';
-import GlassButton from '../../components/common/GlassButton';
+import PageHeader from '../../components/common/PageHeader';
+import BaseCard, { CardBody, CardFooter } from '../../components/common/ui/BaseCard';
+import GlassButton from '../../components/common/ui/GlassButton';
 
 const CommercialFileManagement = () => {
   const documents = [

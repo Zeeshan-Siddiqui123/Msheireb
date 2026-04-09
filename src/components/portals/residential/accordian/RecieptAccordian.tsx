@@ -1,7 +1,7 @@
 import { Download } from "lucide-react";
 import Accordian from "../../../common/Accordian";
 import type { AccordianItem } from "../../../common/Accordian";
-import GlassButton from "../../../common/GlassButton";
+import GlassButton from "../../../common/ui/GlassButton";
 import Receipt from "/src/assets/svg/reciept.svg";
 
 export interface ReceiptItem {

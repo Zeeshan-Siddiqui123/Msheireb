@@ -1,5 +1,5 @@
-import GlassCard from "../../common/GlassCard";
-import GlassButton from "../../common/GlassButton";
+import GlassCard from "../../common/ui/GlassCard";
+import GlassButton from "../../common/ui/GlassButton";
 
 export interface ProfileCardProps {
   name: string;
@@ -23,9 +23,9 @@ export interface ProfileCardProps {
 //         <div className="flex w-0.5 items-start bg-[#ffffff99] absolute bottom-[36px] right-0 top-[36px]" />
 //         <div className="flex h-9 w-9 flex-none items-start rounded-tl-[36px] border-t-2 border-l-2 border-solid border-[#ffffff99] absolute left-0 top-0" />
 //         <div className="flex h-9 w-9 flex-none items-start rounded-br-[36px] border-r-2 border-b-2 border-solid border-[#ffffff99] absolute bottom-0 right-0" />
-      
-       
-        
+
+
+
 //       </div>
 //     </div>
 //   );
